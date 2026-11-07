@@ -5,7 +5,7 @@
   const pages = [
     { href: 'index.html',        label: 'Home' },
     { href: 'research.html',     label: 'Our Research' },
-    { href: 'hafiz.html',        label: 'Hafiz' },
+    { href: 'hafiz.html',        label: 'Tanveer' },
     { href: 'team.html',         label: 'Our Team' },
     { href: 'publications.html', label: 'Publications' },
     { href: 'projects.html',     label: 'Projects' },
@@ -26,12 +26,11 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo">ALI <span style="color:var(--gold)">Research</span> Group</div>
-        <p>Department of Chemistry</p>
-        <p>Department of Pharmacology & Therapeutics</p>
-        <p>The Robert Robinson Laboratories<p>
-        <p>University of Liverpool</p>
-        <p>Liverpool, L69 7ZD</p>
+        <div class="nav-logo">TABISH <span style="color:var(--gold)">Research</span> Group</div>
+        <p>Radcliffe Department of Medicine</p>
+        <p>John Radcliffe Hospital<p>
+        <p>University of Oxford</p>
+        <p>Oxford, OX3 7BN</p>
         <p>United Kingdom</p>
       </div>
       <div class="footer-col">
@@ -39,7 +38,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Our Research</a></li>
-          <li><a href="hafiz.html">Hafiz</a></li>
+          <li><a href="hafiz.html">Tanveer</a></li>
           <li><a href="team.html">Our Team</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="projects.html">Projects</a></li>
