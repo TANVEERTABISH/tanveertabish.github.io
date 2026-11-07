@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects · ALI Research Group</title>
+  <title>Projects · Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,9 +20,7 @@
       padding: 2rem 1.8rem 1.4rem;
       position: relative;
     }
-    .project-icon {
-      font-size: 2.4rem; margin-bottom: .8rem;
-    }
+    .project-icon { font-size: 2.4rem; margin-bottom: .8rem; }
     .project-status {
       position: absolute; top: 1rem; right: 1rem;
       font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
@@ -41,33 +39,39 @@
     }
     .project-links { display: flex; gap: .7rem; flex-wrap: wrap; }
 
-    /* software section */
-    .software-card {
+    /* funders */
+    .funder-strip {
+      display: flex; flex-wrap: wrap; gap: 2.5rem;
+      align-items: center; justify-content: center;
       background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.6rem;
-      box-shadow: var(--shadow); display: flex; gap: 1.2rem; align-items: flex-start;
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 2.2rem 2rem;
     }
-    .software-icon {
-      flex-shrink: 0; width: 52px; height: 52px; border-radius: 10px;
-      background: var(--navy); display: flex; align-items: center;
-      justify-content: center; font-size: 1.6rem;
+    .funder-strip img {
+      height: 58px; width: auto; max-width: 180px;
+      object-fit: contain;
+      filter: grayscale(100%); opacity: .72;
+      transition: filter var(--transition), opacity var(--transition);
     }
-    .software-info h4 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
-    .software-info p { font-size: .85rem; color: var(--muted); line-height: 1.6; margin-bottom: .7rem; }
-    
-    .page-hero p {
-      text-align: justify;
-    } 
-    .area-content p {
-      text-align: justify;
+    .funder-strip img:hover { filter: grayscale(0%); opacity: 1; }
+
+    /* partner pills */
+    .partner-row { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1.4rem; }
+    .partner-pill {
+      background: var(--light); border: 1px solid var(--border);
+      color: var(--muted); border-radius: 20px;
+      padding: .35rem .95rem; font-size: .8rem; font-weight: 500;
     }
+
+    .page-hero p { text-align: justify; }
+    .area-content p { text-align: justify; }
   </style>
 </head>
 <body>
 
 <div class="page-hero">
   <h1>Projects</h1>
-  <p>Active and completed research projects spanning antibiotic resistance, enzyme mechanisms and computational methodology development.</p>
+  <p>Our research is organised around several interconnected themes spanning nanomedicine, redox biology and cardiovascular therapeutics, from the design of nitric oxide-releasing nanomaterials through to the platforms needed to test them.</p>
 </div>
 
 <!-- ACTIVE PROJECTS -->
@@ -81,126 +85,162 @@
     <div class="project-card">
       <div class="project-header">
         <span class="project-status status-active">Active</span>
-        <div class="project-icon">🦠</div>
-        <h3>Accelerating Antibiotic Discovery</h3>
-        <div class="collab">University of Liverpool</div>
+        <div class="project-icon">🫀</div>
+        <h3>Nitric Oxide-Releasing Nanomedicines</h3>
+        <div class="collab">University of Oxford · NANOCARD</div>
       </div>
       <div class="project-body">
-        <p style="text-align: justify;">Development of an automated, physics-informed machine learning workflow to the design and development of new structural classes of antibiotics that target the decoding center of bacterial ribosomes.</p>
+        <p style="text-align: justify;">Nitric oxide sits at the heart of vascular homeostasis, yet its therapeutic potential remains constrained by challenges in spatiotemporal delivery and targeted bioactivity. We engineer nanomaterials that release NO where and when it is needed, restoring endothelial function and promoting vascular healing.</p>
         <div class="project-tags">
-          <span class="project-tag">ML</span>
-          <span class="project-tag">Drug Design</span>
-          <span class="project-tag">AMR</span>
-          <span class="project-tag">Ribosomes</span>
+          <span class="project-tag">Nitric Oxide</span>
+          <span class="project-tag">Nanomedicine</span>
+          <span class="project-tag">Vascular Healing</span>
+          <span class="project-tag">NO Donors</span>
         </div>
-        <!-- <div class="project-links">
+        <div class="project-links">
           <a href="publications.html" class="btn btn-navy">Publications →</a>
-        </div> --> 
+        </div>
       </div>
     </div>
 
     <div class="project-card">
       <div class="project-header">
         <span class="project-status status-active">Active</span>
-        <div class="project-icon">🧬</div>
-        <h3>Molecules Beyond Lipinski Space</h3>
-        <div class="collab">Strathclyde &amp; GSK · Palmer Lab</div>
+        <div class="project-icon">🎯</div>
+        <h3>Redox-Responsive Drug Carriers</h3>
+        <div class="collab">University of Oxford · NANOCARD</div>
       </div>
       <div class="project-body">
-        <p style="text-align: justify;">Developing data-driven approaches to design, synthesise and evaluate molecules that transcend traditional Lipinski drug-likeness rules targeting complex biological targets with improved potency and selectivity.</p>
+        <p style="text-align: justify;">We develop redox-responsive nanodrug excipients capable of navigating the biochemical gradients of the cardiovascular system, using pH-selective permeabilities to guide cargo to subcellular targets in cardiovascular disease.</p>
         <div class="project-tags">
-          <span class="project-tag">ML</span>
-          <span class="project-tag">Drug Design</span>
-          <span class="project-tag">Lipinski Space</span>
-          <span class="project-tag">GSK</span>
+          <span class="project-tag">Targeted Delivery</span>
+          <span class="project-tag">pH-Responsive</span>
+          <span class="project-tag">Redox Biology</span>
+          <span class="project-tag">Subcellular Targeting</span>
         </div>
-        <!--<div class="project-links">
+        <div class="project-links">
           <a href="publications.html" class="btn btn-navy">Publications →</a>
-        </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">🔬</div>
+        <h3>Real-Time Imaging of Nitric Oxide</h3>
+        <div class="collab">University of Oxford · NANOCARD</div>
+      </div>
+      <div class="project-body">
+        <p style="text-align: justify;">Advanced synthetic platforms for imaging NO at subcellular resolution, illuminating how NO fluxes relate to mitochondrial dysfunction, oxidative stress and endothelial pathology in living cells.</p>
+        <div class="project-tags">
+          <span class="project-tag">Bioimaging</span>
+          <span class="project-tag">Biosensing</span>
+          <span class="project-tag">Mitochondria</span>
+          <span class="project-tag">Oxidative Stress</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">⚙️</div>
+        <h3>Next-Generation Cardiovascular Implants</h3>
+        <div class="collab">University of Oxford · Clinical &amp; Industry Partners</div>
+      </div>
+      <div class="project-body">
+        <p style="text-align: justify;">One of our flagship efforts involves the design and fabrication of cardiovascular implants for controlled, sustained and stimulus-responsive therapeutic action, including NO-generating coatings for vascular stents and grafts.</p>
+        <div class="project-tags">
+          <span class="project-tag">Stent Coatings</span>
+          <span class="project-tag">Implants</span>
+          <span class="project-tag">Functional Surfaces</span>
+          <span class="project-tag">Translation</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">🧫</div>
+        <h3>Ex Vivo Device Testing Platforms</h3>
+        <div class="collab">University of Oxford · NANOCARD</div>
+      </div>
+      <div class="project-body">
+        <p style="text-align: justify;">An ex vivo perfusion platform for testing cardiovascular interventional devices under physiologically realistic flow, bridging the gap between bench materials characterisation and pre-clinical evaluation.</p>
+        <div class="project-tags">
+          <span class="project-tag">Ex Vivo Perfusion</span>
+          <span class="project-tag">Device Testing</span>
+          <span class="project-tag">Vascular Biology</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-status status-active">Active</span>
+        <div class="project-icon">💠</div>
+        <h3>2D Porous Framework Materials</h3>
+        <div class="collab">University of Oxford · International Collaborators</div>
+      </div>
+      <div class="project-body">
+        <p style="text-align: justify;">Rational design and chemical functionalisation of graphene and 2D porous framework materials — including graphene organic frameworks — as tuneable scaffolds for therapeutic delivery and sensing.</p>
+        <div class="project-tags">
+          <span class="project-tag">Graphene</span>
+          <span class="project-tag">Porous Frameworks</span>
+          <span class="project-tag">Materials Design</span>
+          <span class="project-tag">Functionalisation</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html" class="btn btn-navy">Publications →</a>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- COMPLETED PROJECTS -->
+<!-- FUNDING -->
 <section class="section section-alt">
   <div class="section-header">
-    <h2>Completed Projects</h2>
+    <h2>Funding</h2>
     <hr class="gold-rule">
+    <p>Our research is supported by competitive funding from UK and international funders, with more than £2M secured to date.</p>
   </div>
-  <div class="grid-3">
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-status status-complete">Complete</span>
-        <div class="project-icon">📊</div>
-        <h3>Multiscale Cell Correlation (MCC)</h3>
-        <div class="collab">Manchester · Henchman Group</div>
-      </div>
-      <div class="project-body">
-        <p style="text-align: justify;">Development and implementation of the Multiscale Cell Correlation (MCC) method, a general, accurate and scalable technique to quantify molecular structure and entropy.</p>
-        <div class="project-tags">
-          <span class="project-tag">Entropy</span>
-          <span class="project-tag">EE-MCC</span>
-          <span class="project-tag">Reaction Rates</span>
-          <span class="project-tag">Free Energy</span>
-        </div>
-        <div class="project-links">
-          <a href="publications.html" class="btn btn-navy">Publications →</a>
-          <a href="https://github.com/HafizSaqibAli/MCC" target="_blank" class="btn btn-navy">Code →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-status status-complete">Complete</span>
-        <div class="project-icon">⚗️</div>
-        <h3>Heme and Non-Heme Iron Oxidases</h3>
-        <div class="collab">Manchester · de Visser Group</div>
-      </div>
-      <div class="project-body">
-        <p style="text-align: justify;">Designed synthetic heme and non-heme enzymes central to antibiotic biosynthesis, including cytochrome P450s i.e. TxtE, GcoA, OleTJE and arginine modifying enzymes including VioC, NapI, OrfP to enable the development of antibiotics.</p>
-        <div class="project-tags">
-          <span class="project-tag">QM-cluster</span>
-          <span class="project-tag">QM/MM</span>
-          <span class="project-tag">Iron Enzymes</span>
-          <span class="project-tag">Kinetics</span>
-        </div>
-        <div class="project-links">
-          <a href="publications.html" class="btn btn-navy">Publications →</a>
-        </div>
-      </div>
-    </div>
-
+  <div class="funder-strip">
+    <img src="img/funders/bhf.png" alt="British Heart Foundation">
+    <img src="img/funders/wellcome.png" alt="Wellcome Trust">
+    <img src="img/funders/royal-society.png" alt="The Royal Society">
+    <img src="img/funders/epsrc.png" alt="EPSRC">
+    <img src="img/funders/ukri.png" alt="UK Research and Innovation">
   </div>
 </section>
 
-<!-- SOFTWARE & CODE -->
+<!-- PARTNERS -->
 <section class="section">
   <div class="section-header">
-    <h2>Open-Source Code &amp; Data</h2>
+    <h2>Collaboration &amp; Partners</h2>
     <hr class="gold-rule">
-    <p>We are committed to open and reproducible science.</p>
+    <p>Our work is pursued in close collaboration with engineers, chemists, pharmacists and clinicians, bridging the gap between fundamental redox biology and translational cardiovascular therapeutics. We work with academic groups internationally and with industry partners in the medical device and pharmaceutical sectors.</p>
   </div>
-  <div class="grid-2">
-    <!-- <div class="software-card">
-      <div class="software-icon">💻</div>
-      <div class="software-info">
-        <h4>SAMPL9 MCC Code</h4>
-        <p>Python code and data files for the energy-entropy MCC method applied to toluene-water LogP prediction in the SAMPL9 blind challenge.</p>
-        <a href="https://github.com/HafizSaqibAli/SAMPL9" target="_blank" class="btn btn-navy">GitHub →</a>
-      </div>
-    </div> --> 
-    <div class="software-card">
-      <div class="software-icon">💻📁</div>
-      <div class="software-info">
-        <h4>GitHub Repository</h4>
-        <p>All code, datasets and supplementary materials associated with published papers are available on GitHub.</p>
-        <a href="https://github.com/HafizSaqibAli?tab=repositories" target="_blank" class="btn btn-navy">View All Repos →</a>
-      </div>
-    </div>
+  <div class="partner-row">
+    <span class="partner-pill">AstraZeneca</span>
+    <span class="partner-pill">Medtronic</span>
+    <span class="partner-pill">Smith &amp; Nephew</span>
+  </div>
+  <div style="text-align:center;margin-top:2.2rem;">
+    <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy">Discuss a Collaboration →</a>
   </div>
 </section>
 
