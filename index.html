@@ -4,36 +4,43 @@
   <meta charset="UTF-8">
   <title>Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TABISH Research Group — Designing Next-Generation Therapeutics.">
+  <meta name="description" content="Tabish Research Group — State-of-the-Heart Medicine: nitric oxide nanomedicine for vascular healing. University of Oxford.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="group-style.css">
   <style>
     /* ── HOME-SPECIFIC ────────────────────────────────── */
 
-    /* HERO */
+    /* HERO — NANOCARD image background */
     .hero {
-      min-height: 88vh;
+      min-height: 92vh;
       display: flex; align-items: center;
       position: relative; overflow: hidden;
-      background: var(--navy);
+      background: #0a1020;
     }
-    /* SVG molecule network background */
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 15% 60%, rgba(30,95,168,.35) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 25%, rgba(200,168,75,.18) 0%, transparent 50%),
-        radial-gradient(ellipse at 55% 80%, rgba(43,127,212,.15) 0%, transparent 45%);
+      background-image: url('img/hero-nanocard.jpg');
+      background-size: cover;
+      background-position: center right;
+      background-repeat: no-repeat;
     }
-    /* animated molecule dots */
-    .molecule-canvas {
-      position: absolute; inset: 0; pointer-events: none;
-      opacity: .55;
+    /* dark scrim so the text stays readable over the artwork */
+    .hero-scrim {
+      position: absolute; inset: 0;
+      background: linear-gradient(100deg,
+        rgba(6,10,22,.94) 0%,
+        rgba(6,10,22,.86) 32%,
+        rgba(6,10,22,.45) 58%,
+        rgba(6,10,22,.15) 100%);
+    }
+    @media (max-width: 900px) {
+      .hero-scrim { background: linear-gradient(180deg, rgba(6,10,22,.80) 0%, rgba(6,10,22,.92) 70%); }
+      .hero-bg { background-position: center; }
     }
     .hero-content {
       position: relative; z-index: 2;
-      padding: 0 6%; max-width: 760px;
+      padding: 0 6%; max-width: 820px;
     }
     .hero-eyebrow {
       font-size: .78rem; font-weight: 600; letter-spacing: .14em;
@@ -42,20 +49,32 @@
       animation: fadeUp .5s ease both;
     }
     .hero-title {
-      font-family: var(--serif); font-size: clamp(3rem,6vw,5.5rem);
+      font-family: var(--serif); font-size: clamp(2.6rem,5.4vw,4.8rem);
       color: var(--white); font-weight: 600; line-height: 1.08;
-      margin-bottom: 1.4rem;
+      margin-bottom: .8rem;
       animation: fadeUp .6s .1s ease both;
     }
-    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-title em { color: #e4322b; font-style: italic; }
+    .hero-tagline {
+      font-size: .82rem; font-weight: 500; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.72);
+      margin-bottom: 1.6rem;
+      animation: fadeUp .6s .15s ease both;
+    }
     .hero-desc {
-      font-size: 1.05rem; color: rgba(255,255,255,.7);
-      max-width: 520px; line-height: 1.75; margin-bottom: 2.2rem;
+      font-size: 1.05rem; color: rgba(255,255,255,.78);
+      max-width: 560px; line-height: 1.75; margin-bottom: 2.2rem;
       animation: fadeUp .6s .2s ease both;
     }
     .hero-actions {
       display: flex; flex-wrap: wrap; gap: 1rem;
       animation: fadeUp .6s .3s ease both;
+    }
+    .hero-pillars {
+      margin-top: 2.2rem;
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      animation: fadeUp .6s .4s ease both;
     }
     .hero-scroll {
       position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
@@ -93,16 +112,26 @@
       transition: transform var(--transition), box-shadow var(--transition);
     }
     .research-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .research-img {
-      width: 100%; height: 200px; object-fit: cover;
-      background: linear-gradient(135deg, #1a3a6b 0%, #2d6ea8 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem;
-    }
     .research-body { padding: 1.4rem; }
     .research-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: .5rem; }
     .research-body p  { font-size: .87rem; color: var(--muted); line-height: 1.65; }
     .research-body a  { display: inline-block; margin-top: .9rem; font-size: .82rem; font-weight: 600; color: var(--accent); }
+
+    .research-img {
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+      background: #ffffff;
+      border-bottom: 1px solid #1a3a6b;
+      padding: 0;
+    }
+    .research-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
     /* LATEST PUBS PREVIEW */
     .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
@@ -136,43 +165,15 @@
       .stats-bar { gap: 2rem; }
     }
 
-    .section-header.fade-up p {
-      max-width: 1000px;
-      margin-left: 0;
-    }
-    
-     .research-img {
-      width: 100%;
-      height: 270px;
-      overflow: hidden;
-      background: #ffffff;
-      border-bottom: 1px solid #1a3a6b;
-      padding: 0;
-    } 
+    .section-header.fade-up p { max-width: 1000px; margin-left: 0; }
+    .page-hero p { text-align: justify; }
+    .area-content p { text-align: justify; }
 
-     .research-img img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+    /* contact grid */
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
     }
-    .page-hero p {
-      text-align: justify;
-    }  
-    .area-content p {
-      text-align: justify;
-    }
-    <!-- .hero-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem); /* scales down instead of forcing 3 lines */
-      max-width: 900px;      /* wide enough for 1–2 lines */
-      white-space: normal;
-      line-height: 1.15;
-    }
-    .hero-content {
-      max-width: 1000px;     /* make sure the parent isn't constraining it */
-    } --> 
-
   </style>
 </head>
 <body>
@@ -182,12 +183,13 @@
 <!-- ── HERO ─────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <canvas class="molecule-canvas" id="molCanvas"></canvas>
+  <div class="hero-scrim"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">University of Oxford, Oxford, UK.</div>
     <h1 class="hero-title">
-      TABISH <em>Research</em><br>Group
+      State-of-the-Heart<br><em>Medicine</em>
     </h1>
+    <div class="hero-tagline">Nitric Oxide Nanomedicine for Vascular Healing</div>
     <p class="hero-desc">
       We develop next-generation cardiovascular therapeutics — intelligent, nitric oxide-releasing nanomedicines that navigate complex biological environments, respond to pathophysiological stimuli and restore vascular homeostasis.
     </p>
@@ -196,6 +198,7 @@
       <a href="publications.html" class="btn btn-outline">Publications</a>
       <a href="team.html" class="btn btn-outline">Meet the Team</a>
     </div>
+    <div class="hero-pillars">Materials &nbsp;|&nbsp; Biology &nbsp;|&nbsp; Devices &nbsp;|&nbsp; Patients</div>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -205,10 +208,9 @@
 
 <!-- ── STATS ─────────────────────────────────────────────── -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">54+</div><div class="stat-label">Publications</div></div>
-  <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Citations</div></div>
-  <div class="stat"><div class="stat-num">19</div><div class="stat-label">h-index</div></div>
-  <div class="stat"><div class="stat-num">34</div><div class="stat-label">i10-index</div></div>
+  <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Publications</div></div>
+  <div class="stat"><div class="stat-num">3500+</div><div class="stat-label">Citations</div></div>
+  <div class="stat"><div class="stat-num">33</div><div class="stat-label">h-index</div></div>
 </div>
 
 <!-- ── RESEARCH AREAS PREVIEW ─────────────────────────────── -->
@@ -216,136 +218,71 @@
   <div class="section-header fade-up">
     <h2>Key Research Areas</h2>
     <hr class="gold-rule">
-    <p> We advance data-driven molecular design as a platform for solving unmet global challenges; coupling automation, structural insight, and molecular-level understanding to accelerate solutions in human health, sustainable catalysis, and infectious disease. Our group cultivates an environment where rigorous science and bold ideas converge.</p>
+    <p>We advance nanomaterial-enabled cardiovascular medicine as a platform for solving unmet clinical challenges; coupling materials design, redox chemical biology and device engineering to accelerate solutions in vascular healing, targeted delivery and real-time diagnosis. Our group cultivates an environment where rigorous science and bold ideas converge.</p>
   </div>
   <div class="grid-4">
     <div class="research-card fade-up">
       <div class="research-img">
-        <img src="img/drug-discovery1.png" alt="drug-discovery" />
+        <img src="img/no-nanomedicine.png" alt="Nitric oxide nanomedicine" />
       </div>
       <div class="research-body">
-        <h3>Computer-Aided Drug Discovery</h3>
-        <p>Design and evaluation of next-generation inhibitors targeting antimicrobial resistance.</p>
+        <h3>Nitric Oxide Nanomedicine</h3>
+        <p>Designing NO-releasing nanomaterials that restore endothelial function and promote vascular healing.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-2">
       <div class="research-img">
-        <img src="img/QMMM_Metalloenzymes.png" alt="QM/MM Metalloenzymes" />
+        <img src="img/drug-delivery.png" alt="Targeted drug delivery" />
       </div>
       <div class="research-body">
-        <h3>Metalloenzymes</h3>
-        <p>Engineering nature-inspired biocatalysts and new synthetic enzymes with novel functions.</p>
+        <h3>Targeted Drug Delivery</h3>
+        <p>Redox- and pH-responsive carriers that release their payload only where and when it is needed.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-3">
       <div class="research-img">
-        <img src="img/methoddev.png" alt="methoddev" />
+        <img src="img/bioimaging.png" alt="Bioimaging and sensing" />
       </div>
       <div class="research-body">
-        <h3>Method Development</h3>
-        <p>Developing next-generation computational methods to accelerate chemical discovery.</p>
+        <h3>Bioimaging &amp; Real-Time Sensing</h3>
+        <p>Imaging nitric oxide inside living cells to decode redox signalling in cardiovascular disease.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-4">
       <div class="research-img">
-        <img src="img/fes.png" alt="FES" />
+        <img src="img/devices.png" alt="Cardiovascular devices" />
       </div>
       <div class="research-body">
-        <h3>Computational Chemistry</h3>
-        <p>Decoding reaction mechanisms and catalytic processes to guide rational synthetic design.</p>
+        <h3>Next-Generation Devices</h3>
+        <p>Coated balloons, stents and implants with controlled, stimulus-responsive drug release.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
-    <!--<div class="research-card fade-up-3">
-      <div class="research-img">
-        <img src="img/Biomolecules.png" alt="Biomolecules" />
-      </div>
-      <div class="research-body">
-        <h3>Biomolecular Modelling</h3>
-        <p>Understanding structure, dynamics and interactions of macromolecules </p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div>
-    
-     <div class="research-card fade-up-4">
-      <div class="research-img">img/QMMM_Metalloenzymes.png</div>
-      <div class="research-body">
-        <h3>Chemical Biology</h3>
-        <p>Exploring metalloenzymes for designing nature-inspired biocatalysts and engineering new synthetic enzymes with novel functions.</p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div> --> 
   </div>
 </section>
 
 <!-- ── PI SPOTLIGHT ───────────────────────────────────────── -->
 <!-- <section class="pi-section">
-  <img src="img/profile.png" alt="Dr Hafiz Saqib Ali" class="pi-photo">
+  <img src="img/profile.png" alt="Dr Tanveer A. Tabish" class="pi-photo">
   <div class="pi-text">
-    <h2>Dr Hafiz Saqib Ali</h2>
-    <div class="pi-title">Principal Investigator · Liverpool University Research Fellow</div>
-    <p>A computational scientist with a broad background in computational chemistry, structural biology, medicinal chemistry, and machine learning. His work focuses on developing data-driven approaches to accelerate the discovery of novel antimicrobials and engineering functional enzymes, at the University of Liverpool, Liverpool, UK.</p>
+    <h2>Dr Tanveer A. Tabish</h2>
+    <div class="pi-title">Principal Investigator · Research Fellow, University of Oxford</div>
+    <p>A materials scientist working at the interface of nanomaterials, redox chemical biology and biomedical engineering. His work focuses on nitric oxide-releasing nanomedicines for cardiovascular repair, redox-responsive drug carriers, real-time imaging of NO in cells, and next-generation cardiovascular implants, at the University of Oxford, Oxford, UK.</p>
     <div class="pi-badges">
-      <span class="pi-badge">Liverpool</span>
-      <span class="pi-badge">Strathclyde &amp; GSK (former)</span>
-      <span class="pi-badge">Oxford (former)</span>
-      <span class="pi-badge">Edinburgh (former)</span>
-      <span class="pi-badge">Manchester PhD</span>
+      <span class="pi-badge">Oxford</span>
+      <span class="pi-badge">Cardiovascular &amp; Redox Nanomedicine</span>
+      <span class="pi-badge">Nanomaterials</span>
+      <span class="pi-badge">Chemical Biology</span>
     </div>
-      <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
+    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
       <a href="papers/CV.pdf" target="_blank" class="btn btn-primary">View CV</a>
-      <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
+      <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="btn btn-outline">Google Scholar</a>
     </div>
   </div>
 </section> -->
-
-<!-- ── LATEST PUBLICATIONS ────────────────────────────────── -->
-<!-- <section class="section section-alt">
-  <div class="section-header">
-    <h2>Latest Publications</h2>
-    <hr class="gold-rule">
-    <p>Recent work from the group spanning antibiotic resistance, enzyme mechanisms and molecular design.</p>
-  </div>
-  <div class="pub-list">
-
-    <div class="pub-row">
-      <img src="papers/CDIN1.tiff" alt="" class="pub-thumb">
-      <div class="pub-body">
-        <div class="pub-title"><a href="#">The CDIN1-Codanin-1 Complex, Defective in Congenital Dyserythropoietic Anaemia Type I, is an RNA Nuclease</a></div>
-        <div class="pub-authors">Sanja Brolih, <strong>Hafiz Saqib Ali</strong>, Caroline Scott et al.</div>
-        <div class="pub-journal"><em>Nature Communications</em>, <strong>2026</strong> (in press)</div>
-        <div class="pub-chips"><span class="chip chip-new">New</span><a class="chip" href="#">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-      </div>
-    </div>
-
-    <div class="pub-row">
-      <img src="papers/Pylori.png" alt="" class="pub-thumb">
-      <div class="pub-body">
-        <div class="pub-title"><a href="https://doi.org/10.1186/s13099-026-00814-8">Novel Indole-based Sulfonate and Sulfamate Derivatives as Potent and Selective Urease Inhibitors Targeting Helicobacter Pylori</a></div>
-        <div class="pub-authors">Ghalia Khoder, …, <strong>Hafiz Saqib Ali</strong> et al.</div>
-        <div class="pub-journal"><em>Gut Pathogens</em>, <strong>2026</strong>, 18, 27</div>
-        <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13099-026-00814-8">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-      </div>
-    </div>
-
-    <div class="pub-row">
-      <img src="papers/TetX.gif" alt="" class="pub-thumb">
-      <div class="pub-body">
-        <div class="pub-title"><a href="https://doi.org/10.1039/D5SC00964B">Binding Assays Enable Discovery of Tet(X) Inhibitors that Combat Tetracycline Destructase Resistance</a></div>
-        <div class="pub-authors">Matthew J. Beech, …, <strong>Hafiz Saqib Ali</strong>, …, Christopher J. Schofield</div>
-        <div class="pub-journal"><em>Chemical Science</em>, <strong>2025</strong>, 16, 9691–9704</div>
-        <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D5SC00964B">Website</a><a class="chip" href="bibtex/TetX.ris">BibTeX</a></div>
-      </div>
-    </div>
-
-  </div>
-  <div style="margin-top:2rem;">
-    <a href="publications.html" class="btn btn-navy">View All Publications →</a>
-  </div>
-</section>-->
 
 <!-- ── LATEST NEWS PREVIEW ───────────────────────────────── -->
 <section class="section section-alt">
@@ -356,61 +293,39 @@
 
   <div class="news-timeline">
 
-    
     <div class="news-entry">
       <div class="news-date-col">
         <div class="news-date-badge">November<br>2026</div>
       </div>
       <div class="news-content">
-        <h4>🧬Fully Funded PhD Opportunity</h4>
-        <p>We are excited to advertise a fully funded four-year PhD studentship in our research group, as part of the MRC Northwest Doctoral Programme in Medical Sciences.</p>
-        <a href="https://www.findaphd.com/phds/project/mrc-nw-dms-dla-programme-automated-discovery-of-inhibitors-targeting-dna-gyrase-to-combat-antimicrobial-resistance/?p201568" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">More Details →</a>
+        <h4>🧬 Group Website Launched</h4>
+        <p>The Tabish Research Group website is live — introducing our programme in nitric oxide nanomedicine for vascular healing at the University of Oxford.</p>
       </div>
     </div>
-    
+
     <div class="news-entry">
       <div class="news-date-col">
-        <div class="news-date-badge">August<br>2026</div>
+        <div class="news-date-badge">2026</div>
       </div>
       <div class="news-content">
-        <h4>Liverpool University Research Fellowship</h4>
-        <p>Awarded a prestigious Liverpool University Research Fellowship to start his own research group at the University of Liverpool.</p>
+        <h4>NANOCARD Programme</h4>
+        <p>Our cardiovascular nanotherapeutics programme spans materials, biology, devices and patients — from NO-releasing coatings to first-in-class vascular implants.</p>
       </div>
     </div>
+
     <div class="news-entry">
       <div class="news-date-col">
-        <div class="news-date-badge">2026<br>In Press</div>
+        <div class="news-date-badge">2026</div>
       </div>
       <div class="news-content">
-        <h4>New Paper · <em>Nature Communications</em></h4>
-        <p>Our work on the CDIN1-Codanin-1 complex defective in Congenital Dyserythropoietic Anaemia Type I, has been accepted in <em>Nature Communications</em>.</p>
-        <a href="https://doi.org/10.1038/s41467-026-74766-7" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">Read Paper →</a>
+        <h4>Join the Group</h4>
+        <p>We welcome enquiries from prospective PhD students, postdoctoral researchers and fellowship candidates interested in cardiovascular nanomedicine.</p>
+        <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">Get in Touch →</a>
       </div>
     </div>
 
-       
-    <!--<div class="news-entry">
-      <div class="news-date-col">
-        <div class="news-date-badge">Jan<br>2026</div>
-      </div>
-      <div class="news-content">
-        <h4>New Position at Strathclyde &amp; GSK</h4>
-        <p>Started Research Associate position with <a href="https://www.palmer-lab.com">Prof. David Palmer</a> at the University of Strathclyde and GSK.</p>
-      </div>
-    </div>
+  </div>
 
-     <div class="news-entry">
-      <div class="news-date-col">
-        <div class="news-date-badge">Mar<br>2022</div>
-      </div>
-      <div class="news-content">
-        <h4>Postdoc at Oxford</h4>
-        <p>Started Postdoc with <a href="https://schofield.web.ox.ac.uk">Prof. Christopher Schofield</a>, FRS, at the University of Oxford.</p>
-      </div>
-    </div>
-
-  </div> -->
-    
   <div style="margin-top:2rem;">
     <a href="news.html" class="btn btn-navy">All News &amp; Events →</a>
   </div>
@@ -418,7 +333,7 @@
 
 <!-- ── CONTACT & LOCATION ─────────────────────────────── -->
 <section class="section section-alt2">
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+  <div class="contact-grid">
 
     <!-- LEFT: Get in Touch form -->
     <div>
@@ -449,11 +364,11 @@
           <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:.4rem;">
             Message <span style="color:var(--accent);">*</span>
           </label>
-          <textarea rows="5.5"
+          <textarea rows="6"
             style="width:100%;padding:.65rem .8rem;border:1px solid #ccc;border-radius:4px;font-family:var(--sans);font-size:.9rem;color:var(--text);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
         </div>
 
-        <a href="mailto:H.Saqib-Ali@liverpool.ac.uk" class="btn btn-navy"
+        <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy"
           style="text-align:center;display:block;">
           Submit form
         </a>
@@ -462,97 +377,37 @@
 
     <!-- RIGHT: Our Location -->
     <div>
-      <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:.3.5rem;">Our location</h2>
+      <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:.4rem;">Our location</h2>
       <hr class="gold-rule">
 
-      <!-- Embedded OpenStreetMap centred on University of Liverpool -->
+      <!-- Embedded OpenStreetMap centred on the John Radcliffe Hospital -->
       <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:1.2rem;">
         <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-2.9720%2C53.3980%2C-2.9520%2C53.4080&layer=mapnik&marker=53.4030%2C-2.9620"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2300%2C51.7570%2C-1.2060%2C51.7700&layer=mapnik&marker=51.7639%2C-1.2185"
           width="100%" height="280"
           style="border:none;display:block;"
           loading="lazy"
-          title="University of Liverpool map">
+          title="John Radcliffe Hospital, University of Oxford map">
         </iframe>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.9rem;color:var(--muted);margin-bottom:1.4rem;">
         <div style="display:flex;align-items:flex-start;gap:.7rem;">
           <span style="color:var(--gold);font-size:1rem;margin-top:.1rem;">📍</span>
-          <span>Department of Chemistry<br>The Robert Robinson Laboratories<br>University of Liverpool<br>Liverpool, L69 7ZD, UK</span>
+          <span>Radcliffe Department of Medicine<br>John Radcliffe Hospital<br>University of Oxford<br>Oxford, OX3 9DU, UK</span>
         </div>
-        <!-- <div style="display:flex;align-items:center;gap:.7rem;">
-          <span style="color:var(--gold);font-size:1rem;">✉️</span>
-          <a href="mailto:H.Saqib-Ali@liverpool.ac.uk" style="color:var(--accent);">H.Saqib-Ali@liverpool.ac.uk</a>
-        </div> -->
       </div>
 
-      <a href="https://maps.google.com/?cid=3288985098308259766" target="_blank"
+      <a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank"
         class="btn btn-navy" style="text-align:center;display:block;">
-        Open in Google Maps →
+        Oxford Profile →
       </a>
     </div>
 
   </div>
-
-  <!-- responsive stack on mobile -->
-  <style>
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
-    }
-  </style>
 </section>
 
 <!-- FOOTER injected by shared-layout.js -->
 <script src="shared-layout.js"></script>
-<script>
-// Animated molecule network on canvas
-(function(){
-  const c = document.getElementById('molCanvas');
-  if (!c) return;
-  const ctx = c.getContext('2d');
-  let W, H, nodes;
-  function resize(){ W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; init(); }
-  function init(){
-    nodes = Array.from({length: 55}, () => ({
-      x: Math.random()*W, y: Math.random()*H,
-      vx: (Math.random()-.5)*.4, vy: (Math.random()-.5)*.4,
-      r: 2 + Math.random()*2.5
-    }));
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    // edges
-    for(let i=0;i<nodes.length;i++){
-      for(let j=i+1;j<nodes.length;j++){
-        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
-        const d=Math.sqrt(dx*dx+dy*dy);
-        if(d<130){
-          ctx.beginPath();
-          ctx.strokeStyle=`rgba(200,168,75,${.55*(1-d/130)})`;
-          ctx.lineWidth=.8;
-          ctx.moveTo(nodes[i].x,nodes[i].y);
-          ctx.lineTo(nodes[j].x,nodes[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    // nodes
-    nodes.forEach(n=>{
-      ctx.beginPath();
-      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(200,168,75,.7)';
-      ctx.fill();
-      n.x+=n.vx; n.y+=n.vy;
-      if(n.x<0||n.x>W) n.vx*=-1;
-      if(n.y<0||n.y>H) n.vy*=-1;
-    });
-    requestAnimationFrame(draw);
-  }
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-})();
-</script>
 </body>
 </html>
