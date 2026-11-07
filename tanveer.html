@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dr Hafiz Saqib Ali · ALI Research Group</title>
+  <title>Dr Tanveer Tabish · Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dr Hafiz Saqib Ali — Liverpool University Research Fellow, Department of Chemistry and Department of Pharmacology & Therapeutics, University of Liverpool.">
+  <meta name="description" content="Dr Tanveer Tabish — Senior Research Fellow and Group Leader in Cardiovascular Nanotherapeutics, Radcliffe Department of Medicine, University of Oxford.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="group-style.css">
@@ -65,48 +65,15 @@
       padding: 60px 6%;
     }
 
-    /* ── LEFT: BIO + CAREER + RESEARCH ────────────────── */
+    /* ── LEFT: BIO + RESEARCH ─────────────────────────── */
     .bio-section { margin-bottom: 3rem; }
     .bio-section h2 {
       font-family: var(--serif); font-size: 1.7rem; color: var(--navy); margin-bottom: .4rem;
     }
     .bio-section p {
       font-size: .95rem; color: #2a3550; line-height: 1.82; margin-bottom: 1rem;
+      text-align: justify;
     }
-
-    /* Career timeline */
-    .career-timeline { display: flex; flex-direction: column; gap: 0; margin-top: .5rem; }
-    .career-item {
-      display: flex; gap: 1.4rem; align-items: flex-start;
-      padding: 1.2rem 0; border-bottom: 1px solid var(--border);
-    }
-    .career-item:last-child { border-bottom: none; }
-    .career-dot-col {
-      flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding-top: .3rem;
-    }
-    .career-dot {
-      width: 14px; height: 14px; border-radius: 50%;
-      background: var(--gold); border: 2px solid var(--navy);
-      box-shadow: 0 0 0 3px rgba(200,168,75,.25);
-      flex-shrink: 0;
-    }
-    .career-dot.active { background: #48c78e; box-shadow: 0 0 0 3px rgba(72,199,142,.25); }
-    .career-line {
-      width: 2px; flex: 1; background: var(--border);
-      margin-top: 4px; min-height: 30px;
-    }
-    .career-content { flex: 1; }
-    .career-period {
-      font-size: .75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .07em; color: var(--accent); margin-bottom: .25rem;
-    }
-    .career-content h4 {
-      font-size: .97rem; font-weight: 600; color: var(--navy); margin-bottom: .15rem; line-height: 1.35;
-    }
-    .career-content p {
-      font-size: .83rem; color: var(--muted); line-height: 1.6; margin-bottom: 0;
-    }
-    .career-content a { color: var(--accent); font-size: .83rem; }
 
     /* Research interests list */
     .interests-grid {
@@ -119,24 +86,27 @@
       font-size: .86rem; color: var(--text); font-weight: 500;
     }
 
-    /* Selected publications (compact) */
+    /* Talks / compact rows */
     .sel-pub {
       display: flex; gap: 1rem; align-items: flex-start;
       padding: 1rem 0; border-bottom: 1px solid var(--border);
     }
     .sel-pub:last-child { border-bottom: none; }
-    .sel-pub-num {
-      flex-shrink: 0; width: 26px; height: 26px;
-      background: var(--navy); color: var(--gold);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: .72rem; font-weight: 700; font-family: var(--serif); margin-top: .1rem;
-    }
     .sel-pub-body { flex: 1; }
-    .sel-pub-title { font-size: .88rem; font-weight: 500; color: var(--navy); line-height: 1.4; margin-bottom: .2rem; }
-    .sel-pub-title a { color: var(--navy); }
-    .sel-pub-title a:hover { color: var(--accent); }
+    .sel-pub-title { font-size: .88rem; font-weight: 500; color: var(--navy); line-height: 1.45; margin-bottom: .2rem; }
     .sel-pub-meta { font-size: .78rem; color: var(--muted); }
-    .sel-pub-meta em { font-style: italic; }
+    .talk-date {
+      flex-shrink: 0; min-width: 112px;
+      background: var(--light); border: 1px solid var(--border);
+      border-left: 3px solid var(--gold); border-radius: 6px;
+      padding: .4rem .6rem; text-align: center;
+      font-size: .76rem; font-weight: 600; color: var(--navy);
+    }
+    .talk-mode {
+      display: inline-block; margin-left: .5rem;
+      font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--accent);
+    }
 
     /* ── RIGHT SIDEBAR ─────────────────────────────────── */
     .profile-sidebar { display: flex; flex-direction: column; gap: 1.6rem; }
@@ -179,13 +149,9 @@
       .profile-badges, .profile-actions { justify-content: center; }
       .profile-body { grid-template-columns: 1fr; gap: 2rem; }
       .interests-grid { grid-template-columns: 1fr; }
+      .sel-pub { flex-direction: column; gap: .5rem; }
     }
-    .bio-section p {
-      text-align: justify;
-    }
-    .area-content p {
-      text-align: justify;
-    }
+    .area-content p { text-align: justify; }
   </style>
 </head>
 <body>
@@ -195,28 +161,31 @@
 <!-- ── PROFILE HERO ─────────────────────────────────────── -->
 <header class="profile-hero">
   <div class="profile-photo-wrap">
-    <img src="img/Hafiz.jpeg" alt="Dr Hafiz Saqib Ali" class="profile-photo">
+    <img src="img/tanveer.jpg" alt="Dr Tanveer Tabish" class="profile-photo">
   </div>
   <div class="profile-info">
-    <div class="profile-title">Principal Investigator · Liverpool University Research Fellow</div>
-    <h1>Dr Hafiz Saqib Ali</h1>
+    <div class="profile-title">Principal Investigator · Senior Research Fellow &amp; Group Leader</div>
+    <h1>Dr Tanveer Tabish</h1>
     <p class="profile-affil">
-      <a href="https://www.liverpool.ac.uk/chemistry/" target="_blank">Department of Chemistry</a> and <a href="https://www.liverpool.ac.uk/systems-molecular-and-integrative-biology/about/pharmacology-therapeutics/" target="_blank"> Department of Pharmacology & Therapeutics</a>,
-      <a href="https://www.liverpool.ac.uk" target="_blank">University of Liverpool</a>, Liverpool, UK.</a>
+      Cardiovascular Nanotherapeutics (NANOCARD) &nbsp;·&nbsp;
+      <a href="https://www.rdm.ox.ac.uk/about/our-divisions/division-of-cardiovascular-medicine" target="_blank">Division of Cardiovascular Medicine</a>,
+      <a href="https://www.rdm.ox.ac.uk" target="_blank">Radcliffe Department of Medicine</a>,
+      <a href="https://www.ox.ac.uk" target="_blank">University of Oxford</a><br>
+      Fellow of <a href="https://www.kellogg.ox.ac.uk" target="_blank">Kellogg College</a>, Oxford, UK.
     </p>
-    <!-- <div class="profile-badges">
-      <span class="profile-badge">Computational Chemistry</span>
-      <span class="profile-badge">Medicinal Chemistry</span>
-      <span class="profile-badge">Machine Learning</span>
-      <span class="profile-badge">QM/MM</span>
-      <span class="profile-badge">Drug Design</span>
-      <span class="profile-badge">Antibiotic Resistance</span>
-    </div> --> 
+    <div class="profile-badges">
+      <span class="profile-badge">Nitric Oxide Nanomedicine</span>
+      <span class="profile-badge">Cardiovascular Therapeutics</span>
+      <span class="profile-badge">Redox Biology</span>
+      <span class="profile-badge">Drug Delivery</span>
+      <span class="profile-badge">Biomaterials</span>
+      <span class="profile-badge">Vascular Devices</span>
+    </div>
     <div class="profile-actions">
-      <a href="papers/CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
-      <a href="publications.html" class="btn btn-outline">Publications</a>
-      <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
-      <a href="mailto:H.Saqib-Ali@liverpool.ac.uk" class="btn btn-outline">Contact</a>
+      <a href="publications.html" class="btn btn-primary">Publications</a>
+      <a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
+      <a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank" class="btn btn-outline">Oxford Profile</a>
+      <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-outline">Contact</a>
     </div>
   </div>
 </header>
@@ -229,92 +198,27 @@
 
     <!-- BIO -->
     <div class="bio-section">
-      <h2>About Hafiz</h2>
+      <h2>About Tanveer</h2>
       <hr class="gold-rule">
-      <p>Hafiz was born in Hafizabad, Punjab, Pakistan, where he completed his early education before moving to Faisalabad for his BS (Hons) and MPhil degrees. During his master’s studies, he completed one year research project with Prof. Asim Mansha on developing a quantum-mechanics-based model for the design of phthalonitrile derivatives for photodynamic therapy application, which sparked his interest in computational chemistry.</p>
-      <p>Hafiz was awarded a highly competitive Chief Minister Merit Scholarship (CMMS) form the Government of Pakistan, which enabled him to pursue his PhD at the University of Manchester, UK. His doctoral research focused on <a href="https://www.proquest.com/openview/f0c445821fff5a25c6a1418b933b89e4/1?pq-origsite=gscholar&cbl=2026366&diss=y" target="_blank">"Developing Computational Algorithms to Study Reaction Kinetics and Stability of Biomolecules"</a>. During this time, he developed expertise in multiscale biomolecular modelling, including QM-cluster, QM/MM, and molecular dynamics approaches, enabling the engineering of synthetic heme/non-heme metalloenzymes with novel functions.</p>
-      <p>Following his PhD, he began his postdoctoral career at the University of Edinburgh, where he applied computational methods to guide the design of Cu-based artificial metalloenzymes. He then moved to the University of Oxford, where he expanded his expertise in free-energy-based computational methods and machine learning for the design of novel small molecules targeting antimicrobial resistance (AMR).</p>
-      <p>Hafiz later joined the University of Strathclyde and GSK, to further his expertise in developing data-driven approaches for drug modalities beyond Lipinski space including Peptides, Oligoneucleotides and PROTACs. Most recently, he was awarded a Liverpool University Research Fellowship and joined the Department of Chemistry and the Department of Pharmacology & Therapeutics at the University of Liverpool. There, he leads a team developing physics-informed machine learning models to accelerate drug discovery, with a particular focus on bacterial ribosomes to address the growing threat of AMR.</p>
+      <p>Tanveer Tabish is a Senior Research Fellow and Group Leader in Cardiovascular Nanotherapeutics in the Division of Cardiovascular Medicine, Radcliffe Department of Medicine, University of Oxford, and a Fellow of Kellogg College. He leads NANOCARD, an interdisciplinary team working at the interface of nanomaterials, redox biology and cardiovascular medicine.</p>
+      <p>His research addresses an unmet clinical challenge: nitric oxide (NO) is a pivotal redox-active mediator of vascular homeostasis, mitochondrial function and inflammation, yet its therapeutic potential remains constrained by the difficulty of delivering it with spatial and temporal precision. His group designs redox- and pH-responsive nanomaterials that navigate the biochemical gradients of the cardiovascular system to carry NO donors and NO-releasing materials to subcellular targets, alongside synthetic platforms for real-time imaging of NO at subcellular resolution and next-generation cardiovascular implants with controlled, stimulus-responsive release.</p>
+      <p>He has published more than 60 peer-reviewed papers, including in <em>Nature Reviews Cardiology</em>, <em>Science Advances</em>, <em>Redox Biology</em> and <em>JACC: Basic to Translational Science</em>, and holds patents on NO-generating materials and NO-releasing angioplasty balloons. He is co-author, with Professor Eleanor Stride, of a forthcoming <em>Very Short Introduction to Biomaterials</em> for Oxford University Press.</p>
+      <p>Alongside his research he is Assistant Editor of <em>Materials Today Communications</em> and an Early Career Advisory Board member of <em>Materials Today Bio</em>, co-organises the Next Generation Biomaterials symposium at Materials Science &amp; Technology (MS&amp;T), and serves as a Wellcome Trust Accelerator Award advisory committee member. The group collaborates closely with engineers, chemists, pharmacists and clinicians to bridge fundamental redox biology and translational cardiovascular therapeutics.</p>
     </div>
 
-    <!-- CAREER TIMELINE -->
-    <div class="bio-section section-alt">
-      <h2>Career Timeline</h2>
+    <!-- RESEARCH INTERESTS -->
+    <div class="bio-section">
+      <h2>Research Interests</h2>
       <hr class="gold-rule">
-      <div class="career-timeline">
-
-      <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot active"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">August 2026 — Present</div>
-            <h4>Liverpool University Research Fellow — University of Liverpool</h4>
-            <p>Machine learning workflows to accelerate the discovery of new antibiotics targeting the decoding center of the bacterial ribosomes. Based in the <a href="https://www.liverpool.ac.uk/chemistry/">Department of Chemistry</a> and the <a href="https://www.liverpool.ac.uk/systems-molecular-and-integrative-biology/about/pharmacology-therapeutics/" target="_blank"> Department of Pharmacology and Therapeutics</a> at the University of liverpool, Liverpool, UK. </p>
-          </div>
-        </div> 
-        
-        <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">January 2026 — July 2026</div>
-            <h4>Postdoctoral Research Associate — University of Strathclyde &amp; GSK</h4>
-            <p>Developing data-driven approaches to the design, synthesis, and evaluation of next-generation molecules beyond Lipinski space. Supervised by <a href="https://www.palmer-lab.com">Prof. David Palmer</a> and <a href="https://www.linkedin.com/in/andrew-baxter-bb38a414a/">Dr Andrew Baxter</a>. Based in Glasgow, Scotland &amp; Stevenage, UK.</p>
-          </div>
-        </div>
-
-        <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">March 2022 — January 2026</div>
-            <h4>Postdoctoral Research Associate — University of Oxford</h4>
-            <p>Developing computational and machine learning approaches for designing antibacterials and resistance-breaking therapies against AMR. Supervised by <a href="https://schofield.web.ox.ac.uk">Prof. Christopher Schofield</a>, FRS and <a href="https://www.duartegroupchem.org">Prof. Fernanda Duarte</a> at the <a href="https://www.ineosoxford.ox.ac.uk">Ineos Oxford Institute for Antimicrobial Research</a> &amp; <a href="https://www.chem.ox.ac.uk">Department of Chemistry</a>.</p>
-          </div>
-        </div>
-
-        <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">September 2021 — March 2022</div>
-            <h4>Postdoctoral Research Associate — University of Edinburgh</h4>
-            <p>Computational methods for engineering Cu-based artificial metalloenzymes (ArMs). Supervised by <a href="https://www.amandajarvis.co.uk">Dr Amanda Jarvis</a> at the <a href="https://chem.ed.ac.uk">School of Chemistry</a>.</p>
-          </div>
-        </div>
-
-        <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">February 2018 — May 2021</div>
-            <h4>PhD — University of Manchester</h4>
-            <p>Development and implementation of algorithms to determine the reaction kinetics and stability of biomolecules. Supervised by <a href="https://scholar.google.com/citations?user=9kUV7lUAAAAJ&hl=en">Dr Richard Henchman</a> and <a href="https://research.manchester.ac.uk/en/persons/sam.devisser">Prof. Samuel de Visser</a>, FRS at the <a href="https://www.mib.manchester.ac.uk">Manchester Institute of Biotechnology</a>.</p>
-          </div>
-        </div>
-
-        <div class="career-item">
-          <div class="career-dot-col">
-            <div class="career-dot"></div>
-            <div class="career-line"></div>
-          </div>
-          <div class="career-content">
-            <div class="career-period">September 2015 — October 2017</div>
-            <h4>MPhil — GC University Faisalabad</h4>
-            <p>Quantum mechanical modelling of nitrile-based photosensitizers for photodynamic therapy (PDT) applications. Supervised by <a href="https://profiles.gcuf.edu.pk/profile/profdrasimmansha">Prof. Asim Mansha</a> in the <a href="https://gcuf.edu.pk/faculties/physical-science/chemistry/">Department of Chemistry</a>.</p>
-          </div>
-        </div>
-
+      <div class="interests-grid">
+        <div class="interest-item">Nitric oxide-releasing nanomedicines</div>
+        <div class="interest-item">Redox- and pH-responsive drug carriers</div>
+        <div class="interest-item">Real-time imaging &amp; sensing of NO</div>
+        <div class="interest-item">Cardiovascular implants and stent coatings</div>
+        <div class="interest-item">Drug-coated balloons</div>
+        <div class="interest-item">Graphene and 2D porous framework materials</div>
+        <div class="interest-item">Vascular inflammation and endothelial function</div>
+        <div class="interest-item">Biomaterials and tissue engineering</div>
       </div>
     </div>
 
@@ -328,114 +232,207 @@
 
       <div class="news-entry">
         <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2026–2031</div> 
-          <!-- <div class="news-date-badge">2026–2031</div> --> 
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2025</div>
         </div>
         <div class="news-content">
-          <h4>University Research Fellowship (PI)</h4>
-          <p>
-            University of Liverpool &nbsp;·&nbsp; Establish own group in the <a href="https://www.liverpool.ac.uk/chemistry/">Department of Chemistry</a> and the <a href="https://www.liverpool.ac.uk/systems-molecular-and-integrative-biology/about/pharmacology-therapeutics/" target="_blank"> Department of Pharmacology and Therapeutics</a>, University of Liverpool.
-          </p>
+          <h4>The Kroto Medal</h4>
+          <p>Awarded by NANOSMAT in recognition of contributions to nanoengineering, named in honour of Nobel Laureate Sir Harold W. Kroto.</p>
         </div>
       </div>
 
       <div class="news-entry">
         <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2023–2026</div> 
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2025</div>
         </div>
         <div class="news-content">
-          <h4>CCPBioSim Software Project Funding (co-PI)</h4>
-          <p>
-            CCPBioSim (EPRSC grant EP/T026308/1) with STFC &nbsp;·&nbsp; CodeEntropy: Generalising Multiscale Cell Correlation (MCC) to mixtures & complexes.
-          </p>
+          <h4>Rising Star in Redox Biology</h4>
+          <p>Invited speaker award, Nitric Oxide Gordon Research Conference (GRC), Ventura, California.</p>
         </div>
       </div>
 
       <div class="news-entry">
         <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2023–2026</div> 
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2024</div>
         </div>
         <div class="news-content">
-          <h4>Computing Time (co-PI)</h4>
-          <p>
-            HECBioSim &nbsp;·&nbsp; Computing time of 47,520 GPU hrs on the supercomputer BEDE.
-          </p>
-        </div>
-      </div>
-      
-      <div class="news-entry">
-        <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2021–2022</div> 
-        </div>
-        <div class="news-content">
-          <h4>CCPBioSim Software Project Funding (co-PI)</h4>
-          <p>
-            CCPBioSim (EPRSC grant EP/T026308/1) with the STFC &nbsp;·&nbsp; Multiscale entropy and structure quantification from molecular dynamics simulations.
-          </p>
-        </div>
-      </div>
-      
-      <div class="news-entry">
-        <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2017–2021</div> 
-        </div>
-        <div class="news-content">
-          <h4>Chief Minister Merit Scholarship (CMMS)</h4>
-          <p>
-            Government of Pakistan &nbsp;·&nbsp; Fully funded PhD scholarship.
-          </p>
+          <h4>Spotlight on BHF Fellows Lecture</h4>
+          <p>Selected from British Heart Foundation fellows across the UK, British Cardiovascular Society.</p>
         </div>
       </div>
 
       <div class="news-entry">
         <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2015–2017</div> 
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2024</div>
         </div>
         <div class="news-content">
-          <h4>The Punjab Educational Endowment Fund (PEEF)</h4>
-          <p>
-            Government of Punjab, Pakistan &nbsp;·&nbsp; Fully funded Master's scholarship.
-          </p>
+          <h4>Scientist in Residence — Inaugural Lecture</h4>
+          <p>Australian Centre for NanoMedicine (ACN), University of New South Wales, Australia.</p>
         </div>
       </div>
 
       <div class="news-entry">
         <div class="news-date-col">
-          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2011–2015</div> 
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2022</div>
         </div>
         <div class="news-content">
-          <h4>Higher Education Commission (HEC) Scholarship</h4>
-          <p>
-            Government of Pakistan &nbsp;·&nbsp; Fully funded Bachelor’s scholarship.
-          </p>
+          <h4>The Larry Hench Young Investigator Prize</h4>
+          <p>UK Society for Biomaterials (UKSB), with the UKSB Award Lecture at the annual conference, University of Sheffield.</p>
         </div>
       </div>
+
+      <div class="news-entry">
+        <div class="news-date-col">
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2022</div>
+        </div>
+        <div class="news-content">
+          <h4>Young Leaders Award</h4>
+          <p>Young Professionals Society (YPS). Also awarded an Erasmus+ Mobility Award, Wrocław University of Science and Technology, Poland.</p>
+        </div>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-date-col">
+          <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;">2018</div>
+        </div>
+        <div class="news-content">
+          <h4>First PhD Graduate, EPSRC CDT in Metamaterials</h4>
+          <p>University of Exeter, UK. Also recipient of the IOP Outstanding Reviewer Award 2018.</p>
+        </div>
+      </div>
+
     </div>
-    
-    <!-- Invited Talks -->
-    <div class="bio-section section-alt">
-      <h2>Invited Talks</h2>
+
+    <!-- INVITED TALKS -->
+    <div class="bio-section" style="margin-top:3rem;">
+      <h2>Invited Talks &amp; Lectures</h2>
       <hr class="gold-rule">
- 
+
       <div class="sel-pub">
-        <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 2026</div> 
-        </div>
-    
-      <div class="sel-pub">
-        <!-- <div class="news-date-badge" style="display:flex; align-items:center; justify-content:center; width:95px; height:40px; font-size:0.8rem; white-space:nowrap;"> 1-3 July</div>--> 
-        <div class="news-date-badge">1-3 July</div>
-        <!-- <div class="sel-pub-num">July</div> -->
+        <div class="talk-date">June 2026</div>
         <div class="sel-pub-body">
-          <div class="sel-pub-title">Inorganic Reaction Mechanisms Group Symposium 2026, Manchester Institute of Biotechnology, University of Manchester (Speaker).</div>
+          <div class="sel-pub-title">Department of Pharmacology and Pharmacy &amp; Dr Li Dak-Sum Research Centre, The University of Hong Kong<span class="talk-mode">In person</span></div>
         </div>
       </div>
-     
+
       <div class="sel-pub">
-        <div class="news-date-badge">24 June</div> 
+        <div class="talk-date">April 2026</div>
         <div class="sel-pub-body">
-          <div class="sel-pub-title">University of Strathclyde/GSK Prosperity Partnership Scientific Showcase at GSK, Stevenage (Speaker).</div>
+          <div class="sel-pub-title">Department of Chemistry, Brown University, USA<span class="talk-mode">In person</span></div>
         </div>
       </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">April 2026</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Centre for Drug Discovery, Virginia Commonwealth University, USA<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">November 2025</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">New Zealand Controlled Release Society (NZCRS) Symposium, New Zealand<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">November 2025</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Drug Delivery Australia, Sydney, Australia<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">April 2025</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Leeds Institute of Cardiovascular and Metabolic Medicine (LICAMM), University of Leeds, UK<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">March 2025</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">School of Computing and Electronic Engineering, University of Surrey, UK<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">February 2025</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Nitric Oxide Gordon Research Conference (GRC), Ventura, California, USA<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">November 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">School of Cardiovascular and Metabolic Medicine &amp; Sciences, King's College London, UK<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">October 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">UT Southwestern Medical Center, University of Texas, Dallas, USA<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">September 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">The Heart Research Institute (HRI), Sydney, Australia<span class="talk-mode">Online</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">June 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">British Cardiovascular Society Annual Conference, Manchester, UK<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">February 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">International Conference on Nanoscience and Nanotechnology (ICONN), Melbourne, Australia<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">February 2024</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Australian Centre for NanoMedicine (ACN), University of New South Wales, Sydney, Australia<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">July 2023</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">Technical University of Munich, Germany<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">April 2023</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">University of Limerick, Republic of Ireland<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">November 2022</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">University of Aveiro, Portugal<span class="talk-mode">Online</span></div>
+        </div>
+      </div>
+
+      <div class="sel-pub">
+        <div class="talk-date">June 2022</div>
+        <div class="sel-pub-body">
+          <div class="sel-pub-title">UK Society for Biomaterials (UKSB) Annual Conference, University of Sheffield, UK — Keynote<span class="talk-mode">In person</span></div>
+        </div>
+      </div>
+
     </div>
   </main>
 
@@ -449,36 +446,60 @@
         <div class="contact-icon">✉</div>
         <div>
           <span>Email</span>
-          <a href="mailto:H.Saqib-Ali@liverpool.ac.uk">H.Saqib-Ali@liverpool.ac.uk</a>
+          <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk">tanveer.tabish@cardiov.ox.ac.uk</a>
         </div>
       </div>
       <div class="contact-row">
-        <div class="contact-icon">𝕏</div>
+        <div class="contact-icon">☎</div>
         <div>
-          <span>Twitter / X</span>
-          <a href="https://twitter.com/HafizSaqibAl1" target="_blank">@HafizSaqibAl1</a>
-        </div>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">⌥</div>
-        <div>
-          <span>GitHub</span>
-          <a href="https://github.com/HafizSaqibAli/" target="_blank">HafizSaqibAli</a>
-        </div>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">in</div>
-        <div>
-          <span>LinkedIn</span>
-          <a href="https://www.linkedin.com/in/dr-h-saqib-ali-02a324123/" target="_blank">Dr H Saqib Ali</a>
+          <span>Telephone</span>
+          <a href="tel:+441865287603">+44 (0)1865 287603</a>
         </div>
       </div>
       <div class="contact-row">
         <div class="contact-icon">◎</div>
         <div>
           <span>Google Scholar</span>
-          <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank">View Profile</a>
+          <a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank">View Profile</a>
         </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">iD</div>
+        <div>
+          <span>ORCID</span>
+          <a href="https://orcid.org/0000-0001-5578-076X" target="_blank">0000-0001-5578-076X</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">S</div>
+        <div>
+          <span>Scopus</span>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=55484476700" target="_blank">55484476700</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">in</div>
+        <div>
+          <span>LinkedIn</span>
+          <a href="https://www.linkedin.com/in/tanveertabish/" target="_blank">tanveertabish</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH METRICS -->
+    <div class="sidebar-card">
+      <h3>Research Metrics</h3>
+      <div class="edu-item">
+        <div class="edu-degree">60+ peer-reviewed publications</div>
+        <div class="edu-uni">32 as first author · 3 book chapters</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">3500+ citations</div>
+        <div class="edu-uni">h-index 33 · i10-index 47</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">&gt;£2M research funding</div>
+        <div class="edu-uni">BHF · Wellcome Trust · Royal Society · UKRI</div>
       </div>
     </div>
 
@@ -486,44 +507,58 @@
     <div class="sidebar-card">
       <h3>Education</h3>
       <div class="edu-item">
-        <div class="edu-degree">PhD in Computational Chemistry</div>
-        <div class="edu-uni">University of Manchester</div>
-        <div class="edu-year">2018 – 2021 · No Revisions</div>
+        <div class="edu-degree">PhD in Engineering</div>
+        <div class="edu-uni">EPSRC CDT in Metamaterials, University of Exeter</div>
+        <div class="edu-year">2014 – 2018</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">MPhil in Physical Chemistry</div>
-        <div class="edu-uni">GC University Faisalabad</div>
-        <div class="edu-year">2015 - 2017 · Distinction</div>
+        <div class="edu-degree">MSc in Materials Bioengineering</div>
+        <div class="edu-uni">University of the Punjab</div>
+        <div class="edu-year">2010 – 2012 · Distinction</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">BS (hons) in Chemistry</div>
-        <div class="edu-uni">GC University Faisalabad</div>
-        <div class="edu-year">2011 - 2015</div>
+        <div class="edu-degree">BSc in Materials Engineering</div>
+        <div class="edu-uni">University of the Punjab</div>
+        <div class="edu-year">2005 – 2009</div>
       </div>
     </div>
 
-    <!-- AWARDS -->
-    <!-- <div class="sidebar-card">
-      <h3>Awards &amp; Recognition</h3>
+    <!-- EDITORIAL & SERVICE -->
+    <div class="sidebar-card">
+      <h3>Editorial &amp; Service</h3>
       <div class="edu-item">
-        <div class="edu-degree">Chief Minister Merit Scholarship</div>
-        <div class="edu-uni">Government of Pakistan</div>
-        <div class="edu-year">2017 · Top 50 University PhD Funding</div>
+        <div class="edu-degree">Assistant Editor</div>
+        <div class="edu-uni"><em>Materials Today Communications</em></div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">PhD Passed Without Revisions</div>
-        <div class="edu-uni">University of Manchester</div>
-        <div class="edu-year">2021</div>
+        <div class="edu-degree">Early Career Advisory Board</div>
+        <div class="edu-uni"><em>Materials Today Bio</em></div>
       </div>
-    </div> -->  
+      <div class="edu-item">
+        <div class="edu-degree">Symposium Organiser</div>
+        <div class="edu-uni">Next Generation Biomaterials, MS&amp;T</div>
+        <div class="edu-year">2023 – 2026</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Advisory Committee Member</div>
+        <div class="edu-uni">Wellcome Trust Accelerator Award</div>
+      </div>
+    </div>
 
-    <!-- CV DOWNLOAD -->
-    <div class="sidebar-card" style="text-align:center; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);">
-      <h3 style="color:var(--white); border-color: var(--gold);">Curriculum Vitae</h3>
-      <p style="font-size:.85rem; color:rgba(255,255,255,.65); margin-bottom:1.2rem; line-height:1.6;">Download the full CV for a complete list of publications, talks, and academic activities.</p>
-      <a href="img/CV.pdf" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center;">
-        ↓ Download CV (PDF)
-      </a>
+    <!-- EXPERTISE -->
+    <div class="sidebar-card">
+      <h3>Expertise</h3>
+      <div class="skill-cloud">
+        <span class="skill-tag">Nitric Oxide</span>
+        <span class="skill-tag">Nanomedicine</span>
+        <span class="skill-tag">Graphene</span>
+        <span class="skill-tag">Redox Biology</span>
+        <span class="skill-tag">Drug Delivery</span>
+        <span class="skill-tag">Stent Coatings</span>
+        <span class="skill-tag">Biosensing</span>
+        <span class="skill-tag">Biomaterials</span>
+        <span class="skill-tag">Tissue Engineering</span>
+      </div>
     </div>
 
   </aside>
