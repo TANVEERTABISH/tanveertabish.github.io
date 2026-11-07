@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Publications · ALI Research Group</title>
+  <title>Publications · Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,6 +32,32 @@
     }
     .pub-stack { display: flex; flex-direction: column; gap: 1.1rem; }
 
+    /* Text-only publication rows */
+    .pub-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius); padding: 1.1rem 1.3rem;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .pub-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .pub-item .pub-title {
+      font-size: .95rem; font-weight: 600; color: var(--navy);
+      line-height: 1.45; margin-bottom: .35rem;
+    }
+    .pub-item .pub-authors {
+      font-size: .83rem; color: var(--muted); line-height: 1.6; margin-bottom: .3rem;
+    }
+    .pub-item .pub-authors strong { color: var(--navy); }
+    .pub-item .pub-journal { font-size: .83rem; color: var(--text); }
+    .pub-item .pub-journal em { font-style: italic; }
+    .pub-note {
+      display: inline-block; margin-left: .5rem;
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 12px; padding: .1rem .55rem;
+    }
+
     /* Scholar link */
     .scholar-banner {
       background: var(--light); border: 1px solid var(--border);
@@ -41,23 +67,18 @@
     }
     .scholar-banner p { font-size: .93rem; color: var(--muted); }
     .scholar-banner strong { color: var(--navy); }
+    .scholar-links { display: flex; gap: .7rem; flex-wrap: wrap; }
 
     @media (max-width: 600px) { .scholar-banner { flex-direction: column; } }
-    
-    .area-content p {
-      text-align: justify;
-    }
-    .pub-thumb {
-      object-fit: contain;
-      background: white;
-    }
+
+    .area-content p { text-align: justify; }
   </style>
 </head>
 <body>
 
 <div class="page-hero">
   <h1>Publications</h1>
-  <p>Peer-reviewed research spanning computational chemistry, medicinal chemistry, antibiotic resistance, and machine learning.</p>
+  <p>Peer-reviewed research spanning nitric oxide nanomedicine, cardiovascular therapeutics, redox biology, drug delivery, biosensing and functional biomaterials.</p>
 </div>
 
 <div class="filter-bar">
@@ -70,13 +91,19 @@
   <button class="filter-btn" onclick="filterPubs('2021',this)">2021</button>
   <button class="filter-btn" onclick="filterPubs('2020',this)">2020</button>
   <button class="filter-btn" onclick="filterPubs('2019',this)">2019</button>
+  <button class="filter-btn" onclick="filterPubs('2018',this)">2018</button>
 </div>
 
 <section class="section">
 
   <div class="scholar-banner">
-    <p><strong>Full publication record</strong> — including citation counts and h-index available on Google Scholar.</p>
-    <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-navy">Google Scholar →</a>
+    <p><strong>60+ peer-reviewed publications · 3500+ citations · h-index 33 · i10-index 47.</strong><br>
+       Selected work is listed below; the complete record is available on Google Scholar, Scopus and ORCID.</p>
+    <div class="scholar-links">
+      <a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank" class="btn btn-navy">Google Scholar →</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=55484476700" target="_blank" class="btn btn-outline">Scopus →</a>
+      <a href="https://orcid.org/0000-0001-5578-076X" target="_blank" class="btn btn-outline">ORCID →</a>
+    </div>
   </div>
 
   <!-- 2026 -->
@@ -84,25 +111,22 @@
     <div class="year-label">2026</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <!-- <img src="papers/CDIN1.tiff" alt="" class="pub-thumb" style="object-fit: contain;"> -->
-        <img src="papers/CDIN1.tiff" alt="" class="pub-thumb"> 
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1038/s41467-026-74766-7">The CDIN1-Codanin-1 Complex, Defective in Congenital Dyserythropoietic Anaemia Type I, is an RNA Nuclease</a></div>
-          <div class="pub-authors">Sanja Brolih, <strong>Hafiz Saqib Ali</strong>, Caroline Scott, Aude-Anais Olijnik, Hazel Aitkenhead, Gemma Moir-Meyer, Angeline E. Gavard, Yuliana Yosaatmadja, Douglas R. Higgs, Veronica Buckle, Noemi Roy, Opher Gileadi, Joseph A. Newman, Fernanda Duarte, Christian Babbs, Peter J. McHugh</div>
-          <div class="pub-journal"><em>Nature Communications</em>, <strong>2026</strong>.</div>
-          <div class="pub-chips"><span class="chip chip-new">New</span><a class="chip" href="https://doi.org/10.1038/s41467-026-74766-7">Website</a><a class="chip" href="bibtex/">BibTeX</a><a class="chip" href="https://github.com/HafizSaqibAli/CDIN1-Codanin1-RNA-Nuclease">Data</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">A new take on nitric oxide signalling: dinitrosyl iron complexes from microbiota promote cardiometabolic health<span class="pub-note">In Press</span></div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Craig A. Lygate, Keith M. Channon</div>
+        <div class="pub-journal"><em>Signal Transduction and Targeted Therapy</em>, <strong>2026</strong>, accepted, in press</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/Pylori.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1186/s13099-026-00814-8">Novel Indole-based Sulfonate and Sulfamate Derivatives as Potent and Selective Urease Inhibitors Targeting Helicobacter Pylori: A Promising Therapeutic Strategy</a></div>
-          <div class="pub-authors">Ghalia Khoder, Esra M. Mustafa, Sumera Zaib, Anil Ravi, Afnan I. Shahin, Seyed-Omar Zaraei, Nehal Rana, Hanan S. Anbar, <strong>Hafiz Saqib Ali</strong>, Shamsul Qumar, Merylin Sebastian, Ragheb Alsheikh Zein, Mohammed I. El-Gamal</div>
-          <div class="pub-journal"><em>Gut Pathogens</em>, <strong>2026</strong>, 18, 27</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13099-026-00814-8">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">An ex vivo perfusion platform for the testing of cardiovascular interventional devices</div>
+        <div class="pub-authors">Thomas Foster, <strong>Tanveer A. Tabish</strong></div>
+        <div class="pub-journal">Tools of the Trade, <em>Nature Reviews Cardiology</em>, <strong>2026</strong></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Flow-dependent nanodrug targeting for atherosclerosis prevention</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Craig A. Lygate</div>
+        <div class="pub-journal">Invited editorial, <em>Cardiovascular Research</em>, <strong>2026</strong>, 122(7)</div>
       </div>
 
     </div>
@@ -113,36 +137,42 @@
     <div class="year-label">2025</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/TetX.gif" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D5SC00964B">Binding Assays Enable Discovery of Tet(X) Inhibitors that Combat Tetracycline Destructase Resistance</a></div>
-          <div class="pub-authors">Matthew J. Beech, Edmond C. Toma, Helen G. Smith, Maria M. Trush, Jit H.J. Ang, Mei Y. Wong, Chung H.J. Wong, <strong>Hafiz Saqib Ali</strong>, Zakia Butt, Viha Goel, Fernanda Duarte, Alistair J.M. Farley, Timothy R. Walsh, Christopher J. Schofield</div>
-          <div class="pub-journal"><em>Chemical Science</em>, <strong>2025</strong>, 16, 9691–9704</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D5SC00964B">Website</a><a class="chip" href="bibtex/TetX.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Nitric oxide releasing graphene for next-generation therapeutics</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Craig A. Lygate</div>
+        <div class="pub-journal"><em>Advanced Drug Delivery Reviews</em>, <strong>2025</strong>, 115676</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/α-amylase.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.ejmech.2025.117584">Synthesis, In-vitro and In-vivo Evaluation, and Computational Modeling Analysis of Thioxothiazolidine Derivatives as Highly Potent and Selective α-amylase Inhibitors</a></div>
-          <div class="pub-authors">Anil Ravi, Sumera Zaib, Shabab Zahra, Imtiaz Khan, <strong>Hafiz Saqib Ali</strong>, Mohammed Ibrahim El-Gamal, Hanan Sayed Anbar</div>
-          <div class="pub-journal"><em>European Journal of Medicinal Chemistry</em>, <strong>2025</strong>, 291, 117584</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.ejmech.2025.117584">Website</a><a class="chip" href="bibtex/α-amylase.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Rapidly self-healing electronic skin for machine learning-assisted physiological and movement evaluation</div>
+        <div class="pub-authors">Yongju Lee, Xinyu Tian, Jaewon Park, Dong Hyun Nam, Zhuohong Wu, Hyojeong Choi, Juhwan Kim, Keren Zhou, Sang Won Lee, <strong>Tanveer A. Tabish</strong>, Xuanbing Chen, Sam Emaminejad, Tae-Woo Lee, Hyeok Kim, Ali Khademhosseini, Yangzhi Zhu</div>
+        <div class="pub-journal"><em>Science Advances</em>, <strong>2025</strong>, 11(7)</div>
       </div>
-      
-      <div class="pub-row">
-        <img src="papers/Antihyperglycemic.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2024.140263">Synergistic Effect of Hydrogen Bonding and C–H…π Interactions to Modulate the Supramolecular Assemblies of Isobenzofuranones: X-ray Crystallography, DFT Analysis and Antihyperglycemic Potential</a></div>
-          <div class="pub-authors">Sumera Zaib, Imtiaz Khan, Aliya Ibrar, <strong>Hafiz Saqib Ali</strong>, Nehal Rana, Rubina Munir, Shabab Zahra, Abdel-Basit Al-Odayni, John Mcadam, Tuncer Hökelek, Antonio Frontera</div>
-          <div class="pub-journal"><em>Journal of Molecular Structure</em>, <strong>2025</strong>, 1321, 140263</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molstruc.2024.14026">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-        </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Nitric oxide-releasing catheters with phenol-amine catalytic coatings for improved anti-inflammatory performance</div>
+        <div class="pub-authors">Qingqing Fan, Shu Geng, <strong>Tanveer A. Tabish</strong>, Kang Lin, Siti Nur Asyura Adzlan, Federico Mazur, Yiyi Yin, Rona Chandrawati</div>
+        <div class="pub-journal"><em>Advanced Healthcare Materials</em>, <strong>2025</strong>, e00457</div>
       </div>
-      
+
+      <div class="pub-item">
+        <div class="pub-title">Self-assembled peptide-based fibrous hydrogel as a biological catalytic scaffold for nitric oxide generation and encapsulation</div>
+        <div class="pub-authors">Muhammad Younis*, <strong>Tanveer A. Tabish</strong>*, Cherly Firdharini, Mohamed Aslam, Mostafa Khair, Dalaver H. Anjum, Xuehai Yan, Manzar Abbas (*equal contribution)</div>
+        <div class="pub-journal"><em>ACS Applied Materials and Interfaces</em>, <strong>2025</strong>, 17(19)</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Multifunctional conductive nanofibers for self-powered glucose biosensors</div>
+        <div class="pub-authors">Seda Gungordu Er, Rameesh Bulathsinghala, Selvinaz Burcu Kizilates, Bing Li, Rucchi Ryan, <strong>Tanveer A. Tabish</strong>, Ishara Dharmasena, Mohan Edirisinghe</div>
+        <div class="pub-journal"><em>Advanced Science</em>, <strong>2025</strong>, 12(18)</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Near infrared window active magnetic core spiky gold nanostars for dual mode imaging and photothermal therapy</div>
+        <div class="pub-authors">Jiamin Xu, Koen Evers, Yu-chien Lin, <strong>Tanveer A. Tabish</strong>, Qiyu Zhang, Ren-Jei Chung, Mary P. Ryan, Fang Xie</div>
+        <div class="pub-journal"><em>Materials Today Advances</em>, <strong>2025</strong>, 25, 100555</div>
+      </div>
+
     </div>
   </div>
 
@@ -151,115 +181,29 @@
     <div class="year-label">2024</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/Electric_Field_Vector.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202304172">QM/MM Study Into the Mechanism of Oxidative C=C Double Bond Cleavage by Lignostilbene-alpha,beta-Dioxygenase</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2024</strong>, e202304172</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202304172">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Nitric oxide releasing nanomaterials for cardiovascular applications</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Mark J. Crabtree, Helen E. Townley, Paul G. Winyard, Craig A. Lygate</div>
+        <div class="pub-journal"><em>JACC: Basic to Translational Science</em>, <strong>2024</strong>, 9(5)</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/L_Arg_Mechanism.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://www.frontiersin.org/articles/10.3389/fchem.2024.1365494/">Catalytic Divergencies in the Mechanism of L-Arginine Hydroxylating Nonheme Iron Enzymes</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Frontiers in Chemistry</em>, <strong>2024</strong>, 12, 1–14</div>
-          <div class="pub-chips"><a class="chip" href="https://www.frontiersin.org/articles/10.3389/fchem.2024.1365494/">Website</a><a class="chip" href="bibtex/">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">S-nitrosocysteamine functionalised porous graphene oxide nanosheets as nitric oxide delivery vehicles for cardiovascular applications</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Mian Zahid Hussain, Sevasti Zervou, William K. Myers, Weiming Tu, Jiabao Xu, Irina Beer, Wei E. Huang, Rona Chandrawati, Mark J. Crabtree, Paul G. Winyard, Craig A. Lygate</div>
+        <div class="pub-journal"><em>Redox Biology</em>, <strong>2024</strong>, 72</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/VioC_MT.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acscatal.4c02365">Probing Ferryl Reactivity in a Nonheme Iron Oxygenase Using an Expanded Genetic Code</a></div>
-          <div class="pub-authors">Florence J. Hardy, Matthew G. Quesne, Emilie F. Gérard, Jingming Zhao, Mary Ortmayer, Christopher J. Taylor, <strong>Hafiz Saqib Ali</strong>, Jeffrey W. Slater, Colin W. Levy, Derren J. Heyes, J. Martin Bollinger, Jr., Sam P. de Visser, Anthony P. Green</div>
-          <div class="pub-journal"><em>ACS Catalysis</em>, <strong>2024</strong>, 14, 11584–11590</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acscatal.4c02365">Website</a><a class="chip" href="bibtex/VioC_MT.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Synthesis and characterisation of amine-functionalized graphene as a nitric oxide-generating coating for vascular stents</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, M. Z. Hussain, Y. Zhu, J. Xu, W. E. Huang, M. Diotallevi, R. J. Narayan, M. J. Crabtree, A. Khademhosseini, P. G. Winyard, C. A. Lygate</div>
+        <div class="pub-journal"><em>Applied Physics Reviews</em>, <strong>2024</strong>, 11, 031422</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/ArM.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D3CY01648J">Using BpyAla to Generate Copper Artificial Metalloenzymes: A Catalytic and Structural Study</a></div>
-          <div class="pub-authors">Eva Klemencic, Richard Brewster, <strong>Hafiz Saqib Ali</strong>, Julia Richardson, Amanda Jarvis </div>
-          <div class="pub-journal"><em>Catalysis Science & Technology</em>, <strong>2024</strong>, 14, 1622-1632</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.mseb.2024.117429">Website</a><a class="chip" href="bibtex/ArM.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">pH-sensitive release of nitric oxide gas using peptide-graphene co-assembled hybrid nanosheets</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Jiamin Xu, Christopher K. Campbell, Manzar Abbas, William K. Myers, Pravin Didwal, Dario Carugo, Fang Xie, Mark J. Crabtree, Eleanor Stride, Craig A. Lygate</div>
+        <div class="pub-journal"><em>Nitric Oxide</em>, <strong>2024</strong>, 147(1)</div>
       </div>
-
-      <div class="pub-row">
-        <img src="papers/activity_cliffs.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="http://ojs.ucp.edu.pk/index.php/ucpjst/article/view/37">Emerging Perception of Activity Cliffs: A Brief Review</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>UCP Journal of Science & Technology</em>, <strong>2024</strong>, 1, 15-29</div>
-          <div class="pub-chips"><a class="chip" href="http://ojs.ucp.edu.pk/index.php/ucpjst/article/view/37">Website</a><a class="chip" href="bibtex/Gold1.bib">BibTeX</a></div>
-        </div>
-      </div>
-     
-      <div class="pub-row">
-        <img src="papers/Anthranilamide.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.ijbiomac.2024.132748">Design and Discovery of Anthranilamide Derivatives as a Potential Treatment for Neurodegenerative Disorders via Targeting Cholinesterases and Monoamine Oxidases</a></div>
-          <div class="pub-authors">Sumera Zaib, Imtiaz Khan, <strong>Hafiz Saqib Ali</strong>, Muhammad Tayyab Younas, Aliya Ibrar, Abdel-Basit Al-Odayni, Abdullah A. Al-Kahtani</div>
-          <div class="pub-journal"><em>International Journal of Biological Macromolecules</em>, <strong>2024</strong>, 272, 132784.</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.ijbiomac.2024.132748">Website</a><a class="chip" href="bibtex/Anthranilamide.bib">BibTeX</a></div>
-        </div>
-      </div>
- 
-      <div class="pub-row">
-        <img src="papers/Mitochondrial.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.stress.2024.100613">Mitochondrial Oxidative Phosphorylation (mtOXPHOS) Serves as a Sentinel to Gauge Fluctuations Under Heat Stress in Arabidopsis Thaliana Elucidated by Comparative Transcriptomics</a></div>
-          <div class="pub-authors">Muhammad Riaz, Erum Yasmeen, Moyang Liu, <strong>Hafiz Saqib Ali</strong>, Mengli Lv, Hu Shi, Chuanhui Du, Tiantian Dong, Zhenxin Liu, Qingwei Song, QiJun Ma, Kaijing Zuo</div>
-          <div class="pub-journal"><em>Plant Stress</em>, <strong>2024</strong>, 14, 100613</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.stress.2024.100613">Website</a><a class="chip" href="bibtex/Mitochondrial.ris">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/Urease.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2024.139065">Hydrogen Bonding, Halogen Bonding and C–H…π Interactions Governing the Supramolecular Architecture of 1-(4-(4-bromophenyl)piperazin-1-yl)-2-chloroethan-1-one: Insights from X-ray Crystallography, DFT Calculations and Urease Inhibitory Assessment</a></div>
-          <div class="pub-authors">Sumera Zaib, Imtiaz Khan, Aliya Ibrar, Nehal Rana, <strong>Hafiz Saqib Ali</strong>, Christopher J. McAdam, Rosa M. Gomila, Islam H. El Azab, M.H.H. Mahmoud, Zeinhom M. El-Bahy, Antonio Frontera</div>
-          <div class="pub-journal"><em>Journal of Molecular Structure</em>, <strong>2024</strong>, 1317, 139065</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molstruc.2024.139065">Website</a><a class="chip" href="bibtex/Urease.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/Quinoline.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2024.138894">Regioselective Metal-free Synthesis of Sulfostyril-Quinoline Hybrid Framework: Experimental and Computational Mechanistic Insights</a></div>
-          <div class="pub-authors">Rubina Munir, Imtiaz Khan, Leena Siddiqui, Noman Javid, Muhammad Zia-ur-Rehman, <strong>Hafiz Saqib Ali</strong>, Memoona Saeed, Sumera Zaib, Nasser S. Awwad, Hala A. Ibrahium, Colleen Hui Shiuan Yeow, Jonathan M. White, Ayed A. Dera</div>
-          <div class="pub-journal"><em>Journal of Molecular Structure</em>, <strong>2024</strong>, 1315, 138894</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molstruc.2024.138894">Website</a><a class="chip" href="bibtex/Quinoline.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/Naphthalene.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.mseb.2024.117429">Computational Exploration of Nonlinear Optical Properties in Supramolecular Naphthalene Diimides and Nucleotide Complexes</a></div>
-          <div class="pub-authors">Wajid Hussain, Muhammad Sulaman, Yahya Sandali, Chuanbo Li, Muhammad Shahid Iqbal, Muhammad Rashid Bashir, Maroof Ahmad Khan, <strong>Hafiz Saqib Ali</strong>, Ahmad Irfan, Hui Li </div>
-          <div class="pub-journal"><em>Materials Science and Engineering: B</em>, <strong>2024</strong>, 305, 117429</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.mseb.2024.117429">Website</a><a class="chip" href="bibtex/Diimides.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/diimides.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1007/s00214-024-03098-w">Exploring Nonlinear Optical Properties of Perylene Diimide and Biomolecules Complexes: A Computational Supramolecular Study</a></div>
-          <div class="pub-authors">Wajid Hussain, <strong>Hafiz Saqib Ali</strong>, Muhammad Shahid Iqbal, Muhammad Rashid Bashir, Maroof Ahmad Khan, Muhammad Hanif, Yahya Sandali, Ahmad Irfan, Hui Li </div>
-          <div class="pub-journal"><em>Theoretical Chemistry Accounts</em>, <strong>2024</strong>, 143, 1-23</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1007/s00214-024-03098-w">Website</a><a class="chip" href="bibtex/ArM.bib">BibTeX</a></div>
-        </div>
-      </div>			
 
     </div>
   </div>
@@ -269,105 +213,47 @@
     <div class="year-label">2023</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/NapI.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acscatal.3c02262">How Does the Nonheme Iron Enzyme NapI React through L-Arginine Desaturation Rather Than Hydroxylation? A QM/MM Study</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Jim Warwicker, Sam P. de Visser</div>
-          <div class="pub-journal"><em>ACS Catalysis</em>, <strong>2023</strong>, 13, 10705–10721</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acscatal.3c02262">Website</a><a class="chip" href="bibtex/NapI.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Graphene nanocomposites for real-time electrochemical sensing of nitric oxide in biological systems</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Yangzhi Zhu, Shubhangi Shukla, Sachin Kadian, Gurneet S. Sangha, Craig A. Lygate, Roger Narayan</div>
+        <div class="pub-journal"><em>Applied Physics Reviews</em>, <strong>2023</strong>, 10, 041310</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/SAMPL9.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D3CP03076H">Energy-Entropy Multiscale Cell Correlation Method to Predict Toluene-Water LogP in the SAMPL9 Challenge</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard Henchman</div>
-          <div class="pub-journal"><em>Physical Chemistry Chemical Physics</em>, <strong>2023</strong>, 25, 27524–27531</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D3CP03076H">Website</a><a class="chip" href="bibtex/SAMPL9.bib">BibTeX</a><a class="chip" href="https://github.com/HafizSaqibAli/SAMPL9">Code</a><a class="chip" href="https://github.com/HafizSaqibAli/SAMPL9/tree/main/Datafiles">Data</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Mitochondria targeted nanomedicines for cardiovascular applications</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Craig A. Lygate</div>
+        <div class="pub-journal">Invited editorial, <em>Nanomedicine</em>, <strong>2023</strong>, 18</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/Gold1.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D2RA06210K">Impact of Counteranions on N-heterocyclic Carbene Gold(I)-Catalyzed Cyclization of Propargylic Amide</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Aqeel A. Hussein, Mohammed Obies</div>
-          <div class="pub-journal"><em>RSC Advances</em>, <strong>2023</strong>, 13, 2896–2902</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D2RA06210K">Website</a><a class="chip" href="bibtex/Gold1.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Graphene-based nanocomposites as antibacterial, antiviral, and antifungal agents</div>
+        <div class="pub-authors">Seda Gungordu Er, Mohan Edirisinghe, <strong>Tanveer A. Tabish</strong></div>
+        <div class="pub-journal"><em>Advanced Healthcare Materials</em>, <strong>2023</strong>, 2201523</div>
       </div>
-      
-      <div class="pub-row">
-        <img src="papers/Yellowfever.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1080/07391102.2023.2294839">Identification of Potential Inhibitors Targeting Yellow Fever Virus Helicase Through Ligand and Structure-based Computational Studies</a></div>
-          <div class="pub-authors">Sumera Zaib, Nehal Rana, <strong>Hafiz Saqib Ali</strong>, Mujeeb ur Rehman, Nasser S. Awwad, Hala A. Ibrahium, Imtiaz Khan</div>
-          <div class="pub-journal"><em>Journal of Biomolecular Structure and Dynamics</em>, <strong>2023</strong>, 253, 127379</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1080/07391102.2023.2294839">Website</a><a class="chip" href="bibtex/Yellowfever.bib">BibTeX</a></div>
-        </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Advances in gelatin bioinks to optimize bioprinted cell functions</div>
+        <div class="pub-authors">Saad Asim, <strong>Tanveer A. Tabish</strong>, Usman Liaqat, Ibrahim T. Ozbolat, Muhammad Rizwan</div>
+        <div class="pub-journal"><em>Advanced Healthcare Materials</em>, <strong>2023</strong>, 12(17), 2203148</div>
       </div>
-      
-      <div class="pub-row">
-        <img src="papers/SARS-CoV-2.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.ijbiomac.2023.127379">Discovery of Druggable Potent Inhibitors of Serine Proteases and Farnesoid X-Receptor by Ligand-based Virtual Screening to Obstruct SARS-CoV-2</a></div>
-          <div class="pub-authors">Sumera Zaib, Nehal Rana, <strong>Hafiz Saqib Ali</strong>, Nadia Hussain, Areeba, Hanan A. Ogaly, Fatimah A.M. Al-Zahrani, Imtiaz Khan</div>
-          <div class="pub-journal"><em>International Journal of Biological Macromolecules</em>, <strong>2023</strong>, 253, 127379</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.ijbiomac.2023.127379">Website</a><a class="chip" href="bibtex/SARSCoV2.bib">BibTeX</a></div>
-        </div>
+
+      <div class="pub-item">
+        <div class="pub-title">One-step green synthesis of biomass-derived graphene quantum dots as a highly selective optical sensing probe</div>
+        <div class="pub-authors">Aumber Abbas, Shabnum Rubab, Abdul Rehman, Syed Irfan, Hafiz Muhammad Adeel Sharif, Qijie Liang, <strong>Tanveer A. Tabish</strong></div>
+        <div class="pub-journal"><em>Materials Today Chemistry</em>, <strong>2023</strong>, 30</div>
       </div>
-      
-      <div class="pub-row">
-        <img src="papers/Pyrimidine.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.bioorg.2023.106868">Pyrimidine-Morpholine Hybrids as Potent Druggable Therapeutics for Alzheimer’s Disease: Synthesis, Biochemical and In-Silico Analyses</a></div>
-          <div class="pub-authors">Sumera Zaib, Muhammad T. Younas, Imtiaz Khan, <strong>Hafiz Saqib Ali</strong>, Christopher J. McAdam, Jonathan M. White, Fadi Jaber, Nasser S. Awwad, Hala A. Ibrahium</div>
-          <div class="pub-journal"><em>Bioorganic Chemistry</em>, <strong>2023</strong>, 141, 106868</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.bioorg.2023.106868">Website</a><a class="chip" href="bibtex/Pyrimidine.bib">BibTeX</a></div>
-        </div>
-      </div>      
- 
-      <div class="pub-row">
-        <img src="papers/manganese.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/ejic.202200621">Dehydrogenative α-Oxygenation of Cyclic Ethers by a High-Valent Manganese(IV)-Oxo Species</a></div>
-          <div class="pub-authors">M. Qadri E. Mubarak, <strong>Hafiz Saqib Ali</strong>, Jimei Zhou, Chaoqun Li, Jianliang Xiao, Sam P. de Visser</div>
-          <div class="pub-journal"><em>European Journal of Inorganic Chemistry</em>, <strong>2023</strong>, 26, e202200621</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/ejic.202200621">Website</a><a class="chip" href="bibtex/manganese.bib">BibTeX</a></div>
-        </div>
-      </div>      
-      
-      <div class="pub-row">
-        <img src="papers/Nileblue.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molliq.2023.122507">Spectroscopic and Conductometric Investigation of Mixed Micellar-Assisted Solubilization of Nile Blue Sulfate</a></div>
-          <div class="pub-authors">Mudussar Ali, Muhammad Usman, Afzal Shah, Abdul Rehman, <strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>Journal of Molecular Liquids</em>, <strong>2023</strong>, 386, 122507</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molliq.2023.122507">Website</a><a class="chip" href="bibtex/Nileblue.bib">BibTeX</a></div>
-        </div>
-      </div>      
- 
-      <div class="pub-row">
-        <img src="papers/Diimide.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/qua.27223">A Comprehensive Analysis of Electronic Transitions in Naphthalene and Perylene Diimide Derivatives Through Computational Methods</a></div>
-          <div class="pub-authors">Wajid Hussain, Muhammad S. Iqbal, Hui Li, Muhammad Sulaman, Honglian Guo, Chuanbo Li, Yahya Sandali, Ahmad Irfan, <strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>International Journal of Quantum Chemistry</em>, <strong>2023</strong>, 124, e27223</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/qua.27223">Website</a><a class="chip" href="bibtex/Diimide.bib">BibTeX</a></div>
-        </div>
-      </div>      
- 
-      <div class="pub-row">
-        <img src="papers/acetamides.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1186/s13065-023-01011-3">Computational and Theoretical Chemistry of Newly Synthesized and Characterized 2,2’-(5,5’-(1,4-Phenylene)bis(1H-Tetrazole-5,1-diyl))bis-N-Acetamides</a></div>
-          <div class="pub-authors">Syeda A. Ejaz, Aftab Farid, Seema Zargar, Pervaiz A. Channar, Mubashir Aziz, Tanveer A. Wani, Hafiz M. Attaullah, Rabail Ujhan, Arfa Tehzeeb, Aamer Saeed, <strong>Hafiz Saqib Ali</strong>, Mauricio F. Erben</div>
-          <div class="pub-journal"><em>BMC Chemistry</em>, <strong>2023</strong>, 17, 97</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13065-023-01011-3">Website</a><a class="chip" href="bibtex/N-acetamides.ris">BibTeX</a></div>
-        </div>
-      </div>      
+
+      <div class="pub-item">
+        <div class="pub-title">Mechanical behaviour of nitric oxide releasing polymers for cardiovascular bypass grafts</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Nanasaheb D. Thorat, Roger J. Narayan</div>
+        <div class="pub-journal"><em>Mechanics of Materials</em>, <strong>2023</strong>, 176, 104520</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">CD44 and CD221 directed magnetic cubosomes for the targeted delivery of helenalin to rhabdomyosarcoma cells</div>
+        <div class="pub-authors">Hakmin Mun, Yuriy Chaban, <strong>Tanveer A. Tabish</strong>, Nanasaheb Thorat, Nathan Cowieson, C. David Owen, Helen E. Townley</div>
+        <div class="pub-journal"><em>Nano Research</em>, <strong>2023</strong>, 16(2), 2915–2926</div>
+      </div>
 
     </div>
   </div>
@@ -377,271 +263,106 @@
     <div class="year-label">2022</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/TauD.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202104167">Electrostatic Perturbations in the Substrate-Binding Pocket of Taurine/α-Ketoglutarate Dioxygenase Determine its Selectivity</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2022</strong>, 16, e202104167</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202104167">Website</a><a class="chip" href="bibtex/TauD.bib">BibTeX</a></div>
-        </div>
-      </div>
-      
-      <div class="pub-row">
-        <img src="papers/ScoE.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1007/s11244-021-01460-x">Density Functional Theory Study into the Reaction Mechanism of Isonitrile Biosynthesis by the Nonheme Iron Enzyme ScoE</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Sidra Ghafoor, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Topics in Catalysis</em>, <strong>2022</strong>, 65, 528–543</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1007/s11244-021-01460-x">Website</a><a class="chip" href="bibtex/ScoE.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Graphene quantum dots-based electrochemical biosensing platform for early detection of acute myocardial infarction</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Hasan Hayat, Aumber Abbas, Roger J. Narayan</div>
+        <div class="pub-journal"><em>Biosensors</em>, <strong>2022</strong>, 12(2), 77</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/AAD1.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202103982">Density Functional Theory Study into the Reaction Mechanism of Isonitrile Biosynthesis by the Nonheme Iron Enzyme ScoE</a></div>
-          <div class="pub-authors">Yen-Ting Lin, <strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2022</strong>, 28, e202103982</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202103982">Website</a><a class="chip" href="bibtex/AAD1.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Antiviral properties of porous graphene, graphene oxide and graphene foam ultrafine fibers against Phi6 bacteriophage</div>
+        <div class="pub-authors">Seda Gungordu Er, <strong>Tanveer A. Tabish</strong>, Mohan Edirisinghe, Rupy Kaur Matharu</div>
+        <div class="pub-journal"><em>Frontiers in Medicine</em>, <strong>2022</strong>, 9, 1032899</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/AuI_2.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D1CY01617B">A Mechanistic Study on the Gold(I)-Catalyzed Cyclization of Propargylic Amide: Revealing the Impact of Expanded-ring N-Heterocyclic Carbenes</a></div>
-          <div class="pub-authors">Yumiao Ma, <strong>Hafiz Saqib Ali</strong>, Aqeel A. Hussein</div>
-          <div class="pub-journal"><em>Catalysis Science & Technology</em>, <strong>2022</strong>, 12, 674-685</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D1CY01617B">Website</a><a class="chip" href="bibtex/AuI_2.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/Acetates.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2022.132671">A Combined Experimental and Theoretical Study of Alkyl 2-(3-benzoyl-4‑hydroxy-1,1-dioxido-2H-benzo[e][1,2]thiazin-2-yl)Acetates: Synthesis, X-ray Crystallography and DFT</a></div>
-          <div class="pub-authors">Sana Aslam, <strong>Hafiz Saqib Ali</strong>, Matloob Ahmad, Asim Mansha, Narmeen Ali, Sana Khan, Syed Ali Raza Naqvi, Zunera Khalid, Sadia Asim, Masood Parvez, Muhammad Khalid</div>
-          <div class="pub-journal"><em>Catalysis Science & Technology</em>, <strong>2022</strong>, 1258, 132671</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molstruc.2022.132671">Website</a><a class="chip" href="bibtex/acetates.bib">BibTeX</a></div>
-        </div>
-      </div>		
     </div>
   </div>
-    
+
   <!-- 2021 -->
   <div class="year-section" data-year="2021">
     <div class="year-label">2021</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/SAMPL8.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1007/s10822-021-00406-5">Energy–Entropy Method Using Multiscale Cell Correlation to Calculate Binding Free Energies in the SAMPL8 Host–Guest Challenge</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Arghya Chakravorty, Jas Kalayan, Samuel P. de Visser, Richard H. Henchman</div>
-          <div class="pub-journal"><em>Journal of Computer-Aided Molecular Design</em>, <strong>2021</strong>, 35, 911-921</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1007/s10822-021-00406-5">Website</a><a class="chip" href="bibtex/SAMPL8.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Crossing the blood brain barrier with graphene nanostructures</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Roger Narayan</div>
+        <div class="pub-journal"><em>Materials Today</em>, <strong>2021</strong>, 51</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/VioC.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acs.jpca.1c00141">How Do Electrostatic Perturbations of the Protein Affect the Bifurcation Pathways of Substrate Hydroxylation versus Desaturation in the Nonheme Iron-Dependent Viomycin Biosynthesis Enzyme?</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard Henchman, Jim Warwicker, and Sam P. de Visser</div>
-          <div class="pub-journal"><em>The Journal of Physical Chemistry A</em>, <strong>2021</strong>, 125, 1720-1737</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acs.jpca.1c00141">Website</a><a class="chip" href="bibtex/VioC.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Mitochondria-targeted graphene for advanced cancer therapeutics</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Roger Narayan</div>
+        <div class="pub-journal"><em>Acta Biomaterialia</em>, <strong>2021</strong>, 129</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/OrfP.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202004019">What Determines the Selectivity of Arginine Dihydroxylation by the Nonheme Iron Enzyme OrfP?</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard Henchman, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2021</strong>, 27, 1795-1809</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202004019">Website</a><a class="chip" href="bibtex/OrfP.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Graphene quantum dot-based electrochemical biosensing for early cancer detection</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Hasan Hayat, Aumber Abbas, Roger J. Narayan</div>
+        <div class="pub-journal"><em>Current Opinion in Electrochemistry</em>, <strong>2021</strong>, 30, 100786</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/HygX.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/cctc.202100393">Mechanism of Oxidative Ring-Closure as Part of the Hygromycin Biosynthesis Step by a Nonheme Iron Dioxygenase</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard Henchman, Sam P. de Visser</div>
-          <div class="pub-journal"><em>ChemCatChem</em>, <strong>2021</strong>, 13, 3054-3066</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/cctc.202100393">Website</a><a class="chip" href="bibtex/HygX.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Role of precursor microstructure in the development of graphene quantum dots from biomass</div>
+        <div class="pub-authors">Aumber Abbas, Saleem Abbas, <strong>Tanveer A. Tabish</strong>, Steve J. Bull, Anh N. Phan, Tuti Mariana Lim</div>
+        <div class="pub-journal"><em>Journal of Environmental Chemical Engineering</em>, <strong>2021</strong>, 9(5), 106154</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/Accounts.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acs.accounts.1c00538">Local Charge Distributions, Electric Dipole Moments, and Local Electric Fields Influence Reactivity Patterns and Guide Regioselectivities in α-Ketoglutarate-Dependent Non-heme Iron Dioxygenases</a></div>
-          <div class="pub-authors">Sam P. de Visser, Gourab Mukherjee, <strong>Hafiz Saqib Ali</strong>, Chivukula V. Sastri</div>
-          <div class="pub-journal"><em>Accounts of Chemical Research</em>, <strong>2021</strong>, 55, 65-74</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acs.accounts.1c00538">Website</a><a class="chip" href="bibtex/Accounts.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/Bell.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.ccr.2021.213914">Negative Catalysis / Non-Bell-Evans-Polanyi Reactivity by Metalloenzymes: Examples from Mononuclear Heme and Non-Heme Iron Oxygenases</a></div>
-          <div class="pub-authors">Sam P. de Visser, Yen-Ting Lin, <strong>Hafiz Saqib Ali</strong>, Umesh Kumar Bagha, Gourab Mukherjee, Chivukula V. Sastri</div>
-          <div class="pub-journal"><em>Coordination Chemistry Reviews</em>, <strong>2021</strong>, 439, 213914</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.ccr.2021.213914">Website</a><a class="chip" href="bibtex/Coordination.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/TmpA.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202100791">Electrostatic Perturbations from the Protein Affect C−H Bond Strengths of the Substrate and Enable Negative Catalysis in the TmpA Biosynthesis Enzyme</a></div>
-          <div class="pub-authors"> Yen-Ting Lin, <strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2021</strong>, 27, 8851-8864</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202100791">Website</a><a class="chip" href="bibtex/TmpA.bib">BibTeX</a></div>
-        </div>
-      </div>
-
-      <div class="pub-row">
-        <img src="papers/CsiD.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acs.inorgchem.0c03749">Glutarate Hydroxylation by the Carbon Starvation-Induced Protein D: A Computational Study into the Stereo- and Regioselectivities of the Reaction</a></div>
-          <div class="pub-authors"> Sungho Bosco Han, <strong>Hafiz Saqib Ali</strong>, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Inorganic Chemistry</em>, <strong>2021</strong>, 60, 4800–4815</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acs.inorgchem.0c03749">Website</a><a class="chip" href="bibtex/CsiD.bib">BibTeX</a></div>
-        </div>
-      </div>      
-
-      <div class="pub-row">
-        <img src="papers/Rhodanine.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1186/s13065-021-00756-z">Rhodanine-3-Acetamide Derivatives as Aldose and Aldehyde Reductase Inhibitors to Treat Diabetic Complications: Synthesis, Biological Evaluation, Molecular Docking and Simulation Studies</a></div>
-          <div class="pub-authors"> Mohsinul Mulk Bacha, Humaira Nadeem, Sumera Zaib, Sadia Sarwar, Aqeel Imran, Shafiq Ur Rahman, <strong>Hafiz Saqib Ali</strong>, Muazzam Arif, Jamshed Iqbal</div>
-          <div class="pub-journal"><em>BMC Chemistry</em>, <strong>2021</strong>, 1258, 132671</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13065-021-00756-z">Website</a><a class="chip" href="bibtex/CsiD.bib">BibTeX</a></div>
-        </div>
-      </div>      
-
-      <div class="pub-row">
-        <img src="papers/Schiff_Bases.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2021.130223">Theoretical and Computational Insight into the Supramolecular Assemblies of Schiff Bases Involving Hydrogen Bonding and C-H…π Interactions: Synthesis, X-ray Characterization, Hirshfeld Surface Analysis, Anticancer Activity and Molecular Docking Analysis</a></div>
-          <div class="pub-authors"> Hina Andleeb, Lubna Danish, Shiza Munawar, Muhammad N. Ahmed, Imtiaz Khan, <strong>Hafiz Saqib Ali</strong>, Muhammad N. Tahir, Jim Simpson, Shahid Hameed</div>
-          <div class="pub-journal"><em>Journal of Molecular Structure</em>, <strong>2021</strong>, 1235, 130223</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1186/s13065-021-00756-z">Website</a><a class="chip" href="bibtex/Schiff.bib">BibTeX</a></div>
-        </div>
-      </div>      
-
-      <div class="pub-row">
-        <img src="papers/dipeptidyl.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.compbiolchem.2020.107326">Structure-Based Virtual Screening of Dipeptidyl Peptidase-4 Inhibitors and Their In-vitro Analysis</a></div>
-          <div class="pub-authors">Shafiq Ur Rahman, <strong>Hafiz Saqib Ali</strong>, Behzad Jafari, Sumera Zaib, Abdul Hameed, Yasser M.S.A Al-Kahraman, Peter Langer, Jamshed Iqbal</div>
-          <div class="pub-journal"><em>ournal of Molecular Structure</em>, <strong>2021</strong>, 91, 107326</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.compbiolchem.2020.107326">Website</a><a class="chip" href="bibtex/dipeptidyl.bib">BibTeX</a></div>
-        </div>
-      </div>      
     </div>
   </div>
-
 
   <!-- 2020 -->
   <div class="year-section" data-year="2020">
     <div class="year-label">2020</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/syringol.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/chem.202002203">Lignin Biodegradation by a Cytochrome P450 Enzyme: A Computational Study into Syringol Activation by GcoA</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard H. Henchman, Samuel P. de Visser</div>
-          <div class="pub-journal"><em>Chemistry: A European Journal</em>, <strong>2020</strong> 26, 13093-13102</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/chem.202002203">Website</a><a class="chip" href="bibtex/GcoA.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Smart gold nanostructures for light mediated cancer theranostics: combining optical diagnostics with photothermal therapy</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Priyanka Dey, Sara Mosca, Marzieh Salimi, Francesca Palombo, Pavel Matousek, Nicholas Stone</div>
+        <div class="pub-journal"><em>Advanced Science</em>, <strong>2020</strong>, 7(15), 1903441</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/OxyB.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D0OB01023E">Cross-linking of Aromatic Phenolate Groups by Cytochrome P450 Enzymes: A Model for the Biosynthesis of Vancomycin by OxyB</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Richard H. Henchman, Samuel P. de Visser</div>
-          <div class="pub-journal"><em>Organic & Biomolecular Chemistry</em>, <strong>2020</strong>, 18, 4610-4618</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D0OB01023E">Website</a><a class="chip" href="bibtex/OxyB.bib">BibTeX</a></div>
-        </div>
-      </div>
-  
-      <div class="pub-row">
-        <img src="papers/EE-MCC.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acs.jpcb.0c02264">Comparison of Free-Energy Methods to Calculate the Barriers for the Nucleophilic Substitution of Alkyl Halides by Hydroxide</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Jonathan Higham, Sam P. de Visser, Richard H. Henchman</div>
-          <div class="pub-journal"><em>The Journal of Physical Chemistry B</em>, <strong>2020</strong>, 124, 6835–6842</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acs.jpcb.0c02264">Website</a><a class="chip" href="bibtex/Nucleophilic.bib">BibTeX</a></div>
-        </div>
-      </div>
-      
-      <div class="pub-row">
-        <img src="papers/TxtE.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/jacs.0c05070">Catalytic Mechanism of Aromatic Nitration by Cytochrome P450 TxtE: Involvement of a Ferric-Peroxynitrite Intermediate</a></div>
-          <div class="pub-authors">Savvas Louka, Sarah M. Barry, Derren J. Heyes, M. Qadri E. Mubarak, <strong>Hafiz Saqib Ali</strong>, Lona M. Alkhalaf, Andrew W. Munro, Nigel S. Scrutton, Gregory L. Challis, Sam P. de Visser</div>
-          <div class="pub-journal"><em>Journal of the American Chemical Society</em>, <strong>2020</strong>, 142, 15764–15779</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/jacs.0c05070">Website</a><a class="chip" href="bibtex/TxtE.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Plasmonic nanoassemblies: tentacles beat satellites for boosting broadband NIR plasmon coupling providing a novel candidate for SERS and photothermal therapy</div>
+        <div class="pub-authors">Priyanka Dey, <strong>Tanveer A. Tabish</strong>, Sara Mosca, Francesca Palombo, Pavel Matousek, Nicholas Stone</div>
+        <div class="pub-journal"><em>Small</em>, <strong>2020</strong>, 16(10), 1906780</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/OleT.tiff" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1039/D0CP05169A">How External Perturbations Affect the Chemoselectivity of Substrate Activation by Cytochrome P450 OleTJE</a></div>
-          <div class="pub-authors">Ahmed Shahria Chowdhury, <strong>Hafiz Saqib Ali</strong>, Abayomi S. Faponle, Samuel P. de Visser</div>
-          <div class="pub-journal"><em>Physical Chemistry Chemical Physics</em>, <strong>2020</strong>, 22, 27178-27190</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1039/D0CP05169A">Website</a><a class="chip" href="bibtex/OleTJE.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">High yield synthesis of graphene quantum dots from biomass waste as a highly selective probe for Fe3+ sensing</div>
+        <div class="pub-authors">Aumber Abbas, <strong>Tanveer A. Tabish</strong>, Steve J. Bull, Tuti Mariana Lim, Anh N. Phan</div>
+        <div class="pub-journal"><em>Scientific Reports</em>, <strong>2020</strong>, 10(1), 21262</div>
       </div>
 
-
-      <div class="pub-row">
-        <img src="papers/Gold3.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1021/acs.joc.0c01845">Revealing the Mechanism and Origin of Reactivity of Au(I)-Catalyzed Functionalized Indenone Formation of Cyclic and Acyclic Acetals of Alkynylaldehydes</a></div>
-          <div class="pub-authors">Aqeel A. Hussein, <strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>The Journal of Organic Chemistry</em>, <strong>2020</strong>, 85, 12682–12691</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1021/acs.joc.0c01845">Website</a><a class="chip" href="bibtex/Gold3.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Microstructure and antibacterial efficacy of graphene oxide nanocomposite fibres</div>
+        <div class="pub-authors">Rupy Kaur Matharu, <strong>Tanveer A. Tabish</strong>, Thithawat Trakoolwilaiwan, Jessica Mansfield, Julian Moger, Tongfei Wu, Cláudio Lourenço et al.</div>
+        <div class="pub-journal"><em>Journal of Colloid and Interface Science</em>, <strong>2020</strong>, 571, 239–252</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/naphthoquinone.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1134/S0022476620020031">Insight into the Molecular Characterization and Spectral Properties of 2-Methoxy-1,4-Naphthoquinone: A Computational Approach</a></div>
-          <div class="pub-authors">Narmeen Ali, Asim Mansha, Sadia Asim, <strong>Hafiz Saqib Ali</strong>, Muhammad Usman</div>
-          <div class="pub-journal"><em>Journal of Structural Chemistry</em>, <strong>2020</strong>, 61, 182–196</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1134/S0022476620020031">Website</a><a class="chip" href="bibtex/Methoxy.ris">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Nanostructured porous graphene for efficient removal of emerging contaminants (pharmaceuticals) from water</div>
+        <div class="pub-authors">Ahmed M. E. Khalil, Fayyaz A. Memon, <strong>Tanveer A. Tabish</strong>, Deborah Salmon, Shaowei Zhang, David Butler</div>
+        <div class="pub-journal"><em>Chemical Engineering Journal</em>, <strong>2020</strong>, 398, 125440</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/Cover_JTCC.jpg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1142/S0219633620500200">The Structural, Spectral, Frontier Molecular Orbital and Thermodynamic Analysis of 2-Hydroxy 2-Methyl Propiophenone by MP2 and B3LYP Methods</a></div>
-          <div class="pub-authors">Sidra Ghafoor, Asim Mansha, Sadia Asim, Muhammad Usman, Ameer Fawad Zahoor, <strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>Journal of Theoretical and Computational Chemistry</em>, <strong>2020</strong>, 19, 2050020</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1142/S0219633620500200">Website</a><a class="chip" href="bibtex/hydroxy.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Microstructure of fibres pressure-spun from polyacrylonitrile–graphene oxide composite mixtures</div>
+        <div class="pub-authors">Amalina Amir, Harshit Porwal, Suntharavathanan Mahalingam, Xiaowen Wu, Tongfei Wu, Biqiong Chen, <strong>Tanveer A. Tabish</strong>, Mohan Edirisinghe</div>
+        <div class="pub-journal"><em>Composites Science and Technology</em>, <strong>2020</strong>, 197, 108214</div>
       </div>
 
-      <div class="pub-row">
-        <img src="papers/triazine.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1080/08927022.2020.1822526">Spectroscopic, Quantum Chemical and Molecular Docking Studies on 2,4-dimethoxy-1,3,5-triazine: A Potent Inhibitor of Protein Kinase CK2 for the Development of Breast Cancer Drug</a></div>
-          <div class="pub-authors">Noreen Akram, Asim Mansha, R. Premkumar, A. Milton Franklin Benial, Sadia Asim, Shahzad Zafar Iqbal, <strong>Hafiz Saqib Ali</strong></div>
-          <div class="pub-journal"><em>Molecular Simulation</em>, <strong>2020</strong>, 46, 1340-1353</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1080/08927022.2020.1822526">Website</a><a class="chip" href="bibtex/CK2.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Determination of inclusion depth in ex vivo animal tissues using surface enhanced deep Raman spectroscopy</div>
+        <div class="pub-authors">Sara Mosca, Priyanka Dey, <strong>Tanveer A. Tabish</strong>, Francesca Palombo, Nicholas Stone, Pavel Matousek</div>
+        <div class="pub-journal"><em>Journal of Biophotonics</em>, <strong>2020</strong>, 13(1), e201960092</div>
       </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Porous graphene composite polymer fibres</div>
+        <div class="pub-authors">Jubair Ahmed, <strong>Tanveer A. Tabish</strong>, Shaowei Zhang, Mohan Edirisinghe</div>
+        <div class="pub-journal"><em>Polymers</em>, <strong>2020</strong>, 13(1), 76</div>
+      </div>
+
     </div>
   </div>
 
@@ -650,38 +371,53 @@
     <div class="year-label">2019</div>
     <div class="pub-stack">
 
-      <div class="pub-row">
-        <img src="papers/Cover-Entropy.png" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.3390/e21080750">Entropy of Simulated Liquids Using Multiscale Cell Correlation</a></div>
-          <div class="pub-authors"><strong>Hafiz Saqib Ali</strong>, Jonathan Higham, Richard H. Henchman</div>
-          <div class="pub-journal"><em>Entropy</em>, <strong>2019</strong> 21, 750</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.3390/e21080750">Website</a><a class="chip" href="bibtex/LiquidsMCC.bib">BibTeX</a></div>
-        </div>
+      <div class="pub-item">
+        <div class="pub-title">Graphene oxide-based targeting of extracellular cathepsin D and cathepsin L in novel anti-metastatic enzyme cancer therapy</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Zahid I. Pranjol, David W. Horsell, Alma Rahat, Jacqueline L. Whatmore, Paul G. Winyard, Shaowei Zhang</div>
+        <div class="pub-journal"><em>Cancers</em>, <strong>2019</strong>, 11(3)</div>
       </div>
-      
-      <div class="pub-row">
-        <img src="papers/naphthamide.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1016/j.molstruc.2019.07.077">A Combined Experimental and Theoretical Analysis of the Solid-state Supramolecular Self-assembly of N-(2,4-Dichlorophenyl)-1-Naphthamide: Synthesis, Anticholinesterase Potential and Molecular Docking Analysis</a></div>
-          <div class="pub-authors">Madiha Kazmi, Aliya Ibrar, <strong>Hafiz Saqib Ali</strong>, Mehreen Ghufran, Abdul Wadood, Ulrich Flörke, Jim Simpson, Aamer Saeed, Antonio Frontera, Imtiaz Khan</div>
-          <div class="pub-journal"><em>Journal of Molecular Structure</em>, <strong>2019</strong>, 1197, 458-470</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1016/j.molstruc.2019.07.077">Website</a><a class="chip" href="bibtex/naphthamide.bib">BibTeX</a></div>
-        </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Novel Au–SiO2–WO3 core–shell composite nanoparticles for surface-enhanced Raman spectroscopy with potential application in cancer cell imaging</div>
+        <div class="pub-authors">Pablo Martinez Pancorbo, Kunyapat Thummavichai, Louise Clark, <strong>Tanveer A. Tabish</strong>, Jessica Mansfield, Ben Gardner, Hong Chang, Nick Stone, Yanqiu Zhu</div>
+        <div class="pub-journal"><em>Advanced Functional Materials</em>, <strong>2019</strong>, 29(46), 1903549</div>
       </div>
-    
-      <div class="pub-row">
-        <img src="papers/amine.jpeg" alt="" class="pub-thumb">
-        <div class="pub-body">
-          <div class="pub-title"><a href="https://doi.org/10.1002/poc.3968">4-(4-Bromophenyl)Thiazol-2-Amine: Crystal Structure Determination, DFT Calculations, Visualizing Intermolecular Interactions Using Hirshfeld Surface Analysis, and DNA Binding Studies</a></div>
-          <div class="pub-authors">Pervaiz A. Channar, Nasima Arshad, Fayaz A. Larik, Shahid I. Farooqi, Aamer Saeed, Tuncer Hökelek, Bakhtawar Batool, Rabail Ujan, <strong>Hafiz Saqib Ali</strong>, Ulrich Flörke</div>
-          <div class="pub-journal"><em>Journal of Physical Organic Chemistry</em>, <strong>2019</strong>, 32, e3968</div>
-          <div class="pub-chips"><a class="chip" href="https://doi.org/10.1002/poc.3968">Website</a><a class="chip" href="bibtex/Bromophenyl.bib">BibTeX</a></div>
-        </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Spatially offset and transmission Raman spectroscopy for determination of depth of inclusion in turbid matrix</div>
+        <div class="pub-authors">Sara Mosca, Priyanka Dey, <strong>Tanveer A. Tabish</strong>, Francesca Palombo, Nicholas Stone, Pavel Matousek</div>
+        <div class="pub-journal"><em>Analytical Chemistry</em>, <strong>2019</strong>, 91(14), 8994–9000</div>
       </div>
 
     </div>
   </div>
+
+  <!-- 2018 -->
+  <div class="year-section" data-year="2018">
+    <div class="year-label">2018</div>
+    <div class="pub-stack">
+
+      <div class="pub-item">
+        <div class="pub-title">Developing the next generation of graphene-based cancer therapeutic platforms: the potential role of reactive oxygen species</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Shaowei Zhang, Paul G. Winyard</div>
+        <div class="pub-journal"><em>Redox Biology</em>, <strong>2018</strong>, 15, 34–40</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Biocompatibility and toxicity of graphene quantum dots for application in photodynamic therapy</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Chris J. Scotton, Daniel C. Ferguson, Liangxu Lin, Anienke van der Veen, Sophie Lowry, Paul G. Winyard, Shaowei Zhang</div>
+        <div class="pub-journal"><em>Nanomedicine</em>, <strong>2018</strong>, 13(15)</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Influence of luminescent graphene quantum dots on trypsin activity</div>
+        <div class="pub-authors"><strong>Tanveer A. Tabish</strong>, Md Zahidul I. Pranjol, Ilayda Karadag, David W. Horsell, Jacqueline L. Whatmore, Shaowei Zhang</div>
+        <div class="pub-journal"><em>International Journal of Nanomedicine</em>, <strong>2018</strong>, 1525–1538</div>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <script src="shared-layout.js"></script>
