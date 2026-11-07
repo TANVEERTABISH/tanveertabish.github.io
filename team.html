@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Our Team · ALI Research Group</title>
+  <title>Our Team · Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,14 +26,16 @@
     .pi-featured-text p { color: rgba(255,255,255,.7); font-size: .95rem; line-height: 1.75; margin-bottom: 1.2rem; max-width: 620px; }
     .pi-featured-text .pi-links { display: flex; gap: .8rem; flex-wrap: wrap; }
 
-    /* collaborators */
+    /* member / collaborator cards */
     .collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .collab-card {
       background: var(--white); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.4rem;
       box-shadow: var(--shadow);
       display: flex; gap: 1rem; align-items: flex-start;
+      transition: transform var(--transition), box-shadow var(--transition);
     }
+    .collab-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
     .collab-initial {
       flex-shrink: 0; width: 52px; height: 52px;
       border-radius: 50%; background: var(--navy2);
@@ -42,8 +44,11 @@
     }
     .collab-info h4 { font-size: .95rem; font-weight: 600; color: var(--navy); margin-bottom: .2rem; }
     .collab-info .collab-role { font-size: .78rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
-    .collab-info p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .collab-info p { font-size: .82rem; color: var(--muted); line-height: 1.5; margin-bottom: .4rem; }
     .collab-info a { font-size: .78rem; color: var(--accent); }
+
+    /* alumni — lighter treatment */
+    .alumni-card .collab-initial { background: var(--light); color: var(--navy); border: 1px solid var(--border); }
 
     /* join section */
     .join-section {
@@ -51,7 +56,8 @@
       padding: 70px 6%; text-align: center;
     }
     .join-section h2 { font-family: var(--serif); font-size: 2.2rem; color: var(--white); margin-bottom: .8rem; }
-    .join-section p { color: rgba(255,255,255,.7); max-width: 520px; margin: 0 auto 2rem; font-size: .97rem; line-height: 1.75; }
+    .join-section p { color: rgba(255,255,255,.72); max-width: 620px; margin: 0 auto 1.4rem; font-size: .97rem; line-height: 1.75; }
+    .join-links { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; }
 
     @media (max-width: 900px) { .collab-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 600px) {
@@ -59,133 +65,112 @@
       .pi-featured-text .pi-links { justify-content: center; }
       .collab-grid { grid-template-columns: 1fr; }
     }
-    .page-hero p {
-      text-align: justify;
-    } 
-    .area-content p {
-      text-align: justify;
-    }
-    .section .section-header p {
-      max-width: 100% !important;
-    }
+    .page-hero p { text-align: justify; }
+    .area-content p { text-align: justify; }
+    .section .section-header p { max-width: 100% !important; }
   </style>
 </head>
 <body>
 
 <div class="page-hero">
   <h1>Our Team</h1>
-  <p>Meet the researchers driving innovation at the ALI Research Group.</p>
+  <p>NANOCARD is an interdisciplinary team working at the interface of nanomaterials, redox biology and cardiovascular medicine, bringing together postdoctoral researchers, doctoral students and international collaborators across nanomaterials synthesis, vascular biology and translational biomedical engineering.</p>
 </div>
 
 <!-- PI -->
 <div class="pi-featured">
-  <img src="img/Ali-prof.PNG" alt="Dr Hafiz Saqib Ali" class="pi-featured-photo">
+  <img src="img/tanveer.jpg" alt="Dr Tanveer Tabish" class="pi-featured-photo">
   <div class="pi-featured-text">
-    <h2>Dr Hafiz Saqib Ali</h2>
-    <div class="role">Principal Investigator · Liverpool University Research Fellow</div>
-    <p style="text-align: justify;">Computational scientist specialised in therapeutic molecular design and enzyme engineering, with expertise in multiscale modelling including molecular dynamics, quantum mechanics, hybrid QM/MM, structural biology and machine learning. He leads a research group at the University of Liverpool developing physics-informed and data-driven approaches to tackle antimicrobial resistance and accelerate drug discovery. His work draws on experience across leading institutions including the Universities of Oxford, Edinburgh, Manchester, Strathclyde and GlaxoSmithKline (GSK).</p>
+    <h2>Dr Tanveer Tabish</h2>
+    <div class="role">Principal Investigator · Senior Research Fellow &amp; Group Leader</div>
+    <p style="text-align: justify;">Materials scientist working at the interface of nanomaterials, redox chemical biology and biomedical engineering. He leads NANOCARD in the Division of Cardiovascular Medicine, Radcliffe Department of Medicine, University of Oxford, and is a Fellow of Kellogg College. His group develops nitric oxide-releasing nanomedicines for cardiovascular repair, redox- and pH-responsive drug carriers, platforms for real-time imaging of nitric oxide in cells, and next-generation cardiovascular implants with controlled, stimulus-responsive release.</p>
     <div class="pi-links">
-      <a href="https://scholar.google.com/citations?user=qEVrdecAAAAJ&hl=en" target="_blank" class="btn btn-primary">Google Scholar</a>
-      <a href="https://github.com/HafizSaqibAli/" target="_blank" class="btn btn-outline">GitHub</a>
-      <a href="https://www.linkedin.com/in/dr-hafiz-saqib-ali-02a324123/" target="_blank" class="btn btn-outline">LinkedIn</a>
-      <a href="https://twitter.com/HafizSaqibAl1" target="_blank" class="btn btn-outline">Twitter / X</a>
-      <a href="papers/CV.pdf" target="_blank" class="btn btn-primary">View CV</a>
+      <a href="tanveer.html" class="btn btn-primary">Full Profile</a>
+      <a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/tanveertabish/" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank" class="btn btn-outline">Oxford Profile</a>
     </div>
   </div>
 </div>
 
-<!-- OPEN POSITIONS -->
+<!-- CURRENT MEMBERS -->
 <section class="section" style="max-width: 100%; width: 100%; padding-left: 6%; padding-right: 6%;">
   <div class="section-header" style="max-width: 100%; width: 100%;">
-    <h2>Shape the Future With Us</h2>
+    <h2>Group Members</h2>
     <hr class="gold-rule">
-    <p style="text-align: justify;">We are building a group where rigorous science and bold ideas meet. If that excites you, we would love to hear from you. We welcome applications from PhD students and postdoctoral researchers eager to work at the intersection of chemistry, biology, medicine and machine learning. No prior experience in computational chemistry is required, what matters is curiosity, drive, and a genuine interest in solving problems that matter. Funded positions will be advertised here as they become available.</p>
+    <p style="text-align: justify;">Our researchers work across nanomaterials synthesis, vascular biology and translational biomedical engineering, supported by funding from the British Heart Foundation, the Wellcome Trust, the Royal Society, UK Research and Innovation and international partners.</p>
   </div>
   <div class="collab-grid">
-    
-<!-- SUPERVISORS & COLLABORATORS -->
- <!-- <section class="section">
-  <div class="section-header">
-    <h2>Shape the Future With Us</h2>
+
+    <div class="collab-card">
+      <div class="collab-initial">TF</div>
+      <div class="collab-info">
+        <h4>Dr Thomas Foster</h4>
+        <div class="collab-role">Postdoctoral Research Associate</div>
+        <p>Works on <em>ex vivo</em> perfusion platforms for testing cardiovascular interventional devices.</p>
+        <a href="https://www.rdm.ox.ac.uk/people/thomas-foster" target="_blank">Oxford Profile →</a>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">RR</div>
+      <div class="collab-info">
+        <h4>Dr Roberta Reis</h4>
+        <div class="collab-role">Postdoctoral Research Associate</div>
+        <p>Works on nanomaterials for cardiovascular therapeutics.</p>
+      </div>
+    </div>
+
+    <div class="collab-card">
+      <div class="collab-initial">CC</div>
+      <div class="collab-info">
+        <h4>Charmaine Chang</h4>
+        <div class="collab-role">DPhil Student</div>
+        <a href="https://www.rdm.ox.ac.uk/people/charmaine-chang" target="_blank">Oxford Profile →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ALUMNI -->
+<section class="section section-alt" style="max-width: 100%; width: 100%; padding-left: 6%; padding-right: 6%;">
+  <div class="section-header" style="max-width: 100%; width: 100%;">
+    <h2>Alumni</h2>
     <hr class="gold-rule">
-    <p>We are building a group where rigorous science and bold ideas meet — if that excites you, we would love to hear from you. We welcome applications from PhD students and postdoctoral researchers ager to work at the intersection of chemistry, biology, medicine and machine learning. No prior experience in computational chemistry is required; what matters is curiosity, drive, and a genuine interest in solving problems that matter. To apply, send Hafiz a brief cover letter describing your research interests and a current CV. Funded positions will be advertised here as they become available.</p>
+    <p style="text-align: justify;">Former members of the group whose work has contributed to our programme in cardiovascular nanomedicine.</p>
   </div>
-  <div class="collab-grid"> -->
+  <div class="collab-grid">
 
-   <!-- <div class="collab-card">
-      <div class="collab-initial">DP</div>
+    <div class="collab-card alumni-card">
+      <div class="collab-initial">FJ</div>
       <div class="collab-info">
-        <h4>Prof. David Palmer</h4>
-        <div class="collab-role">Supervisor · Strathclyde</div>
-        <p>Professor of Computational Chemistry, University of Strathclyde.</p>
-        <a href="https://www.palmer-lab.com" target="_blank">palmer-lab.com →</a>
+        <h4>Felicity Johns</h4>
+        <div class="collab-role">Master's Student</div>
       </div>
     </div>
 
-    <div class="collab-card">
-      <div class="collab-initial">AB</div>
+    <div class="collab-card alumni-card">
+      <div class="collab-initial">CV</div>
       <div class="collab-info">
-        <h4>Dr Andrew Baxter</h4>
-        <div class="collab-role">Supervisor · GSK</div>
-        <p>Senior Scientist at GSK, Stevenage, UK.</p>
-        <a href="https://www.linkedin.com/in/andrew-baxter-bb38a414a/" target="_blank">LinkedIn →</a>
-      </div>
-    </div>
-
-    <div class="collab-card">
-      <div class="collab-initial">CS</div>
-      <div class="collab-info">
-        <h4>Prof. Christopher Schofield, FRS</h4>
-        <div class="collab-role">Supervisor · Oxford</div>
-        <p>Professor of Chemistry, University of Oxford. Antibiotic resistance, β-lactamases.</p>
-        <a href="https://schofield.web.ox.ac.uk" target="_blank">schofield.web.ox.ac.uk →</a>
-      </div>
-    </div>
-
-    <div class="collab-card">
-      <div class="collab-initial">FD</div>
-      <div class="collab-info">
-        <h4>Prof. Fernanda Duarte</h4>
-        <div class="collab-role">Supervisor · Oxford</div>
-        <p>Associate Professor, Department of Chemistry, University of Oxford.</p>
-        <a href="https://www.duartegroupchem.org" target="_blank">duartegroupchem.org →</a>
-      </div>
-    </div>
-
-    <div class="collab-card">
-      <div class="collab-initial">AJ</div>
-      <div class="collab-info">
-        <h4>Dr Amanda Jarvis</h4>
-        <div class="collab-role">Supervisor · Edinburgh</div>
-        <p>Royal Society University Research Fellow, University of Edinburgh. Artificial metalloenzymes.</p>
-        <a href="https://www.amandajarvis.co.uk" target="_blank">amandajarvis.co.uk →</a>
-      </div>
-    </div>
-
-    <div class="collab-card">
-      <div class="collab-initial">SV</div>
-      <div class="collab-info">
-        <h4>Prof. Samuel de Visser, FRS</h4>
-        <div class="collab-role">PhD Supervisor · Manchester</div>
-        <p>Professor, Manchester Institute of Biotechnology, University of Manchester.</p>
-        <a href="https://research.manchester.ac.uk/en/persons/sam.devisser" target="_blank">Profile →</a>
+        <h4>Chau Vu</h4>
+        <div class="collab-role">Master's Student</div>
       </div>
     </div>
 
   </div>
-</section> 
+</section>
+
 <!-- JOIN -->
-<div class="join-section" style="max-width: 900px; margin: 0 auto; border-radius: var(--radius);">
-  <h2>Join the Group</h2>
-  <p>If you are interested in joining the group, please contact Hafiz directly. Applications should include a cover letter outlining your research interests and a full CV.</p>
-  <a href="mailto:H.Saqib-Ali@liverpool.ac.uk" class="btn btn-primary">Get in Touch →</a>
-</div>
-<!-- JOIN
 <div class="join-section">
   <h2>Join the Group</h2>
-  <p>If you are interested in joining the group, please contact Hafiz directly. Applications should include a cover letter outlining your research interests and a full CV.</p>
-  <a href="mailto:H.Saqib-Ali@liverpool.ac.uk" class="btn btn-primary">Get in Touch →</a>
-</div> -->
+  <p>We welcome enquiries from talented researchers who wish to work at the interface of nanomaterials, redox biology and cardiovascular therapeutics. Prospective DPhil students interested in cardiovascular nanomedicine, biomaterials or redox biology are encouraged to get in touch, as are postdoctoral researchers applying for independent fellowships or looking to join ongoing projects.</p>
+  <p>Please email a CV and a brief description of your research interests. We currently have three fully funded DPhil projects on offer — see the news page for details and deadlines.</p>
+  <div class="join-links">
+    <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-primary">Get in Touch →</a>
+    <a href="news.html" class="btn btn-outline">Current Opportunities →</a>
+  </div>
+</div>
 
 <script src="shared-layout.js"></script>
 </body>
