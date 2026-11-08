@@ -2,198 +2,249 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Research Areas · ALI Research Group</title>
+  <title>Our Research · Tabish Research Group</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research in the Tabish Research Group (NANOCARD) — nitric oxide nanomedicine, targeted drug delivery, redox biology and next-generation cardiovascular devices.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="group-style.css">
   <style>
-    .area-block {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
-      align-items: center; padding: 70px 6%;
+    /* Alternating research rows */
+    .area-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      margin-bottom: 4.5rem;
     }
-    .area-block.reverse { direction: rtl; }
-    .area-block.reverse > * { direction: ltr; }
-    .area-block.alt { background: var(--light); }
-    .area-visual {
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 6rem;
+    .area-row:last-child { margin-bottom: 0; }
+    .area-row.reverse .area-figure { order: 2; }
+
+    .area-figure {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      overflow: hidden;
     }
-    .area-content h2 { font-family: var(--serif); font-size: 2rem; color: var(--navy); margin-bottom: .5rem; }
-    .area-content .area-tag {
-      font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
-      color: var(--accent); margin-bottom: .8rem;
+    .area-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
     }
-    .area-content p { color: var(--muted); font-size: .95rem; line-height: 1.8; margin-bottom: 1rem; }
-    .area-content ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.4rem; }
-    .area-content ul li {
-      font-size: .88rem; color: var(--text); padding-left: 1.2rem; position: relative;
+
+    .area-content .area-number {
+      font-family: var(--serif);
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
     }
-    .area-content ul li::before {
-      content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .7rem; top: .2rem;
-    }
-    @media (max-width: 768px) {
-      .area-block { grid-template-columns: 1fr; gap: 2rem; }
-      .area-block.reverse { direction: ltr; }
-    }
-    .page-hero p {
-      max-width: 900px;
-      margin-left: 0;
-    }
-    .page-hero p {
-      text-align: justify;
+    .area-content h3 {
+      font-family: var(--serif);
+      font-size: 1.85rem; color: var(--navy);
+      line-height: 1.25; margin-bottom: .7rem;
     }
     .area-content p {
+      font-size: .94rem; color: #2a3550;
+      line-height: 1.82; margin-bottom: 1rem;
       text-align: justify;
     }
+    .area-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; }
+    .area-tag {
+      font-size: .74rem; padding: .25rem .75rem; border-radius: 20px;
+      background: var(--light); color: var(--muted); border: 1px solid var(--border);
+    }
+
+    /* Timeline band */
+    .timeline-band {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+    }
+    .timeline-band img { width: 100%; height: auto; display: block; border-radius: 4px; }
+    .timeline-caption {
+      font-size: .82rem; color: var(--muted);
+      text-align: center; margin-top: .9rem; line-height: 1.6;
+    }
+
+    /* Approach callouts */
+    .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .approach-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius); padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .approach-card h4 {
+      font-family: var(--serif); font-size: 1.1rem;
+      color: var(--navy); margin-bottom: .5rem;
+    }
+    .approach-card p { font-size: .86rem; color: var(--muted); line-height: 1.7; }
+
+    /* Closing CTA */
+    .research-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 70px 6%; text-align: center;
+    }
+    .research-cta h2 { font-family: var(--serif); font-size: 2.1rem; color: var(--white); margin-bottom: .8rem; }
+    .research-cta p { color: rgba(255,255,255,.72); max-width: 620px; margin: 0 auto 1.6rem; font-size: .97rem; line-height: 1.75; }
+    .cta-links { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; }
+
+    @media (max-width: 900px) {
+      .area-row { grid-template-columns: 1fr; gap: 1.8rem; margin-bottom: 3.2rem; }
+      .area-row.reverse .area-figure { order: 0; }
+      .approach-grid { grid-template-columns: 1fr; }
+    }
+    .page-hero p { text-align: justify; }
+    .section .section-header p { max-width: 100% !important; }
   </style>
 </head>
 <body>
 
+<!-- NAV injected by shared-layout.js -->
+
 <div class="page-hero">
-  <h1>Research Areas</h1>
-  <p> We advance data-driven molecular design as a platform for solving unmet global challenges; coupling automation, structural insight and molecular-level understanding to accelerate solutions in human health, sustainable catalysis and infectious disease. Our group cultivates an environment where rigorous science and bold ideas converge.</p>
+  <h1>Our Research</h1>
+  <p>We lead an interdisciplinary programme developing next-generation functional biomaterials by integrating principles from materials science, chemical biology and biomedical engineering. We specialise in the rational design and chemical functionalisation of advanced nanostructures for targeted drug delivery, bioimaging and real-time sensing. A central focus is the development of nitric oxide-releasing nanomedicines for cardiovascular regeneration, with an emphasis on creating intelligent delivery systems capable of navigating complex biological environments, responding to pathophysiological stimuli and restoring vascular homeostasis.</p>
 </div>
 
-<!-- AREA 1 -->
-<div class="area-block alt" style="background: white;">
-  <div class="research-img" style="border: 2px solid #1a3a6b; border-radius: 8px; overflow: hidden;">
-    <img src="img/CADD_1.tiff" alt="drug-discovery" />
-  </div>   
-  <div class="area-content">
-    <div class="area-tag">Area 01</div>
-    <h2>Computer-Aided Drug Discovery</h2>
+<!-- ── THE CHALLENGE ─────────────────────────────────────── -->
+<section class="section">
+  <div class="section-header">
+    <h2>The Challenge</h2>
     <hr class="gold-rule">
-    <p> In the field of computer-aided drug design, the pivotal question often revolves around determining the next optimal molecule to achieve specific property criteria. Two primary approaches guide this quest:</p>
-    <ul>
-      <li>Virtual Screening: involving a predefined set of candidates</li>
-      <li>Generative Modeling: employs algorithms to propose entirely new molecular structures</li>
-    </ul>
-    <p> While exhaustive virtual screening, utilizing computational tools like docking for structure-based drug design, can aid in hit identification, it becomes challenging when dealing with the vast libraries encompassing billions of molecules in today's virtual landscape. Our group focuses on diverse methods for selecting and suggesting molecular structures through iterative optimization rounds. This encompasses navigating discrete design spaces of candidate molecular structures using model-guided optimisation techniques like <em>Bayesian optimisation</em>. A particularly intriguing thread of our research involves crafting generative models that consider synthesisability constraints, proposing molecular structures feasible for synthesis. Efficiency in sampling is also a primary concern. In the realm of in-silico benchmarks, where hundreds of thousands of molecules might be "tested," aligning with practical experimental possibilities becomes crucial, calling for models that efficiently explore these vast molecular spaces.</p>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+    <p style="text-align: justify;">The cellular environment exists in a delicate equilibrium between reducing and oxidising conditions. This redox balance governs processes from metabolic regulation to cellular signalling, and its disruption underpins the pathogenesis of cardiovascular disease. Nitric oxide, a pivotal redox-active mediator, sits at the heart of this paradigm — modulating vascular homeostasis, mitochondrial function and inflammatory cascades. Yet its therapeutic potential remains constrained by challenges in spatiotemporal delivery and targeted bioactivity. Our work confronts this unmet clinical challenge through an innovative nanomedicine framework, redefining how NO-based therapeutics are engineered.</p>
   </div>
-</div>
 
-<!-- AREA 2 -->
-<div class="area-block reverse alt">
-  <div class="research-img" style="border: 2px solid #1a3a6b; border-radius: 8px; overflow: hidden;">
-    <img src="img/QMMM_Metalloenzymes.png" alt="QM/MM Metalloenzymes" />
-  </div>   
-  <div class="area-content">
-    <div class="area-tag">Area 02</div>
-    <h2>Metalloenzymes</h2>
+  <div class="timeline-band">
+    <img src="img/no-timeline.png" alt="Timeline of nitric oxide biology discoveries and carrier development, 1850 to present">
+    <div class="timeline-caption">From glyceryl trinitrate for angina in 1867 to targeted NO-release nanosystems today: two centuries of nitric oxide biology and the carriers built to deliver it.</div>
+  </div>
+</section>
+
+<!-- ── RESEARCH AREAS ────────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="section-header">
+    <h2>Research Areas</h2>
     <hr class="gold-rule">
-    <p> Nature's array of metalloenzymes using molecular oxygen via iron (Fe) centers presents a fascinating landscape. Among these, a significant cohort utilizes a heme central ligand, while numerous others rely on non-heme ligands, showing the variety in enzymatic systems. These enzymes frequently use an oxo-iron(IV) species for oxidation reactions, extensively studied in the nonheme enzyme taurine/alpha-ketoglutarate dioxygenase. However, this species remains elusive within cytochromes P450 due to its short lifespan, making experimental studies in this field challenging. This complexity leads to a strong dependence on theoretical modeling, a key part of our research. It offers invaluable insights into pivotal queries:</p>
-    <ul>
-      <li>What constitutes the active oxidant species within these diverse enzymes?</li>
-      <li>How precisely do these mechanisms coordinate and activate substrates for oxidation?</li>
-    </ul>
-    <p> Through the lens of multiscale modeling, our effort delves deep into unraveling these fundamental mysteries, peering into the heart of enzymatic catalysis. Our research has been marked by numerous detailed studies employing density functional theory (DFT) and hybrid quantum mechanics/molecular mechanics (QM/MM) methodologies, exploring the intricate nature of substrate oxidation catalysed by both heme and nonheme enzymes. Beyond understanding nature's catalysts, we leverage these mechanistic insights to engineer novel biocatalysts with tailored reactivity paving the way for sustainable, selective chemical transformations that address the demands of green chemistry and industrial synthesis.</p>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+    <p style="text-align: justify;">Our research is organised around several interconnected themes spanning nanomedicine, redox biology and cardiovascular therapeutics.</p>
   </div>
-</div>
 
-<!-- AREA 3 -->
-<div class="area-block alt" style="background: white;">
-  <div class="research-img" style="border: 2px solid #1a3a6b; border-radius: 8px; overflow: hidden;">
-    <img src="img/methoddev.png" alt="fes" />
-  </div>   
-  <div class="area-content">
-    <div class="area-tag">Area 03</div>
-    <h2>Method Development</h2>
-    <hr class="gold-rule">
-    <p> We develop novel computational methods that span statistical mechanics and physics-informed machine learning, with applications ranging from small molecule thermodynamics to complex biomolecular systems, generative molecular design, and protein engineering.</p>
-    <p> Our work falls into two interconnected strands. First, we develop statistical mechanics-based methods including Multiscale Cell Correlation (MCC) theory to rigorously compute entropy and thermodynamic stability across systems ranging from small drug-like molecules to large biomolecular assemblies. Second, we build physics-informed machine learning models that embed physical laws directly into the learning framework, enabling more accurate and generalisable models for de novo molecular generation and the rational design of proteins with improved stability, activity, and selectivity.</p>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
-  </div>
-</div>
-
-<!-- AREA 4 -->
-<div class="area-block reverse alt">
-  <div class="research-img" style="border: 2px solid #1a3a6b; border-radius: 8px; overflow: hidden;">
-    <img src="img/fes.png" alt="fes" />
-  </div>   
-  <div class="area-content">
-    <div class="area-tag">Area 04</div>
-    <h2>Computational Chemistry</h2>
-    <hr class="gold-rule">
-    <p> In the realm of physical organic chemistry, our approach involves employing Density Functional Theory (DFT) and <em>ab initio</em> quantum chemical calculations. These tools serve as windows into the reactivity of unconventional organic structures, unraveling the underlying reasons behind regio- and stereoselectivity in chemical reactions. This knowledge forms the basis for developing novel reactivity models, steering synthetic endeavors. These applications span diverse areas, including exploring enantioselective catalysis, and gaining a deeper comprehension of catalytic pathways. By leveraging these computational methods within the context of physical organic chemistry, we decode the intricate mechanisms guiding chemical reactions, paving the way for advancements in synthetic strategies and the understanding of complex catalytic processes.</p>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
-  </div>
-</div>
-
-    <!-- <div class="research-card fade-up-2">
-      <div class="research-img">
-        <img src="img/QMMM_Metalloenzymes.png" alt="QM/MM Metalloenzymes" />
+  <!-- 1 -->
+  <div class="area-row">
+    <div class="area-figure">
+      <img src="img/no-nanomedicine.png" alt="Catalytic and non-catalytic approaches to nitric oxide release">
+    </div>
+    <div class="area-content">
+      <div class="area-number">Area 01</div>
+      <h3>Nitric Oxide Nanomedicine</h3>
+      <p>We design nanomaterials that store and release nitric oxide with precision. Two complementary strategies run through this work. In the non-catalytic approach, NO is either stored directly as a gas within porous nanostructures or covalently conjugated to the material through S-nitrosothiol and diazeniumdiolate chemistries, releasing on contact with physiological triggers. In the catalytic approach, the material itself generates NO from endogenous sources already circulating in the body, using surface nucleophiles or immobilised metal ions such as copper to decompose S-nitrosothiols at the site of action.</p>
+      <p>Catalytic systems are self-replenishing in principle, offering a route past the finite payload that limits conventional donors — a significant advantage for implants intended to function over months rather than hours.</p>
+      <div class="area-tags">
+        <span class="area-tag">S-nitrosothiols</span>
+        <span class="area-tag">Porous graphene</span>
+        <span class="area-tag">Copper catalysis</span>
+        <span class="area-tag">Controlled release</span>
       </div>
-      <div class="research-body">
-        <h3>Metalloenzymes</h3>
-        <p>Designing nature-inspired biocatalysts and new synthetic enzymes with novel functions.</p>
-        <a href="research.html">Learn more →</a>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="area-row reverse">
+    <div class="area-figure">
+      <img src="img/drug-delivery.png" alt="NO-releasing graphene across cardiovascular, antibacterial and cancer applications">
+    </div>
+    <div class="area-content">
+      <div class="area-number">Area 02</div>
+      <h3>Targeted Drug Delivery</h3>
+      <p>Delivering a gasotransmitter to the right place at the right time is the central difficulty in NO therapeutics. We develop redox-responsive nanodrug excipients capable of navigating the biochemical gradients of the cardiovascular system, using pH-selective permeabilities and oxygen tension to guide cargo — NO-releasing materials and NO donors — to subcellular targets in diseased tissue.</p>
+      <p>The same platforms carry beyond the cardiovascular system. NO-releasing graphene shows antibacterial and antibiofilm activity through peroxynitrite generation, and disrupts tumour vasculature while promoting apoptosis, giving a single materials platform relevance across infection, oncology and vascular medicine.</p>
+      <div class="area-tags">
+        <span class="area-tag">Hypoxia-responsive</span>
+        <span class="area-tag">pH-selective</span>
+        <span class="area-tag">Subcellular targeting</span>
+        <span class="area-tag">Peroxynitrite</span>
       </div>
-    </div> -->
-
-
-<!-- AREA 1 -->
-<!-- <div class="area-block">
-  <div class="area-visual">⚗️</div>
-  <div class="area-content">
-    <div class="area-tag">Area 01</div>
-    <h2>Computational Chemistry</h2>
-    <hr class="gold-rule">
-    <p>We employ state-of-the-art quantum mechanics/molecular mechanics (QM/MM) calculations, molecular dynamics simulations, and electrostatic modelling to understand enzyme mechanisms at an atomic level.</p>
-    <ul>
-      <li>QM/MM studies of enzyme reaction mechanisms</li>
-      <li>Electrostatic perturbation analysis in active sites</li>
-      <li>Free energy calculations and transition state theory</li>
-      <li>Multiscale cell correlation (MCC) methods</li>
-      <li>LogP and partition coefficient prediction</li>
-    </ul>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+    </div>
   </div>
-</div> -->  
-  
-<!-- AREA 3 -->
-<!-- <div class="area-block">
-  <div class="area-visual">🤖</div>
-  <div class="area-content">
-    <div class="area-tag">Area 03</div>
-    <h2>Machine Learning &amp; Data Science</h2>
-    <hr class="gold-rule">
-    <p>We develop and apply machine learning models to accelerate molecular design, predict physicochemical properties, and identify novel chemical scaffolds with therapeutic potential.</p>
-    <ul>
-      <li>Data-driven molecular property prediction</li>
-      <li>Graph neural networks for molecular design</li>
-      <li>ADMET profiling using ML models</li>
-      <li>Generative models for de novo drug design</li>
-      <li>Integration of experimental and computational data</li>
-    </ul>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
-  </div>
-</div> --> 
 
-<!-- AREA 4 -->
-<!-- <div class="area-block reverse alt">
-  <div class="area-visual">🧬</div>
-  <div class="area-content">
-    <div class="area-tag">Area 04</div>
-    <h2>Chemical Biology &amp; Metalloenzymes</h2>
-    <hr class="gold-rule">
-    <p>We investigate artificial and natural metalloenzymes, combining computational structural modelling with mechanistic insights to enhance catalytic efficiency and inspire the design of new biocatalysts.</p>
-    <ul>
-      <li>Artificial metalloenzyme structural modelling</li>
-      <li>Nonheme iron enzyme mechanisms</li>
-      <li>NHC gold(I)-catalysed reactions</li>
-      <li>Ferryl reactivity in oxygenases</li>
-      <li>RNA nuclease activity in CDAs</li>
-    </ul>
-    <a href="publications.html" class="btn btn-navy">Related Publications →</a>
+  <!-- 3 -->
+  <div class="area-row">
+    <div class="area-figure">
+      <img src="img/no-biology.png" alt="Nitric oxide signalling in endothelial cells, cardiomyocytes and immune cells">
+    </div>
+    <div class="area-content">
+      <div class="area-number">Area 03</div>
+      <h3>Nitric Oxide Biology</h3>
+      <p>Designing better NO therapeutics requires understanding what NO actually does, cell type by cell type. In the endothelium, eNOS converts L-arginine to L-citrulline and NO, which diffuses to adjacent smooth muscle and drives the guanylate cyclase–cGMP–PKG axis that produces vasodilation. In cardiomyocytes, eNOS- and nNOS-derived NO modulates calcium handling at the sarcoplasmic reticulum and restrains the mitochondrial electron transport chain, lowering reactive oxygen species. In immune cells, iNOS induction alongside NADPH oxidase activity determines whether NO resolves inflammation or forms damaging peroxynitrite.</p>
+      <p>We interrogate these pathways directly, developing advanced synthetic platforms for real-time imaging of NO at subcellular resolution to illuminate how NO fluxes relate to mitochondrial dysfunction, oxidative stress and endothelial pathology.</p>
+      <div class="area-tags">
+        <span class="area-tag">eNOS / nNOS / iNOS</span>
+        <span class="area-tag">Redox signalling</span>
+        <span class="area-tag">Mitochondrial function</span>
+        <span class="area-tag">Real-time sensing</span>
+      </div>
+    </div>
   </div>
-</div> -->
+
+  <!-- 4 -->
+  <div class="area-row reverse">
+    <div class="area-figure">
+      <img src="img/devices.png" alt="NO-releasing nanoparticles: mechanisms and cardiovascular device applications">
+    </div>
+    <div class="area-content">
+      <div class="area-number">Area 04</div>
+      <h3>Next-Generation Devices</h3>
+      <p>One of our flagship efforts is the design and fabrication of cardiovascular implants for controlled, sustained and stimulus-responsive therapeutic action. NO-releasing surfaces address the two failure modes that have dogged vascular devices for decades: they promote re-endothelialisation of the implant surface while simultaneously inhibiting smooth muscle cell proliferation, the driver of restenosis.</p>
+      <p>Applications span vascular stents, bypass grafts, angiogenesis and tissue engineering scaffolds, and protection against myocardial ischaemia–reperfusion injury. To evaluate them properly we have also built an ex vivo perfusion platform for testing interventional devices under physiologically realistic flow, bridging bench characterisation and pre-clinical work.</p>
+      <div class="area-tags">
+        <span class="area-tag">Stent coatings</span>
+        <span class="area-tag">Bypass grafts</span>
+        <span class="area-tag">Re-endothelialisation</span>
+        <span class="area-tag">Ex vivo perfusion</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── HOW WE WORK ───────────────────────────────────────── -->
+<section class="section">
+  <div class="section-header">
+    <h2>How We Work</h2>
+    <hr class="gold-rule">
+  </div>
+  <div class="approach-grid">
+    <div class="approach-card">
+      <h4>Materials by design</h4>
+      <p>Rational design and chemical functionalisation of advanced nanostructures, with synthesis and characterisation guided by the biological problem rather than the other way round.</p>
+    </div>
+    <div class="approach-card">
+      <h4>Biology at the bench</h4>
+      <p>Vascular biology, redox measurement and real-time sensing in living systems, so that materials are tested against the mechanisms they are meant to engage.</p>
+    </div>
+    <div class="approach-card">
+      <h4>Translation in mind</h4>
+      <p>Close collaboration with engineers, chemists, pharmacists and clinicians, bridging the gap between fundamental redox biology and devices that could reach patients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────── -->
+<div class="research-cta">
+  <h2>Work With Us</h2>
+  <p>We welcome enquiries from researchers who want to work at the interface of nanomaterials, redox biology and cardiovascular therapeutics — and we currently have three fully funded DPhil projects on offer.</p>
+  <div class="cta-links">
+    <a href="publications.html" class="btn btn-primary">Publications</a>
+    <a href="projects.html" class="btn btn-outline">Projects &amp; Funding</a>
+    <a href="news.html" class="btn btn-outline">DPhil Opportunities</a>
+  </div>
+</div>
 
 <script src="shared-layout.js"></script>
 </body>
