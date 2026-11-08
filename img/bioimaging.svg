@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1428"/>
+      <stop offset="0.5" stop-color="#112a52"/>
+      <stop offset="1" stop-color="#0d1b36"/>
+    </linearGradient>
+    <radialGradient id="hotspot" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd978" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#c8a84b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="laser" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff5f6d" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#ff5f6d" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="scatter" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8fd0ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8fd0ff" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="540" fill="url(#bg3)"/>
+
+  <!-- incident laser from top left -->
+  <path d="M0 40 L120 40 L262 196 L214 232 Z" fill="url(#laser)" opacity="0.45"/>
+  <g font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#ff8d96" letter-spacing="1.5">
+    <text x="24" y="30">785 nm EXCITATION</text>
+  </g>
+
+  <!-- scattered light back out, top right -->
+  <path d="M330 196 L382 170 L560 44 L690 44 Z" fill="url(#scatter)" opacity="0.3" transform="scale(-1,1) translate(-1040,0)"/>
+  <g font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#8fd0ff" letter-spacing="1.5" text-anchor="end">
+    <text x="776" y="30">RAMAN SCATTER</text>
+  </g>
+
+  <!-- tissue / cell field -->
+  <path d="M120 268 C 132 170, 250 112, 392 116 C 540 120, 640 186, 634 272 C 628 366, 520 424, 386 420 C 240 416, 110 360, 120 268 Z"
+        fill="#102546" stroke="#2b5e9e" stroke-width="2" opacity="0.95"/>
+
+  <!-- nucleus outline, muted -->
+  <ellipse cx="318" cy="250" rx="86" ry="68" fill="#16325c" stroke="#38619c" stroke-width="1.6" opacity="0.9"/>
+
+  <!-- SERS nanotag hotspots -->
+  <g>
+    <g transform="translate(262,214)">
+      <circle r="38" fill="url(#hotspot)" opacity="0.85"/>
+      <circle r="11" fill="#c8a84b" stroke="#fff0c2" stroke-width="1.6"/>
+      <g stroke="#ffd978" stroke-width="1.6" opacity="0.8">
+        <path d="M0 -18 V-26"/><path d="M13 -13 L19 -19"/><path d="M18 0 H26"/>
+        <path d="M13 13 L19 19"/><path d="M0 18 V26"/><path d="M-13 13 L-19 19"/>
+        <path d="M-18 0 H-26"/><path d="M-13 -13 L-19 -19"/>
+      </g>
+    </g>
+    <g transform="translate(452,308)">
+      <circle r="44" fill="url(#hotspot)" opacity="0.9"/>
+      <circle r="13" fill="#c8a84b" stroke="#fff0c2" stroke-width="1.8"/>
+      <g stroke="#ffd978" stroke-width="1.7" opacity="0.8">
+        <path d="M0 -20 V-30"/><path d="M15 -15 L22 -22"/><path d="M20 0 H30"/>
+        <path d="M15 15 L22 22"/><path d="M0 20 V30"/><path d="M-15 15 L-22 22"/>
+        <path d="M-20 0 H-30"/><path d="M-15 -15 L-22 -22"/>
+      </g>
+    </g>
+    <g transform="translate(528,196)">
+      <circle r="30" fill="url(#hotspot)" opacity="0.7"/>
+      <circle r="9" fill="#c8a84b" stroke="#fff0c2" stroke-width="1.4"/>
+      <g stroke="#ffd978" stroke-width="1.4" opacity="0.75">
+        <path d="M0 -15 V-22"/><path d="M11 -11 L16 -16"/><path d="M15 0 H22"/>
+        <path d="M11 11 L16 16"/><path d="M0 15 V22"/><path d="M-11 11 L-16 16"/>
+        <path d="M-15 0 H-22"/><path d="M-11 -11 L-16 -16"/>
+      </g>
+    </g>
+    <g transform="translate(222,348)">
+      <circle r="28" fill="url(#hotspot)" opacity="0.6"/>
+      <circle r="8.5" fill="#c8a84b" stroke="#fff0c2" stroke-width="1.3"/>
+    </g>
+  </g>
+
+  <!-- NO probe marker next to a hotspot -->
+  <g font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle">
+    <g transform="translate(378,254)">
+      <circle r="15" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.6"/>
+      <circle cx="14" cy="-5" r="8" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.3"/>
+      <text y="4" font-size="10" fill="#fff">NO</text>
+    </g>
+  </g>
+
+  <!-- Raman spectrum readout panel -->
+  <g transform="translate(96,430)">
+    <rect x="-16" y="-24" width="624" height="96" rx="8" fill="#0a1a33" stroke="#2b5e9e" stroke-width="1.4" opacity="0.92"/>
+    <!-- baseline -->
+    <path d="M0 56 H592" stroke="#38619c" stroke-width="1.2"/>
+    <!-- spectrum trace with sharp Raman bands -->
+    <path d="M0 54 L36 53 L52 52 L64 20 L74 52 L104 53 L118 51
+             L128 34 L138 51 L176 52 L196 50 L206 8 L216 50 L244 52
+             L262 51 L272 30 L282 51 L318 52 L338 50 L348 26 L358 50
+             L396 52 L418 51 L428 14 L438 51 L470 52 L492 51 L502 38
+             L512 51 L548 52 L570 51 L582 48 L592 53"
+          fill="none" stroke="#8fd0ff" stroke-width="2.2" stroke-linejoin="round"/>
+    <!-- highlighted marker band -->
+    <path d="M196 50 L206 8 L216 50" fill="none" stroke="#c8a84b" stroke-width="3"/>
+    <circle cx="206" cy="8" r="4.5" fill="#ffd978"/>
+    <g font-family="Helvetica,Arial,sans-serif" font-size="11" fill="#7f93b4">
+      <text x="0" y="72">400</text>
+      <text x="288" y="72" text-anchor="middle">RAMAN SHIFT (cm⁻¹)</text>
+      <text x="592" y="72" text-anchor="end">1800</text>
+    </g>
+  </g>
+</svg>

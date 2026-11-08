@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1b36"/>
+      <stop offset="0.6" stop-color="#16365f"/>
+      <stop offset="1" stop-color="#0a1428"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#c8a84b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c8a84b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="o2Bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4da3ff"/>
+      <stop offset="0.5" stop-color="#6c7fa8"/>
+      <stop offset="1" stop-color="#5a2230"/>
+    </linearGradient>
+    <linearGradient id="hypoxiaWash" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4da3ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7a1b2c" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="540" fill="url(#bg2)"/>
+  <rect width="800" height="540" fill="url(#hypoxiaWash)"/>
+  <ellipse cx="620" cy="280" rx="300" ry="240" fill="url(#glow2)"/>
+
+  <!-- oxygen tension gradient bar -->
+  <rect x="90" y="462" width="620" height="10" rx="5" fill="url(#o2Bar)" opacity="0.9"/>
+  <g font-family="Helvetica,Arial,sans-serif" font-size="15" fill="#9fb3d1">
+    <text x="90" y="498">Normoxia</text>
+    <text x="710" y="498" text-anchor="end">Hypoxia</text>
+  </g>
+  <text x="400" y="444" font-family="Helvetica,Arial,sans-serif" font-size="14" fill="#7f93b4"
+        text-anchor="middle" letter-spacing="2">DECREASING OXYGEN TENSION</text>
+
+  <!-- scattered O2 molecules, dense left, sparse right -->
+  <g font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#8fd0ff" opacity="0.75">
+    <text x="60" y="120">O₂</text><text x="128" y="86">O₂</text><text x="96" y="176">O₂</text>
+    <text x="178" y="128">O₂</text><text x="54" y="226">O₂</text><text x="214" y="74">O₂</text>
+    <text x="150" y="196">O₂</text><text x="262" y="112">O₂</text>
+    <g opacity="0.55"><text x="318" y="86">O₂</text><text x="372" y="150">O₂</text><text x="300" y="186">O₂</text></g>
+    <g opacity="0.3"><text x="470" y="104">O₂</text><text x="520" y="170">O₂</text></g>
+    <g opacity="0.16"><text x="648" y="120">O₂</text></g>
+  </g>
+
+  <!-- stage 1: intact carrier -->
+  <g transform="translate(170,270)">
+    <circle r="78" fill="none" stroke="#2b5e9e" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7"/>
+    <circle r="58" fill="#14305e" stroke="#4da3ff" stroke-width="2.5"/>
+    <g fill="#c8a84b">
+      <circle cx="-20" cy="-14" r="7"/><circle cx="16" cy="-20" r="7"/>
+      <circle cx="22" cy="14" r="7"/><circle cx="-12" cy="20" r="7"/>
+      <circle cx="2" cy="0" r="7"/>
+    </g>
+    <g stroke="#4da3ff" stroke-width="2" opacity="0.8">
+      <path d="M0 -58 V-74"/><path d="M41 -41 L52 -52"/><path d="M58 0 H74"/>
+      <path d="M41 41 L52 52"/><path d="M0 58 V74"/><path d="M-41 41 L-52 52"/>
+      <path d="M-58 0 H-74"/><path d="M-41 -41 L-52 -52"/>
+    </g>
+  </g>
+
+  <!-- stage 2: triggered by low oxygen -->
+  <g transform="translate(400,270)">
+    <circle r="86" fill="none" stroke="#c8a84b" stroke-width="1.5" stroke-dasharray="5 7" opacity="0.6"/>
+    <circle r="62" fill="#2a3c66" stroke="#c8a84b" stroke-width="2.5" stroke-dasharray="14 7"/>
+    <g fill="#c8a84b">
+      <circle cx="-24" cy="-12" r="7"/><circle cx="18" cy="-26" r="7"/>
+      <circle cx="28" cy="18" r="7"/><circle cx="-16" cy="26" r="7"/>
+    </g>
+  </g>
+
+  <!-- stage 3: released payload in hypoxic tissue -->
+  <g transform="translate(640,270)">
+    <circle r="92" fill="none" stroke="#c3272f" stroke-width="1.4" stroke-dasharray="4 8" opacity="0.55"/>
+    <g fill="#c8a84b" opacity="0.95">
+      <circle cx="-54" cy="-34" r="8"/><circle cx="-10" cy="-62" r="8"/>
+      <circle cx="42" cy="-40" r="8"/><circle cx="62" cy="6" r="8"/>
+      <circle cx="30" cy="52" r="8"/><circle cx="-26" cy="56" r="8"/>
+      <circle cx="-66" cy="18" r="8"/><circle cx="6" cy="8" r="8"/>
+      <circle cx="-30" cy="-6" r="6"/><circle cx="34" cy="-4" r="6"/>
+    </g>
+    <g stroke="#c8a84b" stroke-width="1.6" opacity="0.4" fill="none">
+      <circle r="40"/><circle r="66"/>
+    </g>
+  </g>
+
+  <!-- arrows between stages -->
+  <g stroke="#9fb3d1" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round">
+    <path d="M258 270 H318"/>
+    <path d="M306 260 L320 270 L306 280"/>
+    <path d="M490 270 H540"/>
+    <path d="M528 260 L542 270 L528 280"/>
+  </g>
+
+  <!-- labels -->
+  <g font-family="Helvetica,Arial,sans-serif" font-size="16" fill="#cfe0f5" text-anchor="middle" font-weight="600">
+    <text x="170" y="400">Stable in circulation</text>
+    <text x="400" y="400">Low oxygen sensed</text>
+    <text x="640" y="400">Payload released</text>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1b36"/>
+      <stop offset="0.55" stop-color="#15325c"/>
+      <stop offset="1" stop-color="#0a1428"/>
+    </linearGradient>
+    <linearGradient id="vessel4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6d1119"/>
+      <stop offset="0.5" stop-color="#c3272f"/>
+      <stop offset="1" stop-color="#6d1119"/>
+    </linearGradient>
+    <linearGradient id="strut" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c7127"/>
+      <stop offset="0.35" stop-color="#f0e2b4"/>
+      <stop offset="0.65" stop-color="#c8a84b"/>
+      <stop offset="1" stop-color="#7d6322"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8fd0ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#8fd0ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lumen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1016"/>
+      <stop offset="0.5" stop-color="#4a141d"/>
+      <stop offset="1" stop-color="#2a1016"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="540" fill="url(#bg4)"/>
+
+  <!-- vessel wall, top and bottom -->
+  <path d="M0 96 C 200 86, 420 100, 800 84 L800 146 C 420 162, 200 148, 0 158 Z" fill="url(#vessel4)" opacity="0.5"/>
+  <path d="M0 382 C 200 396, 420 380, 800 396 L800 456 C 420 470, 200 456, 0 444 Z" fill="url(#vessel4)" opacity="0.5"/>
+  <path d="M0 156 C 200 146, 420 160, 800 144" fill="none" stroke="#e4747c" stroke-width="2" opacity="0.5"/>
+  <path d="M0 384 C 200 398, 420 382, 800 398" fill="none" stroke="#e4747c" stroke-width="2" opacity="0.5"/>
+
+  <!-- stent lumen shading -->
+  <rect x="110" y="152" width="580" height="236" fill="url(#lumen)" opacity="0.55"/>
+  <ellipse cx="110" cy="270" rx="30" ry="118" fill="#2a1016" opacity="0.7"/>
+
+  <!-- STENT MESH: zigzag rings around a tube -->
+  <g stroke="url(#strut)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 110.0 160.5 L 151.4 148.6 L 192.9 160.5 L 234.3 148.6 L 275.7 160.5 L 317.1 148.6 L 358.6 160.5 L 400.0 148.6 L 441.4 160.5 L 482.9 148.6 L 524.3 160.5 L 565.7 148.6 L 607.1 160.5 L 648.6 148.6 L 690.0 160.5" stroke-width="3.3" opacity="0.56"/>
+    <path d="M 110.0 183.1 L 151.4 163.6 L 192.9 183.1 L 234.3 163.6 L 275.7 183.1 L 317.1 163.6 L 358.6 183.1 L 400.0 163.6 L 441.4 183.1 L 482.9 163.6 L 524.3 183.1 L 565.7 163.6 L 607.1 183.1 L 648.6 163.6 L 690.0 183.1" stroke-width="4.1" opacity="0.69"/>
+    <path d="M 110.0 221.9 L 151.4 193.1 L 192.9 221.9 L 234.3 193.1 L 275.7 221.9 L 317.1 193.1 L 358.6 221.9 L 400.0 193.1 L 441.4 221.9 L 482.9 193.1 L 524.3 221.9 L 565.7 193.1 L 607.1 221.9 L 648.6 193.1 L 690.0 221.9" stroke-width="5.1" opacity="0.86"/>
+    <path d="M 110.0 266.3 L 151.4 232.8 L 192.9 266.3 L 234.3 232.8 L 275.7 266.3 L 317.1 232.8 L 358.6 266.3 L 400.0 232.8 L 441.4 266.3 L 482.9 232.8 L 524.3 266.3 L 565.7 232.8 L 607.1 266.3 L 648.6 232.8 L 690.0 266.3" stroke-width="5.5" opacity="0.94"/>
+    <path d="M 110.0 311.2 L 151.4 277.9 L 192.9 311.2 L 234.3 277.9 L 275.7 311.2 L 317.1 277.9 L 358.6 311.2 L 400.0 277.9 L 441.4 311.2 L 482.9 277.9 L 524.3 311.2 L 565.7 277.9 L 607.1 311.2 L 648.6 277.9 L 690.0 311.2" stroke-width="5.5" opacity="0.94"/>
+    <path d="M 110.0 350.1 L 151.4 321.9 L 192.9 350.1 L 234.3 321.9 L 275.7 350.1 L 317.1 321.9 L 358.6 350.1 L 400.0 321.9 L 441.4 350.1 L 482.9 321.9 L 524.3 350.1 L 565.7 321.9 L 607.1 350.1 L 648.6 321.9 L 690.0 350.1" stroke-width="5.0" opacity="0.85"/>
+    <path d="M 110.0 377.3 L 151.4 358.3 L 192.9 377.3 L 234.3 358.3 L 275.7 377.3 L 317.1 358.3 L 358.6 377.3 L 400.0 358.3 L 441.4 377.3 L 482.9 358.3 L 524.3 377.3 L 565.7 358.3 L 607.1 377.3 L 648.6 358.3 L 690.0 377.3" stroke-width="4.0" opacity="0.69"/>
+    <path d="M 110.0 391.4 L 151.4 379.5 L 192.9 391.4 L 234.3 379.5 L 275.7 391.4 L 317.1 379.5 L 358.6 391.4 L 400.0 379.5 L 441.4 391.4 L 482.9 379.5 L 524.3 391.4 L 565.7 379.5 L 607.1 391.4 L 648.6 379.5 L 690.0 391.4" stroke-width="3.3" opacity="0.56"/>
+
+    <!-- longitudinal connecting struts -->
+    <path d="M 151.4 155.5 C 161.4 270.0, 141.4 270.0, 151.4 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 234.3 155.5 C 244.3 270.0, 224.3 270.0, 234.3 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 317.1 155.5 C 327.1 270.0, 307.1 270.0, 317.1 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 400.0 155.5 C 410.0 270.0, 390.0 270.0, 400.0 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 482.9 155.5 C 492.9 270.0, 472.9 270.0, 482.9 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 565.7 155.5 C 575.7 270.0, 555.7 270.0, 565.7 384.5" stroke-width="2.2" opacity="0.45"/>
+    <path d="M 648.6 155.5 C 658.6 270.0, 638.6 270.0, 648.6 384.5" stroke-width="2.2" opacity="0.45"/>
+  </g>
+
+  <!-- open end rims -->
+  <ellipse cx="110" cy="270" rx="30" ry="121" fill="none" stroke="#c8a84b" stroke-width="2.6" opacity="0.8"/>
+  <ellipse cx="690" cy="270" rx="30" ry="121" fill="none" stroke="#c8a84b" stroke-width="2.2" opacity="0.45"/>
+
+  <!-- coating shimmer -->
+  <g stroke="#8fd0ff" stroke-width="1.8" opacity="0.4" fill="none" stroke-dasharray="3 8">
+    <path d="M 110 264 L 151 231 L 193 264 L 234 231 L 276 264 L 317 231 L 359 264 L 400 231 L 441 264 L 483 231 L 524 264 L 566 231 L 607 264 L 649 231 L 690 264"/>
+    <path d="M 110 313 L 151 280 L 193 313 L 234 280 L 276 313 L 317 280 L 359 313 L 400 280 L 441 313 L 483 280 L 524 313 L 566 280 L 607 313 L 649 280 L 690 313"/>
+  </g>
+
+  <!-- NO released from coating -->
+  <g font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <g transform="translate(250,112)">
+      <circle r="30" fill="url(#glow4)"/>
+      <circle r="16" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.8"/>
+      <circle cx="15" cy="-5" r="8.5" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.4"/>
+      <text y="5" font-size="11" fill="#fff">NO</text>
+    </g>
+    <g transform="translate(430,94)">
+      <circle r="34" fill="url(#glow4)"/>
+      <circle r="18" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.9"/>
+      <circle cx="17" cy="-6" r="9.5" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.4"/>
+      <text y="5" fill="#fff">NO</text>
+    </g>
+    <g transform="translate(602,108)">
+      <circle r="28" fill="url(#glow4)"/>
+      <circle r="15" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.7"/>
+      <circle cx="14" cy="-5" r="8" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.3"/>
+      <text y="4" font-size="10" fill="#fff">NO</text>
+    </g>
+    <g transform="translate(330,436)">
+      <circle r="30" fill="url(#glow4)"/>
+      <circle r="16" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.8"/>
+      <circle cx="15" cy="-5" r="8.5" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.4"/>
+      <text y="5" font-size="11" fill="#fff">NO</text>
+    </g>
+    <g transform="translate(524,446)">
+      <circle r="28" fill="url(#glow4)"/>
+      <circle r="15" fill="#1d5fa8" stroke="#8fd0ff" stroke-width="1.7"/>
+      <circle cx="14" cy="-5" r="8" fill="#c3272f" stroke="#ff9aa0" stroke-width="1.3"/>
+      <text y="4" font-size="10" fill="#fff">NO</text>
+    </g>
+  </g>
+
+  <!-- release trails -->
+  <g stroke="#8fd0ff" stroke-width="2" fill="none" opacity="0.4" stroke-dasharray="6 8" stroke-linecap="round">
+    <path d="M252 148 V142"/>
+    <path d="M432 150 V128"/>
+    <path d="M602 146 V136"/>
+    <path d="M332 392 V406"/>
+    <path d="M524 396 V418"/>
+  </g>
+
+  <!-- flow arrows -->
+  <g stroke="#9fb3d1" stroke-width="2" opacity="0.35" fill="none" stroke-linecap="round">
+    <path d="M26 270 H74"/><path d="M62 260 L76 270 L62 280"/>
+    <path d="M724 270 H774"/><path d="M762 260 L776 270 L762 280"/>
+  </g>
+</svg>
