@@ -5,10 +5,11 @@
   const pages = [
     { href: 'index.html',        label: 'Home' },
     { href: 'research.html',     label: 'Our Research' },
-    { href: 'tanveer.html',      label: 'Tanveer' },
+    { href: 'tanveer.html',      label: 'PI' },
     { href: 'team.html',         label: 'Our Team' },
     { href: 'publications.html', label: 'Publications' },
     { href: 'projects.html',     label: 'Projects' },
+    { href: 'gallery.html',      label: 'Gallery' },
     { href: 'news.html',         label: 'News & Events' },
   ];
 
@@ -16,7 +17,6 @@
     `<li><a href="${p.href}" class="${currentPage === p.href ? 'active' : ''}">${p.label}</a></li>`
   ).join('');
 
-  /* strapline styling, injected so group-style.css stays untouched */
   const styles = `
   <style>
     .nav-logo-wrap {
@@ -34,7 +34,7 @@
       letter-spacing: .16em; text-transform: uppercase;
       color: var(--gold); opacity: .85; margin: .35rem 0 .9rem;
     }
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       .nav-strapline { display: none; }
     }
   </style>`;
@@ -65,10 +65,11 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Our Research</a></li>
-          <li><a href="tanveer.html">Tanveer</a></li>
+          <li><a href="tanveer.html">PI</a></li>
           <li><a href="team.html">Our Team</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="news.html">News &amp; Events</a></li>
         </ul>
       </div>
