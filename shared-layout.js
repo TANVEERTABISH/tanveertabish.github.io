@@ -34,8 +34,58 @@
       letter-spacing: .16em; text-transform: uppercase;
       color: var(--gold); opacity: .85; margin: .35rem 0 .9rem;
     }
-    @media (max-width: 900px) {
+
+    /* hamburger button — hidden on desktop */
+    .nav-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      padding: .5rem; margin-left: auto;
+      flex-direction: column; gap: 5px;
+      z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block; width: 26px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 1100px) {
       .nav-strapline { display: none; }
+
+      .site-nav { position: relative; flex-wrap: wrap; }
+
+      .nav-toggle { display: flex; }
+
+      .site-nav .nav-menu {
+        display: none !important;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        background: var(--navy, #0d1b36);
+        border-top: 2px solid var(--gold);
+        box-shadow: 0 14px 30px rgba(0,0,0,.35);
+        padding: .5rem 0;
+        margin: 0;
+        gap: 0 !important;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .site-nav .nav-menu.open { display: flex !important; }
+
+      .site-nav .nav-menu li { width: 100%; list-style: none; }
+      .site-nav .nav-menu li a {
+        display: block;
+        padding: .95rem 6%;
+        font-size: .95rem;
+        color: rgba(255,255,255,.88);
+        border-bottom: 1px solid rgba(255,255,255,.08);
+      }
+      .site-nav .nav-menu li:last-child a { border-bottom: none; }
+      .site-nav .nav-menu li a.active { color: var(--gold); }
     }
   </style>`;
 
@@ -45,7 +95,10 @@
       <span>TABISH <span>Research</span> Group</span>
       <span class="nav-strapline">NANOCARD · Cardiovascular Nanotherapeutics</span>
     </a>
-    <ul class="nav-menu">${navLinks}</ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">${navLinks}</ul>
   </nav>`;
 
   const footer = `
@@ -104,4 +157,21 @@
   document.head.insertAdjacentHTML('beforeend', styles);
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
+
+  /* mobile menu toggle */
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  }
 })();
