@@ -16,9 +16,35 @@
     `<li><a href="${p.href}" class="${currentPage === p.href ? 'active' : ''}">${p.label}</a></li>`
   ).join('');
 
+  /* strapline styling, injected so group-style.css stays untouched */
+  const styles = `
+  <style>
+    .nav-logo-wrap {
+      display: flex; flex-direction: column; justify-content: center;
+      line-height: 1.1; text-decoration: none;
+    }
+    .nav-strapline {
+      font-size: .58rem; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); opacity: .85; margin-top: .3rem;
+      white-space: nowrap;
+    }
+    .footer-strapline {
+      font-size: .6rem; font-weight: 500;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold); opacity: .85; margin: .35rem 0 .9rem;
+    }
+    @media (max-width: 820px) {
+      .nav-strapline { display: none; }
+    }
+  </style>`;
+
   const nav = `
   <nav class="site-nav">
-    <a href="index.html" class="nav-logo">TABISH <span>Research</span> Group</a>
+    <a href="index.html" class="nav-logo nav-logo-wrap">
+      <span>TABISH <span>Research</span> Group</span>
+      <span class="nav-strapline">NANOCARD · Cardiovascular Nanotherapeutics</span>
+    </a>
     <ul class="nav-menu">${navLinks}</ul>
   </nav>`;
 
@@ -27,6 +53,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">TABISH <span style="color:var(--gold)">Research</span> Group</div>
+        <div class="footer-strapline">NANOCARD · Cardiovascular Nanotherapeutics</div>
         <p>Radcliffe Department of Medicine</p>
         <p>John Radcliffe Hospital</p>
         <p>University of Oxford</p>
@@ -73,6 +100,7 @@
     </div>
   </footer>`;
 
+  document.head.insertAdjacentHTML('beforeend', styles);
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 })();
