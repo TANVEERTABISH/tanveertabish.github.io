@@ -25,7 +25,6 @@
       background-position: center right;
       background-repeat: no-repeat;
     }
-    /* dark scrim so the text stays readable over the artwork */
     .hero-scrim {
       position: absolute; inset: 0;
       background: linear-gradient(100deg,
@@ -106,18 +105,21 @@
 
     .research-img {
       width: 100%;
-      height: 270px;
+      height: 250px;
       overflow: hidden;
-      background: #0d1b36;
+      background: #ffffff;
       border-bottom: 1px solid #1a3a6b;
       padding: 0;
+      display: flex; align-items: center; justify-content: center;
     }
     .research-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center;
       display: block;
+      padding: .5rem;
+      box-sizing: border-box;
     }
 
     /* LATEST PUBS PREVIEW */
@@ -206,7 +208,7 @@
   <div class="grid-4">
     <div class="research-card fade-up">
       <div class="research-img">
-        <img src="img/no-nanomedicine.svg" alt="Nitric oxide nanomedicine" />
+        <img src="img/no-nanomedicine.png" alt="Catalytic and non-catalytic nitric oxide release" />
       </div>
       <div class="research-body">
         <h3>Nitric Oxide Nanomedicine</h3>
@@ -216,7 +218,7 @@
     </div>
     <div class="research-card fade-up-2">
       <div class="research-img">
-        <img src="img/drug-delivery.svg" alt="Targeted drug delivery" />
+        <img src="img/drug-delivery.png" alt="Targeted drug delivery with NO-releasing graphene" />
       </div>
       <div class="research-body">
         <h3>Targeted Drug Delivery</h3>
@@ -226,17 +228,17 @@
     </div>
     <div class="research-card fade-up-3">
       <div class="research-img">
-        <img src="img/bioimaging.svg" alt="Raman imaging and sensing" />
+        <img src="img/no-biology.png" alt="Nitric oxide signalling in endothelial, cardiac and immune cells" />
       </div>
       <div class="research-body">
-        <h3>Raman Imaging &amp; Sensing</h3>
-        <p>Surface-enhanced Raman nanotags for label-free, real-time readout of redox signalling in living tissue.</p>
+        <h3>Nitric Oxide Biology</h3>
+        <p>Decoding how NO governs vascular tone, mitochondrial function and inflammation across cell types.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-4">
       <div class="research-img">
-        <img src="img/devices.svg" alt="Cardiovascular devices" />
+        <img src="img/devices.png" alt="NO-releasing nanoparticles for cardiovascular devices" />
       </div>
       <div class="research-body">
         <h3>Next-Generation Devices</h3>
@@ -253,7 +255,7 @@
   <div class="pi-text">
     <h2>Dr Tanveer Tabish</h2>
     <div class="pi-title">Principal Investigator · Senior Research Fellow &amp; Group Leader, University of Oxford</div>
-    <p>A materials scientist working at the interface of nanomaterials, redox chemical biology and biomedical engineering. His work focuses on nitric oxide-releasing nanomedicines for cardiovascular repair, redox-responsive drug carriers, real-time imaging of NO in cells, and next-generation cardiovascular implants, in the Radcliffe Department of Medicine at the University of Oxford.</p>
+    <p>A cardiovascular nanoscientist working at the interface of nanomaterials, redox chemical biology and biomedical engineering. His work focuses on nitric oxide-releasing nanomedicines for cardiovascular repair, redox-responsive drug carriers, real-time imaging of NO in cells, and next-generation cardiovascular implants, in the Radcliffe Department of Medicine at the University of Oxford.</p>
     <div class="pi-badges">
       <span class="pi-badge">Oxford</span>
       <span class="pi-badge">Cardiovascular &amp; Redox Nanomedicine</span>
@@ -365,7 +367,6 @@
       <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:.4rem;">Our location</h2>
       <hr class="gold-rule">
 
-      <!-- Embedded OpenStreetMap centred on the John Radcliffe Hospital -->
       <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:1.2rem;">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2300%2C51.7570%2C-1.2060%2C51.7700&layer=mapnik&marker=51.7639%2C-1.2185"
