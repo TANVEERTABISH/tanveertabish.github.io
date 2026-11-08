@@ -41,7 +41,7 @@
 
     /* funders */
     .funder-strip {
-      display: flex; flex-wrap: wrap; gap: 2.5rem;
+      display: flex; flex-wrap: wrap; gap: 2.8rem;
       align-items: center; justify-content: center;
       background: var(--white); border: 1px solid var(--border);
       border-radius: var(--radius); box-shadow: var(--shadow);
@@ -50,10 +50,9 @@
     .funder-strip img {
       height: 62px; width: auto; max-width: 190px;
       object-fit: contain;
-      filter: grayscale(100%); opacity: .72;
-      transition: filter var(--transition), opacity var(--transition);
+      transition: transform var(--transition);
     }
-    .funder-strip img:hover { filter: grayscale(0%); opacity: 1; }
+    .funder-strip img:hover { transform: scale(1.05); }
 
     /* partner pills */
     .partner-group-label {
