@@ -90,37 +90,37 @@
   <div class="gallery-grid" id="galleryGrid">
 
     <div class="gallery-item">
-      <img src="img/01.jpg" alt="Nitric Oxide Gordon Research Conference 2025, Ventura, California">
+      <img src="img/01.jpg" data-alt="img/img/01.jpg" alt="Nitric Oxide Gordon Research Conference 2025, Ventura, California">
       <div class="gallery-caption"><strong>Nitric Oxide Gordon Research Conference</strong><span>Ventura, California · February 2025</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/02.jpg" alt="Nitric Oxide Gordon Research Conference 2023, Ventura, California">
+      <img src="img/02.jpg" data-alt="img/img/02.jpg" alt="Nitric Oxide Gordon Research Conference 2023, Ventura, California">
       <div class="gallery-caption"><strong>Nitric Oxide Gordon Research Conference</strong><span>Ventura, California · February 2023</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/03.jpg" alt="International Conference on Nitric Oxide Therapeutics, Lisbon">
+      <img src="img/03.jpg" data-alt="img/img/03.jpg" alt="International Conference on Nitric Oxide Therapeutics, Lisbon">
       <div class="gallery-caption"><strong>Nitric Oxide Therapeutics Conference</strong><span>Lisbon, Portugal · October 2026</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/04.jpg" alt="Presenting at the Nitric Oxide Therapeutics Conference in Lisbon">
+      <img src="img/04.jpg" data-alt="img/img/04.jpg" alt="Presenting at the Nitric Oxide Therapeutics Conference in Lisbon">
       <div class="gallery-caption"><strong>Presenting in Lisbon</strong><span>NO Therapeutics in Cancer and Other Diseases</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/05.jpg" alt="Invited lecture on nitric oxide releasing nanomedicines">
+      <img src="img/05.jpg" data-alt="img/img/05.jpg" alt="Invited lecture on nitric oxide releasing nanomedicines">
       <div class="gallery-caption"><strong>Invited lecture</strong><span>NO-releasing nanomedicines for cardiovascular therapeutics</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/06.jpg" alt="Collaboration visit to the Li Dak-Sum Research Centre, University of Hong Kong">
+      <img src="img/06.jpg" data-alt="img/img/06.jpg" alt="Collaboration visit to the Li Dak-Sum Research Centre, University of Hong Kong">
       <div class="gallery-caption"><strong>Li Dak-Sum Research Centre</strong><span>The University of Hong Kong · June 2026</span></div>
     </div>
 
     <div class="gallery-item">
-      <img src="img/07.jpg" alt="Invited seminar at the University of Hong Kong, June 2026">
+      <img src="img/07.jpg" data-alt="img/img/07.jpg" alt="Invited seminar at the University of Hong Kong, June 2026">
       <div class="gallery-caption"><strong>From NO to YES — invited seminar</strong><span>LKS Faculty of Medicine, HKU · June 2026</span></div>
     </div>
 
@@ -138,6 +138,15 @@
 
 <script src="shared-layout.js"></script>
 <script>
+/* if an image fails at img/, retry at img/img/ */
+document.querySelectorAll('.gallery-item img').forEach(function (img) {
+  img.addEventListener('error', function handler() {
+    const alt = img.getAttribute('data-alt');
+    if (alt && img.getAttribute('src') !== alt) { img.setAttribute('src', alt); }
+    else { img.removeEventListener('error', handler); }
+  });
+});
+
 (function(){
   const items = Array.from(document.querySelectorAll('.gallery-item'));
   const lb = document.getElementById('lightbox');
