@@ -57,6 +57,8 @@
       font-size: .74rem; padding: .25rem .75rem; border-radius: 20px;
       background: var(--light); color: var(--muted); border: 1px solid var(--border);
     }
+
+    /* Timeline band */
     .timeline-band {
       background: var(--white);
       border: 1px solid var(--border);
@@ -65,9 +67,13 @@
       padding: .8rem;
       overflow-x: auto;
     }
-    .timeline-band img { min-width: 700px; }
+    .timeline-band img {
+      width: 100%;
+      min-width: 700px;
+      height: auto;
+      display: block;
+      border-radius: 4px;
     }
-    .timeline-band img { width: 100%; height: auto; display: block; border-radius: 4px; }
     .timeline-caption {
       font-size: .82rem; color: var(--muted);
       text-align: center; margin-top: .9rem; line-height: 1.6;
@@ -124,8 +130,8 @@
 
   <div class="timeline-band">
     <img src="img/no-timeline.png" alt="Timeline of nitric oxide biology discoveries and carrier development, 1850 to present">
-    <div class="timeline-caption">From glyceryl trinitrate for angina in 1867 to targeted NO-release nanosystems today: two centuries of nitric oxide biology and the carriers built to deliver it.</div>
   </div>
+  <div class="timeline-caption">From glyceryl trinitrate for angina in 1867 to targeted NO-release nanosystems today: two centuries of nitric oxide biology and the carriers built to deliver it.</div>
 </section>
 
 <!-- ── RESEARCH AREAS ────────────────────────────────────── -->
