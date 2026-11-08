@@ -92,7 +92,7 @@
   const nav = `
   <nav class="site-nav">
     <a href="index.html" class="nav-logo nav-logo-wrap">
-      <span>TABISH <span>Research</span> Group</span>
+      <span>TABISH <span>Lab</span></span>
       <span class="nav-strapline">NANOCARD · Cardiovascular Nanotherapeutics</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
@@ -105,7 +105,7 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo">TABISH <span style="color:var(--gold)">Research</span> Group</div>
+        <div class="nav-logo">TABISH <span style="color:var(--gold)">Lab</span></div>
         <div class="footer-strapline">NANOCARD · Cardiovascular Nanotherapeutics</div>
         <p>Radcliffe Department of Medicine</p>
         <p>John Radcliffe Hospital</p>
@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; ${new Date().getFullYear()} Tabish Research Group &nbsp;·&nbsp; University of Oxford
+      &copy; ${new Date().getFullYear()} Tabish Lab &nbsp;·&nbsp; University of Oxford
     </div>
   </footer>`;
 
