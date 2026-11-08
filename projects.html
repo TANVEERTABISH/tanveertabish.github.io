@@ -56,6 +56,11 @@
     .funder-strip img:hover { filter: grayscale(0%); opacity: 1; }
 
     /* partner pills */
+    .partner-group-label {
+      font-family: var(--serif); font-size: 1.1rem; color: var(--navy);
+      text-align: center; margin-bottom: .9rem;
+    }
+    .partner-group-label + .partner-row { margin-top: 0; }
     .partner-row { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; margin-top: 1.4rem; }
     .partner-pill {
       background: var(--light); border: 1px solid var(--border);
@@ -150,7 +155,7 @@
         <span class="project-status status-active">Active</span>
         <div class="project-icon">⚙️</div>
         <h3>Next-Generation Cardiovascular Implants</h3>
-        <div class="collab">University of Oxford · Clinical &amp; Industry Partners</div>
+        <div class="collab">University of Oxford · Clinical Partners</div>
       </div>
       <div class="project-body">
         <p style="text-align: justify;">One of our flagship efforts involves the design and fabrication of cardiovascular implants for controlled, sustained and stimulus-responsive therapeutic action, including NO-generating coatings for vascular stents and grafts.</p>
@@ -232,14 +237,31 @@
   <div class="section-header">
     <h2>Collaboration &amp; Partners</h2>
     <hr class="gold-rule">
-    <p>Our work is pursued in close collaboration with engineers, chemists, pharmacists and clinicians, bridging the gap between fundamental redox biology and translational cardiovascular therapeutics. We work with academic groups internationally and with industry partners in the medical device and pharmaceutical sectors.</p>
+    <p>Our work is pursued in close collaboration with engineers, chemists, pharmacists and clinicians, bridging the gap between fundamental redox biology and translational cardiovascular therapeutics. We work with partner groups across the UK, Europe, North America and Australia.</p>
   </div>
+
+  <div class="partner-group-label">United Kingdom</div>
   <div class="partner-row">
-    <span class="partner-pill">AstraZeneca</span>
-    <span class="partner-pill">Medtronic</span>
-    <span class="partner-pill">Smith &amp; Nephew</span>
+    <span class="partner-pill">University of Glasgow</span>
+    <span class="partner-pill">University of Leeds</span>
+    <span class="partner-pill">Imperial College London</span>
+    <span class="partner-pill">University of Exeter</span>
   </div>
-  <div style="text-align:center;margin-top:2.2rem;">
+
+  <div class="partner-group-label" style="margin-top:2rem;">Europe</div>
+  <div class="partner-row">
+    <span class="partner-pill">Karolinska Institute</span>
+  </div>
+
+  <div class="partner-group-label" style="margin-top:2rem;">International</div>
+  <div class="partner-row">
+    <span class="partner-pill">UNC Chapel Hill</span>
+    <span class="partner-pill">UT Southwestern Medical Center</span>
+    <span class="partner-pill">Brown University</span>
+    <span class="partner-pill">UNSW Sydney</span>
+  </div>
+
+  <div style="text-align:center;margin-top:2.4rem;">
     <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy">Discuss a Collaboration →</a>
   </div>
 </section>
