@@ -35,7 +35,6 @@
       color: var(--gold); opacity: .85; margin: .35rem 0 .9rem;
     }
 
-    /* hamburger button — hidden on desktop */
     .nav-toggle {
       display: none;
       background: none; border: none; cursor: pointer;
@@ -54,9 +53,7 @@
 
     @media (max-width: 1100px) {
       .nav-strapline { display: none; }
-
       .site-nav { position: relative; flex-wrap: wrap; }
-
       .nav-toggle { display: flex; }
 
       .site-nav .nav-menu {
@@ -158,7 +155,6 @@
   document.body.insertAdjacentHTML('afterbegin', nav);
   document.body.insertAdjacentHTML('beforeend', footer);
 
-  /* mobile menu toggle */
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
   if (toggle && menu) {
