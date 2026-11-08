@@ -76,19 +76,6 @@
       color: rgba(255,255,255,.55);
       animation: fadeUp .6s .4s ease both;
     }
-    .hero-scroll {
-      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .5rem;
-    }
-    .hero-scroll span { font-size: .72rem; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; }
-    .scroll-line {
-      width: 1px; height: 48px;
-      background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent);
-      animation: scrollPulse 2s infinite;
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity: .4; } 50% { opacity: 1; }
-    }
 
     /* STATS BAR */
     .stats-bar {
@@ -121,7 +108,7 @@
       width: 100%;
       height: 270px;
       overflow: hidden;
-      background: #ffffff;
+      background: #0d1b36;
       border-bottom: 1px solid #1a3a6b;
       padding: 0;
     }
@@ -200,10 +187,6 @@
     </div>
     <div class="hero-pillars">Materials &nbsp;|&nbsp; Biology &nbsp;|&nbsp; Devices &nbsp;|&nbsp; Patients</div>
   </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
 <!-- ── STATS ─────────────────────────────────────────────── -->
@@ -223,7 +206,7 @@
   <div class="grid-4">
     <div class="research-card fade-up">
       <div class="research-img">
-        <img src="img/no-nanomedicine.png" alt="Nitric oxide nanomedicine" />
+        <img src="img/no-nanomedicine.svg" alt="Nitric oxide nanomedicine" />
       </div>
       <div class="research-body">
         <h3>Nitric Oxide Nanomedicine</h3>
@@ -233,27 +216,27 @@
     </div>
     <div class="research-card fade-up-2">
       <div class="research-img">
-        <img src="img/drug-delivery.png" alt="Targeted drug delivery" />
+        <img src="img/drug-delivery.svg" alt="Targeted drug delivery" />
       </div>
       <div class="research-body">
         <h3>Targeted Drug Delivery</h3>
-        <p>Redox- and pH-responsive carriers that release their payload only where and when it is needed.</p>
+        <p>Hypoxia- and redox-responsive carriers that release their payload only where and when it is needed.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-3">
       <div class="research-img">
-        <img src="img/bioimaging.png" alt="Bioimaging and sensing" />
+        <img src="img/bioimaging.svg" alt="Raman imaging and sensing" />
       </div>
       <div class="research-body">
-        <h3>Bioimaging &amp; Real-Time Sensing</h3>
-        <p>Imaging nitric oxide inside living cells to decode redox signalling in cardiovascular disease.</p>
+        <h3>Raman Imaging &amp; Sensing</h3>
+        <p>Surface-enhanced Raman nanotags for label-free, real-time readout of redox signalling in living tissue.</p>
         <a href="research.html">Learn more →</a>
       </div>
     </div>
     <div class="research-card fade-up-4">
       <div class="research-img">
-        <img src="img/devices.png" alt="Cardiovascular devices" />
+        <img src="img/devices.svg" alt="Cardiovascular devices" />
       </div>
       <div class="research-body">
         <h3>Next-Generation Devices</h3>
@@ -299,8 +282,9 @@
         <div class="news-date-badge">November<br>2026</div>
       </div>
       <div class="news-content">
-        <h4>🧬 Group Website Launched</h4>
-        <p>The Tabish Research Group website is live — introducing our programme in nitric oxide nanomedicine for vascular healing at the University of Oxford.</p>
+        <h4>🧬 Three Fully Funded DPhil Projects</h4>
+        <p>We have three DPhil projects on offer through the BHF Oxford Centre of Research Excellence and the BHF Oxford–Cambridge VascularRewind Programme. Applications close 1 December 2026.</p>
+        <a href="news.html" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">More Details →</a>
       </div>
     </div>
 
