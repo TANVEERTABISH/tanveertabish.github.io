@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery · Tabish Research Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gallery — conferences, invited lectures and collaborations of the Tabish Research Group (NANOCARD), University of Oxford.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="group-style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      background: var(--navy);
+      aspect-ratio: 4 / 3;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, rgba(6,10,22,.94), rgba(6,10,22,0));
+      color: #fff; font-size: .84rem; line-height: 1.5;
+      padding: 2rem .9rem .85rem;
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-caption strong { display: block; font-weight: 600; margin-bottom: .15rem; }
+    .gallery-caption span { color: var(--gold); font-size: .76rem; }
 
+    /* lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 9999;
+      background: rgba(6,10,22,.95);
+      display: none; align-items: center; justify-content: center;
+      padding: 4vh 4vw;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 100%; max-height: 80vh;
+      border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,.6);
+    }
+    .lightbox-cap {
+      position: absolute; bottom: 3vh; left: 0; right: 0;
+      text-align: center; color: rgba(255,255,255,.85);
+      font-size: .92rem; padding: 0 2rem; line-height: 1.6;
+    }
+    .lightbox-close {
+      position: absolute; top: 2vh; right: 3vw;
+      background: none; border: none; color: rgba(255,255,255,.75);
+      font-size: 2.4rem; line-height: 1; cursor: pointer; font-family: var(--sans);
+    }
+    .lightbox-close:hover { color: var(--gold); }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: rgba(255,255,255,.6);
+      font-size: 3rem; line-height: 1; cursor: pointer; padding: 1rem;
+    }
+    .lightbox-nav:hover { color: var(--gold); }
+    .lightbox-prev { left: 1vw; }
+    .lightbox-next { right: 1vw; }
+
+    .page-hero p { text-align: justify; }
+  </style>
+</head>
+<body>
+
+<!-- NAV injected by shared-layout.js -->
+
+<div class="page-hero">
+  <h1>Gallery</h1>
+  <p>Conferences, invited lectures and collaborations — the people and places behind our work in cardiovascular nanomedicine.</p>
+</div>
+
+<section class="section">
+  <div class="gallery-grid" id="galleryGrid">
+
+    <div class="gallery-item">
+      <img src="img/gallery/01.jpg" alt="Nitric Oxide Gordon Research Conference 2025, Ventura, California">
+      <div class="gallery-caption"><strong>Nitric Oxide Gordon Research Conference</strong><span>Ventura, California · February 2025</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/02.jpg" alt="Nitric Oxide Gordon Research Conference 2023, Ventura, California">
+      <div class="gallery-caption"><strong>Nitric Oxide Gordon Research Conference</strong><span>Ventura, California · February 2023</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/03.jpg" alt="International Conference on Nitric Oxide Therapeutics, Lisbon">
+      <div class="gallery-caption"><strong>Nitric Oxide Therapeutics Conference</strong><span>Lisbon, Portugal · October 2026</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/04.jpg" alt="Presenting at the Nitric Oxide Therapeutics Conference in Lisbon">
+      <div class="gallery-caption"><strong>Presenting in Lisbon</strong><span>NO Therapeutics in Cancer and Other Diseases</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/05.jpg" alt="Talk on SNO-Cys@PGO and endothelial proliferation, Lisbon">
+      <div class="gallery-caption"><strong>SNO-Cys@PGO and endothelial proliferation</strong><span>Lisbon, Portugal</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/06.jpg" alt="Invited lecture on nitric oxide releasing nanomedicines">
+      <div class="gallery-caption"><strong>Invited lecture</strong><span>NO-releasing nanomedicines for cardiovascular therapeutics</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/07.jpg" alt="Collaboration visit to the Li Dak-Sum Research Centre, University of Hong Kong">
+      <div class="gallery-caption"><strong>Li Dak-Sum Research Centre</strong><span>The University of Hong Kong · June 2026</span></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="img/gallery/08.jpg" alt="Invited seminar at the University of Hong Kong, June 2026">
+      <div class="gallery-caption"><strong>From NO to YES — invited seminar</strong><span>LKS Faculty of Medicine, HKU · June 2026</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lightbox-cap" id="lbCap"></div>
+</div>
+
+<script src="shared-layout.js"></script>
+<script>
+(function(){
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  let idx = 0;
+
+  function show(i){
+    idx = (i + items.length) % items.length;
+    const img = items[idx].querySelector('img');
+    const cap = items[idx].querySelector('.gallery-caption');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = cap ? cap.textContent.replace(/\s+/g,' ').trim() : '';
+    lb.classList.add('open');
+  }
+  function close(){ lb.classList.remove('open'); }
+
+  items.forEach((el,i) => el.addEventListener('click', () => show(i)));
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); show(idx-1); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); show(idx+1); });
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx-1);
+    if (e.key === 'ArrowRight') show(idx+1);
+  });
+})();
+</script>
+</body>
+</html>
