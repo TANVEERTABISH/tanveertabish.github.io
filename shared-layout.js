@@ -126,10 +126,10 @@
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=55484476700" target="_blank">Scopus</a></li>
-          <li><a href="https://www.linkedin.com/in/tanveertabish/" target="_blank">LinkedIn</a></li>
-          <li><a href="https://orcid.org/0000-0001-5578-076X" target="_blank">ORCID</a></li>
+          <li><a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank" rel="me noopener">Google Scholar</a></li>
+          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=55484476700" target="_blank" rel="me noopener">Scopus</a></li>
+          <li><a href="https://www.linkedin.com/in/tanveertabish/" target="_blank" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://orcid.org/0000-0001-5578-076X" target="_blank" rel="me noopener">ORCID</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -137,9 +137,9 @@
         <ul>
           <li><a href="mailto:tanveer.tabish@cardiov.ox.ac.uk">tanveer.tabish@cardiov.ox.ac.uk</a></li>
           <li><a href="tel:+441865287603">+44 (0)1865 287603</a></li>
-          <li><a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank">Oxford Profile</a></li>
+          <li><a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank" rel="me noopener">Oxford Profile</a></li>
           <li>
-            <a href="https://orcid.org/0000-0001-5578-076X" target="_blank">
+            <a href="https://orcid.org/0000-0001-5578-076X" target="_blank" rel="me noopener">
               <img src="img/ORCID.png" alt="ORCID iD" style="width:20px; height:20px;">
             </a>
           </li>
@@ -170,4 +170,18 @@
       }
     });
   }
+})();
+
+/* ---------- Canonical URL — tells Google tabishlab.co.uk is the real address ---------- */
+(function () {
+  var page = location.pathname.split('/').pop() || '';
+  if (page === 'index.html') page = '';
+
+  var link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'canonical';
+    document.head.appendChild(link);
+  }
+  link.href = 'https://tabishlab.co.uk/' + page;
 })();
