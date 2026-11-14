@@ -2,404 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-site-verification" content="278tNPs2GZu13f75rqcJO5orGTxyhA5Nb4UYSEeQbPY" />
-  <title>Tabish Lab | NANOCARD · Tanveer Tabish, University of Oxford</title>
+  <title>News &amp; Events | Tabish Lab, Oxford</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tabish Lab (NANOCARD) — State-of-the-Heart Medicine: nitric oxide nanomedicine for vascular healing. Radcliffe Department of Medicine, University of Oxford.">
-
-  <!-- Social preview (WhatsApp, LinkedIn, X) -->
-  <meta property="og:title" content="Tabish Lab — State-of-the-Heart Medicine">
-  <meta property="og:description" content="Nitric oxide nanomedicine for vascular healing. NANOCARD, Radcliffe Department of Medicine, University of Oxford.">
-  <meta property="og:image" content="https://tabishlab.co.uk/img/hero-nanocard.jpg">
-  <meta property="og:url" content="https://tabishlab.co.uk/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Tabish Lab">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tabish Lab — State-of-the-Heart Medicine">
-  <meta name="twitter:description" content="Nitric oxide nanomedicine for vascular healing. University of Oxford.">
-  <meta name="twitter:image" content="https://tabishlab.co.uk/img/hero-nanocard.jpg">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="group-style.css">
   <style>
-    /* ── HOME-SPECIFIC ────────────────────────────────── */
+    .news-layout { display: grid; grid-template-columns: 1fr 320px; gap: 4rem; }
 
-    .hero {
-      min-height: 92vh;
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-      background: #0a1020;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('img/hero-nanocard.jpg');
-      background-size: cover;
-      background-position: center right;
-      background-repeat: no-repeat;
-    }
-    .hero-scrim {
-      position: absolute; inset: 0;
-      background: linear-gradient(100deg,
-        rgba(6,10,22,.94) 0%,
-        rgba(6,10,22,.86) 32%,
-        rgba(6,10,22,.45) 58%,
-        rgba(6,10,22,.15) 100%);
-    }
-    @media (max-width: 900px) {
-      .hero-scrim { background: linear-gradient(180deg, rgba(6,10,22,.80) 0%, rgba(6,10,22,.92) 70%); }
-      .hero-bg { background-position: center; }
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      padding: 0 6%; max-width: 820px;
-    }
-    .hero-eyebrow {
-      font-size: .78rem; font-weight: 600; letter-spacing: .14em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1.2rem;
-      animation: fadeUp .5s ease both;
-    }
-    .hero-title {
-      font-family: var(--serif); font-size: clamp(2.6rem,5.4vw,4.8rem);
-      color: var(--white); font-weight: 600; line-height: 1.08;
-      margin-bottom: .8rem;
-      animation: fadeUp .6s .1s ease both;
-    }
-    .hero-title em { color: #e4322b; font-style: italic; }
-    .hero-tagline {
-      font-size: .82rem; font-weight: 500; letter-spacing: .18em;
-      text-transform: uppercase; color: rgba(255,255,255,.72);
-      margin-bottom: 1.6rem;
-      animation: fadeUp .6s .15s ease both;
-    }
-    .hero-desc {
-      font-size: 1.05rem; color: rgba(255,255,255,.78);
-      max-width: 560px; line-height: 1.75; margin-bottom: 2.2rem;
-      animation: fadeUp .6s .2s ease both;
-    }
-    .hero-actions {
-      display: flex; flex-wrap: wrap; gap: 1rem;
-      animation: fadeUp .6s .3s ease both;
-    }
-    .hero-pillars {
-      margin-top: 2.2rem;
-      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
-      color: rgba(255,255,255,.55);
-      animation: fadeUp .6s .4s ease both;
-    }
-
-    .stats-bar {
-      background: var(--navy2);
-      padding: 2rem 6%;
-      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1.5rem;
-      border-bottom: 3px solid var(--gold);
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-family: var(--serif); font-size: 2.8rem; font-weight: 700; color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label { font-size: .8rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .08em; margin-top: .3rem; }
-
-    .research-card {
+    /* Big news cards */
+    .news-card {
       background: var(--white); border-radius: var(--radius);
-      border: 1px solid var(--border); overflow: hidden;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+      overflow: hidden; margin-bottom: 1.6rem;
       transition: transform var(--transition), box-shadow var(--transition);
     }
-    .research-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .research-body { padding: 1.4rem; }
-    .research-body h3 { font-family: var(--serif); font-size: 1.2rem; color: var(--navy); margin-bottom: .5rem; }
-    .research-body p  { font-size: .87rem; color: var(--muted); line-height: 1.65; }
-    .research-body a  { display: inline-block; margin-top: .9rem; font-size: .82rem; font-weight: 600; color: var(--accent); }
+    .news-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .news-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      padding: 1.4rem 1.8rem;
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .news-card-date {
+      font-family: var(--serif); font-size: 1.8rem; color: var(--gold); font-weight: 700;
+      line-height: 1; white-space: nowrap;
+    }
+    .news-card-date span { display: block; font-size: .75rem; font-family: var(--sans); font-weight: 500; color: rgba(255,255,255,.55); letter-spacing: .06em; text-transform: uppercase; margin-top: .2rem; }
+    .news-card-type {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: .25rem .75rem; border-radius: 20px; margin-top: .25rem;
+    }
+    .type-position  { background: rgba(72,199,142,.2); color: #48c78e; border: 1px solid #48c78e; }
+    .type-paper     { background: rgba(45,110,168,.25); color: #7eb8f0; border: 1px solid #7eb8f0; }
+    .type-award     { background: rgba(200,168,75,.2); color: var(--gold); border: 1px solid var(--gold); }
+    .type-milestone { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); }
+    .news-card-body { padding: 1.6rem 1.8rem; }
+    .news-card-body h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); margin-bottom: .6rem; line-height: 1.35; }
+    .news-card-body p  { font-size: .9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
 
-    .research-img {
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      background: #ffffff;
-      border-bottom: 1px solid #1a3a6b;
-      padding: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .research-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      padding: .5rem;
-      box-sizing: border-box;
-    }
-
-    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
-
-    .pi-section {
-      background: var(--navy);
-      padding: 80px 6%;
-      display: flex; gap: 60px; align-items: center;
-    }
-    .pi-photo {
-      flex-shrink: 0; width: 240px; height: 240px;
-      border-radius: 50%; object-fit: cover;
-      border: 4px solid var(--gold);
-      box-shadow: 0 0 0 10px rgba(200,168,75,.15);
-      background: linear-gradient(135deg, #1a3a6b, #2d6ea8);
-    }
-    .pi-text h2 { font-family: var(--serif); font-size: 2.2rem; color: var(--white); margin-bottom: .5rem; }
-    .pi-text .pi-title { color: var(--gold); font-size: .9rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1rem; }
-    .pi-text p { color: rgba(255,255,255,.72); font-size: .97rem; line-height: 1.75; margin-bottom: 1rem; }
-    .pi-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.4rem; }
-    .pi-badge {
-      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
-      color: rgba(255,255,255,.8); border-radius: 20px;
-      padding: .3rem .9rem; font-size: .78rem;
+    /* Deadline strip inside a card */
+    .deadline-note {
+      background: var(--light); border-left: 3px solid var(--gold);
+      border-radius: 6px; padding: .7rem 1rem; margin-bottom: 1rem;
+      font-size: .83rem; color: var(--navy); font-weight: 500;
     }
 
-    @media (max-width: 768px) {
-      .pi-section { flex-direction: column; text-align: center; }
-      .pi-badges { justify-content: center; }
-      .stats-bar { gap: 2rem; }
+    /* Sidebar */
+    .sidebar-widget {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 1.4rem; margin-bottom: 1.6rem;
     }
+    .sidebar-widget h4 {
+      font-family: var(--serif); font-size: 1.1rem; color: var(--navy);
+      border-bottom: 2px solid var(--gold); padding-bottom: .5rem; margin-bottom: 1rem;
+    }
+    .quick-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .quick-list li { font-size: .83rem; color: var(--muted); padding-left: 1rem; position: relative; line-height: 1.5; }
+    .quick-list li::before { content: '▸'; position: absolute; left: 0; color: var(--gold); font-size: .65rem; top: .25rem; }
+    .quick-list a { color: var(--accent); }
 
-    .section-header.fade-up p { max-width: 1000px; margin-left: 0; }
-    .page-hero p { text-align: justify; }
-    .area-content p { text-align: justify; }
-
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+    @media (max-width: 900px) {
+      .news-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV injected by shared-layout.js -->
-
-<!-- ── HERO ─────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-scrim"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">University of Oxford</div>
-    <h1 class="hero-title">
-      State-of-the-Heart<br><em>Medicine</em>
-    </h1>
-    <div class="hero-tagline">Nitric Oxide Nanomedicine for Vascular Healing</div>
-    <p class="hero-desc">
-      We develop next-generation cardiovascular therapeutics — intelligent, nitric oxide-releasing nanomedicines that navigate complex biological environments, respond to pathophysiological stimuli and restore vascular homeostasis.
-    </p>
-    <div class="hero-actions">
-      <a href="research.html" class="btn btn-primary">Discover Our Research</a>
-      <a href="publications.html" class="btn btn-outline">Publications</a>
-      <a href="team.html" class="btn btn-outline">Meet the Team</a>
-    </div>
-    <div class="hero-pillars">Materials &nbsp;|&nbsp; Biology &nbsp;|&nbsp; Devices &nbsp;|&nbsp; Patients</div>
-  </div>
-</section>
-
-<!-- ── STATS ─────────────────────────────────────────────── -->
-<div class="stats-bar">
-  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Publications</div></div>
-  <div class="stat"><div class="stat-num">3500+</div><div class="stat-label">Citations</div></div>
-  <div class="stat"><div class="stat-num">33</div><div class="stat-label">h-index</div></div>
+<div class="page-hero">
+  <h1>News &amp; Events</h1>
+  <p>Latest updates, opportunities, publications and milestones from the Tabish Research Group (NANOCARD), University of Oxford.</p>
 </div>
 
-<!-- ── RESEARCH AREAS PREVIEW ─────────────────────────────── -->
 <section class="section">
-  <div class="section-header fade-up">
-    <h2>Key Research Areas</h2>
-    <hr class="gold-rule">
-    <p>We advance nanomaterial-enabled cardiovascular medicine as a platform for solving unmet clinical challenges; coupling materials design, redox chemical biology and device engineering to accelerate solutions in vascular healing, targeted delivery and real-time diagnosis. Our group cultivates an environment where rigorous science and bold ideas converge.</p>
-  </div>
-  <div class="grid-4">
-    <div class="research-card fade-up">
-      <div class="research-img">
-        <img src="img/no-nanomedicine.png" alt="Catalytic and non-catalytic nitric oxide release" />
-      </div>
-      <div class="research-body">
-        <h3>Nitric Oxide Nanomedicine</h3>
-        <p>Designing NO-releasing nanomaterials that restore endothelial function and promote vascular healing.</p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div>
-    <div class="research-card fade-up-2">
-      <div class="research-img">
-        <img src="img/drug-delivery.png" alt="Targeted drug delivery with NO-releasing graphene" />
-      </div>
-      <div class="research-body">
-        <h3>Targeted Drug Delivery</h3>
-        <p>Hypoxia- and redox-responsive carriers that release their payload only where and when it is needed.</p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div>
-    <div class="research-card fade-up-3">
-      <div class="research-img">
-        <img src="img/no-biology.png" alt="Nitric oxide signalling in endothelial, cardiac and immune cells" />
-      </div>
-      <div class="research-body">
-        <h3>Nitric Oxide Biology</h3>
-        <p>Decoding how NO governs vascular tone, mitochondrial function and inflammation across cell types.</p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div>
-    <div class="research-card fade-up-4">
-      <div class="research-img">
-        <img src="img/devices.png" alt="NO-releasing nanoparticles for cardiovascular devices" />
-      </div>
-      <div class="research-body">
-        <h3>Next-Generation Devices</h3>
-        <p>Stents, grafts and vascular implants with controlled, stimulus-responsive drug release.</p>
-        <a href="research.html">Learn more →</a>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="news-layout">
 
-<!-- ── PI SPOTLIGHT ───────────────────────────────────────── -->
-<section class="pi-section">
-  <img src="img/tanveer.jpg" alt="Tanveer Tabish" class="pi-photo">
-  <div class="pi-text">
-    <h2>Tanveer Tabish</h2>
-    <div class="pi-title">Principal Investigator · Senior Research Fellow &amp; Group Leader, University of Oxford</div>
-    <p>A cardiovascular nanoscientist working at the interface of nanomaterials, redox chemical biology and biomedical engineering. His work focuses on nitric oxide-releasing nanomedicines for cardiovascular repair, redox-responsive drug carriers, real-time imaging of NO in cells, and next-generation cardiovascular implants, in the Radcliffe Department of Medicine at the University of Oxford.</p>
-    <div class="pi-badges">
-      <span class="pi-badge">Oxford</span>
-      <span class="pi-badge">Cardiovascular &amp; Redox Nanomedicine</span>
-      <span class="pi-badge">Nanomaterials</span>
-      <span class="pi-badge">Chemical Biology</span>
-      <span class="pi-badge">Fellow, Kellogg College</span>
-    </div>
-    <div style="display:flex;gap:.9rem;flex-wrap:wrap;">
-      <a href="tanveer.html" class="btn btn-primary">Full Profile</a>
-      <a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank" class="btn btn-outline">Google Scholar</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── LATEST NEWS PREVIEW ───────────────────────────────── -->
-<section class="section section-alt">
-  <div class="section-header">
-    <h2>Latest News</h2>
-    <hr class="gold-rule">
-  </div>
-
-  <div class="news-timeline">
-
-    <div class="news-entry">
-      <div class="news-date-col">
-        <div class="news-date-badge">November<br>2026</div>
-      </div>
-      <div class="news-content">
-        <h4>🧬 Three Fully Funded DPhil Projects</h4>
-        <p>We have three DPhil projects on offer through the BHF Oxford Centre of Research Excellence and the BHF Oxford–Cambridge VascularRewind Programme. Applications close 1 December 2026.</p>
-        <a href="news.html" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">More Details →</a>
-      </div>
-    </div>
-
-    <div class="news-entry">
-      <div class="news-date-col">
-        <div class="news-date-badge">2026</div>
-      </div>
-      <div class="news-content">
-        <h4>NANOCARD Programme</h4>
-        <p>Our cardiovascular nanotherapeutics programme spans materials, biology, devices and patients — from NO-releasing coatings to first-in-class vascular implants.</p>
-      </div>
-    </div>
-
-    <div class="news-entry">
-      <div class="news-date-col">
-        <div class="news-date-badge">2026</div>
-      </div>
-      <div class="news-content">
-        <h4>Join the Group</h4>
-        <p>We welcome enquiries from prospective PhD students, postdoctoral researchers and fellowship candidates interested in cardiovascular nanomedicine.</p>
-        <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy" style="display:inline-block;margin-top:.8rem;">Get in Touch →</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div style="margin-top:2rem;">
-    <a href="news.html" class="btn btn-navy">All News &amp; Events →</a>
-  </div>
-</section>
-
-<!-- ── CONTACT & LOCATION ─────────────────────────────── -->
-<section class="section section-alt2">
-  <div class="contact-grid">
-
+    <!-- MAIN NEWS -->
     <div>
-      <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:.4rem;">Get in touch</h2>
-      <hr class="gold-rule">
-      <p style="font-size:.9rem;color:var(--muted);margin-bottom:1.5rem;">
-        Interested in collaboration, PhD opportunities, or joining the group? We'd love to hear from you.
-      </p>
 
-      <div style="display:flex;flex-direction:column;gap:1.2rem;">
-        <div>
-          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:.4rem;">
-            Name <span style="color:var(--accent);">*</span>
-          </label>
-          <input type="text"
-            style="width:100%;padding:.65rem .8rem;border:1px solid #ccc;border-radius:4px;font-family:var(--sans);font-size:.9rem;color:var(--text);outline:none;box-sizing:border-box;">
+      <!-- ── DPHIL OPPORTUNITIES ── -->
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>Now Recruiting</span></div>
+          <span class="news-card-type type-position">DPhil Projects</span>
         </div>
-
-        <div>
-          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:.4rem;">
-            Email address <span style="color:var(--accent);">*</span>
-          </label>
-          <input type="email"
-            style="width:100%;padding:.65rem .8rem;border:1px solid #ccc;border-radius:4px;font-family:var(--sans);font-size:.9rem;color:var(--text);outline:none;box-sizing:border-box;">
+        <div class="news-card-body">
+          <h3>🧬 Three Fully Funded DPhil Projects Available</h3>
+          <p>We currently have <strong>three DPhil projects on offer</strong> through two different Oxford programmes, for students interested in cardiovascular nanomedicine, nitric oxide biology and functional biomaterials. Details of each programme are below.</p>
+          <div class="deadline-note">⏳ Applications for both programmes close on <strong>1 December 2026</strong>.</div>
         </div>
-
-        <div>
-          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:.4rem;">
-            Message <span style="color:var(--accent);">*</span>
-          </label>
-          <textarea rows="6"
-            style="width:100%;padding:.65rem .8rem;border:1px solid #ccc;border-radius:4px;font-family:var(--sans);font-size:.9rem;color:var(--text);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
-        </div>
-
-        <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy"
-          style="text-align:center;display:block;">
-          Submit form
-        </a>
       </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>Applications Open</span></div>
+          <span class="news-card-type type-position">BHF Oxford CRE</span>
+        </div>
+        <div class="news-card-body">
+          <h3>Photoresponsive Nanotherapeutics for Vascular Healing</h3>
+          <p>A fully funded DPhil studentship through the <strong>BHF Oxford Centre of Research Excellence (CRE)</strong> graduate studentship scheme, supervised jointly with Professor Matthew Fuchter and Professor Keith Channon. The project develops light-activated nanotherapeutics for controlled, site-specific vascular healing.</p>
+          <div class="deadline-note">⏳ Application deadline: <strong>1 December 2026</strong></div>
+          <a href="https://www.cardioscience.ox.ac.uk/bhf-centre-of-research-excellence/graduate-studentships-1/projects/photoresponsive-nanotherapeutics-for-vascular-healing-fuchter-channon-tabish" target="_blank" class="btn btn-navy">Project Details &amp; Apply →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>Applications Open</span></div>
+          <span class="news-card-type type-position">BHF VascularRewind</span>
+        </div>
+        <div class="news-card-body">
+          <h3>BHF Oxford–Cambridge VascularRewind Programme</h3>
+          <p>Fully funded DPhil projects through the <strong>BHF Oxford–Cambridge VascularRewind Programme</strong>, a four-year structured research degree on the secondary prevention of vascular dysfunction and disease. Our projects focus on nitric oxide-releasing nanomedicines for restoring endothelial function and vascular homeostasis.</p>
+          <div class="deadline-note">⏳ Application deadline: <strong>1 December 2026</strong></div>
+          <a href="https://www.medsci.ox.ac.uk/study/graduateschool/courses/dtc-structured-research-degrees/cardiovascular-science-programme/cardiovascular-science-vascularrewind" target="_blank" class="btn btn-navy">Programme Details &amp; Apply →</a>
+        </div>
+      </div>
+
+      <!-- ── AWARDS ── -->
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2025<span>2025</span></div>
+          <span class="news-card-type type-award">Award</span>
+        </div>
+        <div class="news-card-body">
+          <h3>The Kroto Medal 2025</h3>
+          <p>Tanveer was awarded the Kroto Medal by NANOSMAT, in recognition of contributions to nanoengineering. The medal is named in honour of Nobel Laureate Sir Harold W. Kroto.</p>
+        </div>
+      </div>
+
+      <!-- ── PAPERS ── -->
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>In Press</span></div>
+          <span class="news-card-type type-paper">New Paper</span>
+        </div>
+        <div class="news-card-body">
+          <h3><em>Signal Transduction and Targeted Therapy</em>: Dinitrosyl Iron Complexes from Microbiota</h3>
+          <p>Our work on a new take on nitric oxide signalling — dinitrosyl iron complexes from the microbiota promoting cardiometabolic health — has been accepted for publication.</p>
+          <a href="publications.html" class="btn btn-navy">All Publications →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2026<span>2026</span></div>
+          <span class="news-card-type type-paper">New Paper</span>
+        </div>
+        <div class="news-card-body">
+          <h3><em>Nature Reviews Cardiology</em>: Ex Vivo Perfusion Platform for Interventional Devices</h3>
+          <p>Thomas Foster and Tanveer Tabish describe an ex vivo perfusion platform for testing cardiovascular interventional devices, published as a Tools of the Trade paper in <em>Nature Reviews Cardiology</em>.</p>
+          <a href="publications.html" class="btn btn-navy">All Publications →</a>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-card-header">
+          <div class="news-card-date">2025<span>2025</span></div>
+          <span class="news-card-type type-paper">Review</span>
+        </div>
+        <div class="news-card-body">
+          <h3><em>Advanced Drug Delivery Reviews</em>: Nitric Oxide-Releasing Graphene</h3>
+          <p>Our review on nitric oxide-releasing graphene for next-generation therapeutics, with Professor Craig Lygate, surveys the design principles behind NO-releasing nanomaterials for cardiovascular applications.</p>
+          <a href="https://doi.org/10.1016/j.addr.2025.115676" target="_blank" class="btn btn-navy">Read Paper →</a>
+        </div>
+      </div>
+
     </div>
 
-    <div>
-      <h2 style="font-family:var(--serif);font-size:2rem;color:var(--navy);margin-bottom:.4rem;">Our location</h2>
-      <hr class="gold-rule">
+    <!-- SIDEBAR -->
+    <aside>
 
-      <div style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-bottom:1.2rem;">
+      <div class="sidebar-widget">
+        <h4>Opportunities</h4>
+        <ul class="quick-list">
+          <li><a href="https://www.cardioscience.ox.ac.uk/bhf-centre-of-research-excellence/graduate-studentships-1/projects/photoresponsive-nanotherapeutics-for-vascular-healing-fuchter-channon-tabish" target="_blank">BHF Oxford CRE Studentship</a> — closes 1 December 2026</li>
+          <li><a href="https://www.medsci.ox.ac.uk/study/graduateschool/courses/dtc-structured-research-degrees/cardiovascular-science-programme/cardiovascular-science-vascularrewind" target="_blank">BHF VascularRewind Programme</a> — closes 1 December 2026</li>
+          <li><a href="mailto:tanveer.tabish@cardiov.ox.ac.uk">Postdoctoral &amp; fellowship enquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>Quick Links</h4>
+        <ul class="quick-list">
+          <li><a href="https://scholar.google.com/citations?user=ZGpmIIIAAAAJ&hl=en" target="_blank">Google Scholar Profile</a></li>
+          <li><a href="https://www.scopus.com/authid/detail.uri?authorId=55484476700" target="_blank">Scopus Profile</a></li>
+          <li><a href="https://orcid.org/0000-0001-5578-076X" target="_blank">ORCID</a></li>
+          <li><a href="https://www.linkedin.com/in/tanveertabish/" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:tanveer.tabish@cardiov.ox.ac.uk">Email Dr Tabish</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h4>Affiliations</h4>
+        <ul class="quick-list">
+          <li><a href="https://www.rdm.ox.ac.uk/about/our-divisions/division-of-cardiovascular-medicine" target="_blank">Division of Cardiovascular Medicine</a></li>
+          <li><a href="https://www.rdm.ox.ac.uk" target="_blank">Radcliffe Department of Medicine</a></li>
+          <li><a href="https://www.kellogg.ox.ac.uk" target="_blank">Kellogg College, Oxford</a></li>
+          <li><a href="https://www.ox.ac.uk" target="_blank">University of Oxford, UK</a></li>
+        </ul>
+      </div>
+
+      <!-- ── MAP WIDGET ── -->
+      <div class="sidebar-widget" style="padding:0;overflow:hidden;">
         <iframe
           src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2300%2C51.7570%2C-1.2060%2C51.7700&layer=mapnik&marker=51.7639%2C-1.2185"
-          width="100%" height="280"
+          width="100%" height="200"
           style="border:none;display:block;"
           loading="lazy"
           title="John Radcliffe Hospital, University of Oxford map">
         </iframe>
-      </div>
-
-      <div style="display:flex;flex-direction:column;gap:.5rem;font-size:.9rem;color:var(--muted);margin-bottom:1.4rem;">
-        <div style="display:flex;align-items:flex-start;gap:.7rem;">
-          <span style="color:var(--gold);font-size:1rem;margin-top:.1rem;">📍</span>
-          <span>Radcliffe Department of Medicine<br>John Radcliffe Hospital<br>University of Oxford<br>Oxford, OX3 9DU, UK</span>
+        <div style="padding:.9rem 1rem;">
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.6;margin-bottom:.7rem;">
+            📍 Radcliffe Department of Medicine<br>
+            John Radcliffe Hospital<br>
+            University of Oxford<br>
+            Oxford, OX3 9DU, UK
+          </p>
+          <a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank"
+            class="btn btn-navy" style="display:block;text-align:center;font-size:.8rem;">
+            Oxford Profile →
+          </a>
         </div>
       </div>
 
-      <a href="https://www.rdm.ox.ac.uk/people/tanveer-tabish" target="_blank"
-        class="btn btn-navy" style="text-align:center;display:block;">
-        Oxford Profile →
-      </a>
-    </div>
+      <div class="sidebar-widget">
+        <h4>Get in Touch</h4>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.8rem;">Interested in a DPhil project, a fellowship, or collaborating with us?</p>
+        <a href="mailto:tanveer.tabish@cardiov.ox.ac.uk" class="btn btn-navy" style="width:100%;justify-content:center;text-align:center;display:block;">Email the Group →</a>
+      </div>
 
+    </aside>
   </div>
 </section>
 
-<!-- FOOTER injected by shared-layout.js -->
 <script src="shared-layout.js"></script>
 </body>
 </html>
